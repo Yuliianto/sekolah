@@ -1,0 +1,86 @@
+#Content
+	type 		=> 1 (header)
+	update_dtm	=> upd
+	xn1			=> 
+	xn2			=>
+	xn3			=>
+	xn4			=>
+	xn5			=>
+	xn6			=>
+	xn7			=>
+	xs1			=>
+	xs2			=>
+	xs3			=>
+	xs4			=>
+	xs5			=>
+	xs6			=>
+	xs7			=>
+
+	type 		=> 2 (header)
+	update_dtm	=>	
+	xn1			=>
+	xn2			=>
+	xn3			=>
+	xn4			=>
+	xn5			=>
+	xn6			=>
+	xn7			=>
+	xs1			=>
+	xs2			=>
+	xs3			=>
+	xs4			=>
+	xs5			=>
+	xs6			=>
+	xs7			=>
+
+	type 		=> 3 (program)
+	update_dtm	=>	
+	xn1			=>
+	xn2			=>
+	xn3			=>
+	xn4			=>
+	xn5			=>
+	xn6			=>
+	xn7			=>
+	xs1			=>
+	xs2			=>
+	xs3			=>
+	xs4			=>
+	xs5			=>
+	xs6			=>
+	xs7			=>
+
+# new_pendaftar
+A. Keterangan Calon Siswa
+	1. Nama Lengkap 
+	2. Nama Panggilan 
+	3. Jenis Kelamin 
+	4. Tempat Tanggal Lahir
+	5. Agama 
+	6. Anak Ke _ dari _ saudara
+	7. Nik Anak
+	8. Bahasa sehari - hari 
+	9. Status anak 
+		- kandung 
+		- yatim 
+		- piatu
+		- yatim piatu
+	10. Kewarga negaraan
+
+B. Data Tempat Tinggal 
+	1. Alamat
+	2. No. Telepon / HP
+	3. Selama sekolah tinggal bersama
+	4. Jarak dari rumah ke sekolah
+
+C. Keterangan Kesehatan Calon Siswa
+	1. Berat Badan 
+	2. Tinggi Badan 
+	3. Golongan darah 
+	4. Penyakit yang pernah di derita
+	5. Kelainan jasmani/lainnya 
+	6. Berkebutuhan Khusus
+
+D. Keterangan Pendidikan Calon Siswa
+	1. Nama TK/RA
+	2. Alamat TK/RA
