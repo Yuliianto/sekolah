@@ -28,6 +28,13 @@ The above copyright notice and this permission notice shall be included in all c
     <!-- Material Kit CSS -->
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body>
@@ -90,8 +97,15 @@ The above copyright notice and this permission notice shall be included in all c
         </div>  
     </div>
 
-
     <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
 </body>
 
 </html>
