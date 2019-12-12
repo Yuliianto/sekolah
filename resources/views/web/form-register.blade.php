@@ -1,6 +1,10 @@
 @extends('layouts.guest')
 
 @section('content')
+<style>
+#hidden_div { display: none; }
+</style>
+
 <div class="card">
     <div class="card-header card-header-text card-header-primary">
         <div class="card-text">
@@ -35,6 +39,7 @@
                     </ol>
                 </nav>
                 <form>
+                <h3><center><b>ISI BIODATA</b></center></h3>
                     <div class="form-group">
                         <div class="row">
                             <div class="col">
@@ -96,22 +101,25 @@
                         <label for="kewarganegaraan">Kewarga negaraan</label>
                         <input type="text" name="kewarganegaraan" class="form-control" placeholder="WNI">
                       </div>
+                      </div>
+                      <div class="row">
                       <div class="col">
                         <div class="form-group">
-                          <label for="anakke">Anaka</label>
+                          <label for="anakke">Anak ke</label>
                           <input type="number" name="anakke" class="form-control" placeholder="2">
-                          <p></p>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-group">
                           <label>dari</label>
                           <input type="number" name="dari" class="form-control" placeholder="2">
-                          <p></p>
-                          <label for="status">Status anak</label>
-                          <input type="text" name="status" class="form-control" placeholder="Kandung">
                         </div>
                       </div>
                     </div>
                   </div>
                 </form>
             </div>
+
             <div class="tab-pane" id="alamat">
                 <nav aria-label="breadcrumb" role="navigation">
                   <ol class="breadcrumb">
@@ -122,31 +130,32 @@
                 <form>
                   <div class="form-group">
                     <label for="email">Email Orang Tua</label>
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
                   </div>
                   <p><p>
                   <div class="form-group">
                     <label for="notelp">Nomor Telpon</label>
-                    <input type="number" class="form-control" id="notelp" placeholder="08121828xxx">
+                    <input type="number" class="form-control" id="notelp" name="notelp" placeholder="08121828xxx">
                   </div>
                   <div class="form-group">
                     <label for="alamat">Alamat tempat tinggal :</label>
-                    <textarea class="form-control" id="alamat" rows="3" placeholder="Jalan kerja bakti xxxxx"></textarea>
+                    <textarea class="form-control" id="alamat" rows="3" name="alamat"  placeholder="Jalan kerja bakti xxxxx"></textarea>
                   </div>
                   <div class="form-group">
                     <div class="row">
                       <div class="col">
                         <label for="tinggalbersama">Selama sekolah tinggal bersama : </label>
-                        <input type="text" class="form-control" id="tinggalbersama" placeholder="Jalan kerja bakti xxxxx">
+                        <input type="text" class="form-control" id="tinggalbersama" name="tinggalbersama" placeholder="Jalan kerja bakti xxxxx">
                        </div>
                        <div class="col">
                         <label for="jaraksekolah">Jarak dari rumah ke sekolah : </label>
-                        <input type="number" class="form-control" id="jaraksekolah" placeholder="20 meter">
+                        <input type="number" class="form-control" id="jaraksekolah" name="jaraksekolah" placeholder="20 meter">
                       </div>
                     </div>  
                   </div>
                 </form>
             </div>
+
             <div class="tab-pane" id="kesehatan">
                 <nav aria-label="breadcrumb" role="navigation">
                   <ol class="breadcrumb">
@@ -158,16 +167,17 @@
                 <form>
                   <div class="form-group">
                     <label for="beratbadan">Berat badan :</label>
-                    <input type="number" class="form-control" id="beratbadan" placeholder="34">
+                    <input type="number" class="form-control" id="beratbadan" name="beratbadan"placeholder="00">
                   </div>
                   <div class="form-group">
                     <label for="tinggi">Tinggi :</label>
-                    <input type="number" class="form-control" id="tinggi" placeholder="90">
+                    <input type="number" class="form-control" id="tinggi" name="tinggi" placeholder="000">
                   </div>
                   
                   <div class="form-group">
                     <label for="golongandarah">Golongan Darah</label>
-                    <select class="form-control selectpicker" data-style="btn btn-link" id="golongandarah">
+                    <select class="form-control selectpicker" data-style="btn btn-link" id="golongandarah" name="golongandarah" >
+                            <option value="-">Pilih</option>
                             <option value="A">A</option>
                             <option value="B">B</option>
                             <option value="AB">AB</option>
@@ -176,26 +186,27 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="penyakit">Penyakit yang pernah di derita</label>
-                    <select class="form-control selectpicker" data-style="btn btn-link" id="golongandarah" onchange="showDiv('hidden_div', this)">
-                            <option value="TBC">TBC</option>
-                            <option value="Cacar">Cacar</option>
-                            <option value="Campak">Campak</option>
-                            <option value="Alergi">Alergi</option>
-                            <option value="dll">DLL</option>
-                    </select>
-                    <div id="hidden_div" >
-                      <input type="text" class="form-control" id="penyakit" placeholder="isi penyakit..">
-                    </div>
+                      <label for="penyakit">Penyakit yang pernah di derita</label>
+                      <select class="form-control selectpicker" data-style="btn btn-link" id="penyakit" name="penyakit" onchange="showDiv('hidden_div', this)">
+                              <option value="-">Tidak Ada</option>
+                              <option value="tbc">TBC</option>
+                              <option value="cacar">Cacar</option>
+                              <option value="campak">Campak</option>
+                              <option value="alergi">Alergi</option>
+                              <option value="dll">DLL</option>
+                      </select>
+                      <div id="hidden_div">
+                        <input type="text" class="form-control" id="penyakit" name="penyakit" placeholder="isi penyakit..">
+                      </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="kebutuhankhusus">Kebutuhan Khusus :</label>
-                    <input type="kebutuhankhusus" class="form-control" id="kebutuhankhusus" placeholder="Masukan keterangan ..">
+                    <label for="kebutuhankhusus">Kebutuhan Khusus </label>
+                    <input type="kebutuhankhusus" class="form-control" id="kebutuhankhusus" name="kebutuhankhusus" placeholder="kosongkan jika tidak ada ..">
                   </div>
                   <div class="form-group">
-                    <label for="kelainanlainnya">Kelainan Jasmani Lainnya :</label>
-                    <input type="kelainanlainnya" class="form-control" id="kelainanlainnya" placeholder="Masukan keterangan ..">
+                    <label for="kelainanlainnya">Kelainan Jasmani Lainnya </label>
+                    <input type="kelainanlainnya" class="form-control" id="kelainanlainnya" name="kelainanlainnya" placeholder="kosongkan jika tidak ada ..">
                   </div>
                 </form> 
             </div>
@@ -218,11 +229,11 @@
                   
                   <div class="form-group">
                     <label for="namatk">Nama TK/RA</label>
-                    <input type="text" class="form-control" id="namatk" placeholder="isi kan nama TK asal">
+                    <input type="text" class="form-control" id="namatk" name="namatk" placeholder="isi kan nama TK asal">
                   </div>
                   <div class="form-group">
                     <label for="alamattk">Alamat TK/RA</label>
-                    <input type="text" class="form-control" id="alamattk" placeholder="alamat TK asal">
+                    <input type="text" class="form-control" id="alamattk" name="alamattk" placeholder="alamat TK asal">
                   </div>
 
 
@@ -273,9 +284,8 @@
 </div>
 
     <script type="text/javascript">
-
       $("#check").click(function(){
-        let _nama_lengkap   =$("input[name=name]").val();
+        let _nama_lengkap    =$("input[name=name]").val();
         let _nama_Panggilan  =$("input[name=nama-panggilan]").val();
         let _jenis_kelamin   =$("input[name=jenis-kelamin]").val();
         let _tempat_Lahir    =$("input[name=tempat-lahir]").val();
@@ -283,10 +293,25 @@
         let _agama           =$("input[name=agama]").val();
         let _anak_Ke         =$("input[name=anakke]").val();
         let _dari            =$("input[name=dari]").val();
-        let _nik_Anak        =$("input[name=name]").val();
-        let _bahasa          =$("input[name=name]").val();
-        let _status_anak     =$("input[name=status]").val();
+        let _nik_Anak        =$("input[name=nik_Anak]").val();
+        let _bahasa          =$("input[name=bahasa]").val();
+        let _status_anak     =$("input[name=status_anak]").val();
+        let _kewarga_negaraan=$("input[name=kewarga_negaraan]").val();
         let _kewarga_negaraan=$("input[name=name]").val();
+        let _email           =$("input[name=email]").val();
+        let _notelp          =$("input[name=notelp]").val();
+        let _alamat          =$("input[name=alamat]").val();
+        let _tinggalbersama  =$("input[name=tinggalbersama]").val();
+        let _jaraksekolah    =$("input[name=jaraksekolah]").val();
+        let _beratbadan      =$("input[name=beratbadan]").val();
+        let _tinggi          =$("input[name=tinggi]").val();
+        let _golongandarah   =$("input[name=golongandarah]").val();
+        let _penyakit        =$("input[name=penyakit]").val();
+        let _kebutuhankhusus =$("input[name=kebutuhankhusus]").val();
+        let _kelainanlainnya =$("input[name=kelainanlainnya]").val(); 
+        let _namatk=$("input[name=namatk]").val();
+        let _alamattk=$("input[name=alamattk]").val();
+
 
           var data_siswa = {
                   keterangan:{
@@ -303,16 +328,30 @@
                           status_anak   : _status_anak,
                           kewarga_negaraan   : _kewarga_negaraan
                   },
-                  tempat_tinggal:{
-                        
+                  tempat_tinggal:{	
+						              email   : _email,
+						              notelp	: _notelp,
+						              alamat	: _alamat,
+						              tinggalbersama : _tinggalbersama,
+						              jaraksekolah : _jaraksekolah
                   },
                   kesehatan :{
+                          		
+						            beratbadan		 :_beratbadan,		
+						            tinggi         : _tinggi,
+                        golongandarah  : _golongandarah,
+						            penyakit       : _penyakit,
+                        kebutuhankhusus: _kebutuhankhusus,
+                        kelainanlainnya: _kelainanlainnya
 
                   },
                   pendidikan:{
+						            namatk		:_namatk
+						            alamattk	:_alamattk
 
-                  }
+                  }	
                 };
+
           let str = JSON.stringify(data_siswa);
           $.ajax({
             method: "post",
@@ -325,6 +364,12 @@
             alert(res);
           });
       });
+
+      //menampilkan form penyakit dll
+      function showDiv(divId, element){
+          document.getElementById(divId).style.display = element.value == 'dll' ? 'block' : 'none';
+      };
+      
     </script>
 @endsection
 
