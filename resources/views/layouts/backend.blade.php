@@ -17,7 +17,7 @@
 <html lang="en">
 
 <head>
-  <title>Hello, world!</title>
+  <title>Dashboard</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
@@ -40,10 +40,10 @@
   -->
       <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-          CT
+          SDIT
         </a>
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+          Portal
         </a>
       </div>
       <div class="sidebar-wrapper">

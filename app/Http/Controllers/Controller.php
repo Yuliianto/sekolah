@@ -73,7 +73,7 @@ class Controller extends BaseController
                 $details->xs10      = $param->kesehatan->golongandarah;
                 $details->xs11      = $param->kesehatan->penyakit;
                 $details->xs1       = $param->kesehatan->kebutuhankhusus;
-                $details->xs1       = $param->kesehatan->kelainanlainnya;
+                $details->xs4       = $param->kesehatan->kelainanlainnya;
                 $details->xs2       = $param->pendidikan->namatk;
                 $details->xs3       = $param->pendidikan->alamattk;
                 $details->save();      
@@ -97,6 +97,11 @@ class Controller extends BaseController
         $pendaftar = New_pendaftar::where('xn1',$nik)->first();
         $detail = New_pendaftar_details::where('pendaftar_account_id',$nik)
                                             ->where('pendaftar_detail_type_id',1)->first();
-        return var_dump($detail);
+        $detail2 = New_pendaftar_details::where('pendaftar_account_id',$nik)
+                                            ->where('pendaftar_detail_type_id',2)->first();
+        
+        return view('web.detail-pendaftar',['dt_pendaftaran'=>$pendaftar,
+                                            'detail'=>$detail,
+                                            'detail2'=>$detail2]);
     }
 }
