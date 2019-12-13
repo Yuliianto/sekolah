@@ -86,4 +86,9 @@ class Controller extends BaseController
     	}
     	// return json_encode($param->keterangan);
     }
+
+    public function check_nomor()
+    {
+        return view('web.check-nopendaftaran');
+    }
 }

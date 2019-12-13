@@ -44,7 +44,7 @@ Route::get('/student-register',function(){
 	return view('web.form-register');
 });
 Route::post('/do_register','Controller@do_register');
-
+Route::get('/check-nomor','Controller@check_nomor');
 
 
 
