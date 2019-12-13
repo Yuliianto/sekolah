@@ -45,6 +45,7 @@ Route::get('/student-register',function(){
 });
 Route::post('/do_register','Controller@do_register');
 Route::get('/check-nomor','Controller@check_nomor');
+Route::post('/get_detail','Controller@get_detail');
 
 
 
