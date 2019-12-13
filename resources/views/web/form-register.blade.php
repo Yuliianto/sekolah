@@ -285,6 +285,19 @@
 
     <script type="text/javascript">
       
+      function usia(_tgllahir) {
+        let lahir = new Date(_tgllahir);
+        let now = new Date();
+        let year = 0;
+        let usia = 0;
+        if (now.getMonth()<lahir.getMonth()) {
+          year = 1;
+        }else if ((now.getMonth() == lahir.getMonth)&&(now.getDate() < lahir.getDate())){
+          year =1;
+        }
+        usia = now.getFullYear() - lahir.getFullYear() - year;
+        return usia;
+      }
       $("#check").click(function(){
         let _nama_lengkap    =$("input[name=name]").val();
         let _nama_Panggilan  =$("input[name=nama-panggilan]").val();
@@ -352,16 +365,25 @@
                 };
 
           let str = JSON.stringify(data_siswa);
-          $.ajax({
-            method: "post",
-            url: "/do_register",
-            data: {param: str}
-          })
-          .done(function( result ) {
-            // $("#result-data").html(result);
-            let res = JSON.stringify( result );
-            alert(res);
-          });
+          let tgl = data_siswa.keterangan.tanggal_lahir;
+          let umur;
+          if (tgl) {
+              umur  = usia(tgl);
+          }
+          if (umur >= 6 && umur <= 8) {
+            $.ajax({
+              method: "post",
+              url: "/do_register",
+              data: {param: str}
+            })
+            .done(function( result ) {
+              // $("#result-data").html(result);
+              let res = JSON.stringify( result );
+              alert(res);
+            });
+          }else{
+            alert("usia tidak memenuhi persyaratan");
+          }
       });
 
       //menampilkan form penyakit dll
