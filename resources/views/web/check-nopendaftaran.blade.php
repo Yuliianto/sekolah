@@ -7,40 +7,25 @@
 
 <div class="card">
     <!-- Do what you wont -->
+    <div class="form-group label-floating has-success">
+    <h2><center><label class="control-label">MASUKAN NOMOR PENDAFTARAN</label></center></h2>
+    <p><p>
+          <input type="text" class="form-control" name="nopendaftaran" placeholder="masukan nomor pendaftaran.." />
+    <br><p><p>
 
+  </div>
+
+  <div class="result">
+  </div>
 </div>
 
     <script type="text/javascript">
       
       $("#check").click(function(){
         let _nama_lengkap    =$("input[name=name]").val();
-        let _nama_Panggilan  =$("input[name=nama-panggilan]").val();
-        let _jenis_kelamin   =$("input[name=jenis_kelamin]").val();
-        let _tempat_Lahir    =$("input[name=tempat-lahir]").val();
-        let _tanggal_lahir   =$("input[name=tanggal-lahir]").val();
-        let _agama           =$("select[name=agama]").val();
-        let _anak_Ke         =$("input[name=anakke]").val();
-        let _dari            =$("input[name=dari]").val();
-        let _nik_Anak        =$("input[name=nik]").val();
-        let _bahasa          =$("select[name=bahasa]").val();
-        let _status_anak     =$("input[name=status_anak]").val();
-        let _kewarga_negaraan=$("input[name=kewarganegaraan]").val();
-        let _email           =$("input[name=email]").val();
-        let _notelp          =$("input[name=notelp]").val();
-        let _alamat          =$("textarea[name=alamat]").val();
-        let _tinggalbersama  =$("input[name=tinggalbersama]").val();
-        let _jaraksekolah    =$("input[name=jaraksekolah]").val();
-        let _beratbadan      =$("input[name=beratbadan]").val();
-        let _tinggi          =$("input[name=tinggi]").val();
-        let _golongandarah   =$("select[name=golongandarah]").val();
-        let _penyakit        =$("select[name=penyakit]").val();
-        let _kebutuhankhusus =$("input[name=kebutuhankhusus]").val();
-        let _kelainanlainnya =$("input[name=kelainanlainnya]").val(); 
-        let _namatk=$("input[name=namatk]").val();
-        let _alamattk=$("input[name=alamattk]").val();
 
 
-          var data_siswa = {
+          var no_pendaftaran = {
                   keterangan:{
                           nama_lengkap   : _nama_lengkap,
                           nama_Panggilan   : _nama_Panggilan,
@@ -90,11 +75,6 @@
             alert(res);
           });
       });
-
-      //menampilkan form penyakit dll
-      function showDiv(divId, element){
-          document.getElementById(divId).style.display = element.value == 'dll' ? 'block' : 'none';
-      };
       
     </script>
 @endsection
