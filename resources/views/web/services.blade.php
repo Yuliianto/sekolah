@@ -46,7 +46,7 @@
 	</div>
 	<!-- //inner services page -->
 <!-- choose -->
-	<div class="jarallax w3-agileits-choose py-5">
+	<!-- <div class="jarallax w3-agileits-choose py-5">
 			<div class="container  py-md-3">
 				<div class="w3-head-all mb-3 w3_choose_head">
 		         <h3>New Services</h3>
@@ -81,7 +81,7 @@
 					</div>
 				</div>	
 			</div>
-	</div>
+	</div> -->
 	<!-- //choose -->
 <!-- stats -->
 <div class="stats">
@@ -219,8 +219,8 @@
 			</div>
 		</div>
 		<div class="agileits_w3layouts-copyright text-center">
-			<p>© 2018 Success path. All Rights Reserved | Design by
-				<a href="http://w3layouts.com/" target="=_blank"> W3layouts </a>
+			<p>© 2018 SDIT Nurul Yaqin. All Rights Reserved | Design by
+				<a href="http://hallomysa.com/" target="=_blank"> MYSA TEAM </a>
 			</p>
 		</div>
 	</div>
