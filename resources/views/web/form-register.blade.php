@@ -318,7 +318,7 @@
         let _email           =$("input[name=email]").val();
         let _notelp          =$("input[name=notelp]").val();
         let _alamat          =$("textarea[name=alamat]").val();
-        let _tinggalbersama  =$("input[name=tinggalbersama]").val();
+        let _tinggalbersama  =$("select[name=tinggalbersama]").val();
         let _jaraksekolah    =$("input[name=jaraksekolah]").val();
         let _beratbadan      =$("input[name=beratbadan]").val();
         let _tinggi          =$("input[name=tinggi]").val();
