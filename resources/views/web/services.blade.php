@@ -93,28 +93,28 @@
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 
 			w3layouts_stats_left w3_counter_grid">
 				<span class="fas fa-smile" aria-hidden="true"></span>
-				<p class="counter">700</p>
+				<p class="counter">436</p>
 				<h3>STUDENT</h3>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6   w3layouts_stats_left w3_counter_grid1">
 				<span class="fas fa-bookmark" aria-hidden="true"></span>
-				<p class="counter">19</p>
+				<p class="counter">9</p>
 				<h3>EXTRAKULIKULER</h3>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6  w3layouts_stats_left w3_counter_grid2">
 				<span class="fas fa-users" aria-hidden="true"></span>
-				<p class="counter">73</p>
+				<p class="counter">41</p>
 				<h3>TEACHERS</h3>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6  w3layouts_stats_left w3_counter_grid3">
 				<span class="fas fa-trophy" aria-hidden="true"></span>
-				<p class="counter">500</p>
+				<p class="counter">200</p>
 				<h3>AWARDS WON</h3>
 			</div>
 			<div class="clearfix"> </div>
 		</div>
-			</div>
 	</div>
+</div>
 	<!-- //stats -->
 <!-- footer -->
 <section class="agile-footer w3ls-section py-5">

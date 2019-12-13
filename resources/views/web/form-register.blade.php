@@ -21,7 +21,7 @@
                         <a class="nav-link" id="tiga" href="#kesehatan" data-toggle="tab">Kesehatan<i class="material-icons">label_important</i></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="empat" href="#pendidikan" data-toggle="tab">Pendidikan<i class="material-icons">label_important</i></a>
+                        <a class="nav-link" id="empat" href="#pendidikan" data-toggle="tab">Pendidikan & Upload<i class="material-icons">label_important</i></a>
                     </li>
                 </ul>
             </div>
@@ -302,6 +302,7 @@
         usia = now.getFullYear() - lahir.getFullYear() - year;
         return usia;
       }
+      
       $("#check").click(function(){
         let _nama_lengkap    =$("input[name=name]").val();
         let _nama_Panggilan  =$("input[name=nama-panggilan]").val();
@@ -326,8 +327,8 @@
         let _penyakit        =$("select[name=penyakit]").val();
         let _kebutuhankhusus =$("input[name=kebutuhankhusus]").val();
         let _kelainanlainnya =$("input[name=kelainanlainnya]").val(); 
-        let _namatk=$("input[name=namatk]").val();
-        let _alamattk=$("input[name=alamattk]").val();
+        let _namatk          =$("input[name=namatk]").val();
+        let _alamattk        =$("input[name=alamattk]").val();
 
 
           var data_siswa = {

@@ -326,7 +326,7 @@
 		</div>
 		<div class="agileits_w3layouts-copyright text-center">
 			<p>© 2018 Success path. All Rights Reserved | Design by
-				<a href="http://w3layouts.com/" target="=_blank"> W3layouts </a>
+				<a href="http://hallomysa.com/" target="=_blank"> MYSA TEAM </a>
 			</p>
 		</div>
 	</div>

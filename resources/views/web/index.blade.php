@@ -71,7 +71,46 @@
 
 <!--//Slider-->
 <!-- About us -->
-	
+	<!-- <div class="about-3 py-5">
+		<div class="container py-md-3">
+		<div class="w3-head-all mb-3">
+		         <h3>Welcome</h3>
+		       </div>
+			<div class="d-flex">
+				<div class="about1"> 
+					<h4>WE ARE THE LEADERS IN THE ONLINE EDUCATION.</h4>
+					<p class="details">Nullam pulvinar vulputate aliquam. Pellentesque venenatis ut mi ac porta. Praesent interdum nibh libero, id malesuada libero aliquet quis. Donec at odio nibh.</p>
+					<ul class="about-list">
+						<li>
+							<span class="fas fa-chess-rook" aria-hidden="true"></span>
+							<div class="in-block">
+								<h5>Our Mission</h5>
+								<p>Suspendisse maximus leo vel facilisis porta. Aliquam posuere mollis auctor. Nunc eget massa eleifend, finibus felis eu, tincidunt eros.</p>
+							</div>
+						</li>
+						<li>
+						<span class="fab fa-accessible-icon" aria-hidden="true"></span>
+							<div class="in-block">
+								<h5>Our Activity</h5>
+								<p>Suspendisse maximus leo vel facilisis porta. Aliquam posuere mollis auctor. Nunc eget massa eleifend, finibus felis eu, tincidunt eros.</p>
+							</div>
+						</li>
+						<li>
+						<span class="fas fa-bus" aria-hidden="true"></span>
+							<div class="in-block">
+								<h5>Our Vission</h5>
+								<p>Suspendisse maximus leo vel facilisis porta. Aliquam posuere mollis auctor. Nunc eget massa eleifend, finibus felis eu, tincidunt eros.</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="about2">
+					
+				</div>
+			</div>
+			
+		</div>
+	</div> -->
 <!-- //About us -->
 <!--CONTENT NYA GW BACKUP-->
 
@@ -86,27 +125,27 @@
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 
 			w3layouts_stats_left w3_counter_grid">
 				<span class="fas fa-smile" aria-hidden="true"></span>
-				<p class="counter">700</p>
+				<p class="counter">436</p>
 				<h3>STUDENT</h3>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6   w3layouts_stats_left w3_counter_grid1">
 				<span class="fas fa-bookmark" aria-hidden="true"></span>
-				<p class="counter">19</p>
+				<p class="counter">9</p>
 				<h3>EXTRAKULIKULER</h3>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6  w3layouts_stats_left w3_counter_grid2">
 				<span class="fas fa-users" aria-hidden="true"></span>
-				<p class="counter">73</p>
+				<p class="counter">41</p>
 				<h3>TEACHERS</h3>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6  w3layouts_stats_left w3_counter_grid3">
 				<span class="fas fa-trophy" aria-hidden="true"></span>
-				<p class="counter">500</p>
+				<p class="counter">200</p>
 				<h3>AWARDS WON</h3>
 			</div>
 			<div class="clearfix"> </div>
 		</div>
-			</div>
+		</div>
 	</div>
 	<!-- //stats -->
 
@@ -264,7 +303,7 @@
 		</div>
 		<div class="agileits_w3layouts-copyright text-center">
 			<p>© 2018 Success path. All Rights Reserved | Design by
-				<a href="http://w3layouts.com/" target="=_blank"> W3layouts </a>
+				<a href="http://hallomysa.com/" target="=_blank"> MYSA TEAM </a>
 			</p>
 		</div>
 	</div>
