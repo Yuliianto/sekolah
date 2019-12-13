@@ -134,7 +134,7 @@
                   </div>
                   <p><p>
                   <div class="form-group">
-                    <label for="notelp">Nomor Telpon</label>
+                    <label for="notelp">Nomor What's App Aktif</label>
                     <input type="number" class="form-control" id="notelp" name="notelp" placeholder="08121828xxx">
                   </div>
                   <div class="form-group">
@@ -145,7 +145,11 @@
                     <div class="row">
                       <div class="col">
                         <label for="tinggalbersama">Selama sekolah tinggal bersama : </label>
-                        <input type="text" class="form-control" id="tinggalbersama" name="tinggalbersama" placeholder="Jalan kerja bakti xxxxx">
+                        <select class="form-control selectpicker" data-style="btn btn-link" id="tinggalbersama" name="tinggalbersama">
+                          <option value="orangtua">Orang Tua</option>
+                          <option value="saudara">Saudara</option>
+                          <option value="nenek-kakek">Nenek/Kakek</option>
+                        </select>
                        </div>
                        <div class="col">
                         <label for="jaraksekolah">Jarak dari rumah ke sekolah : </label>

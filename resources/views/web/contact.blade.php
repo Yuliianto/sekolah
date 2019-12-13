@@ -18,19 +18,19 @@
 							<div class="col-lg-4 col-sm-6 col-xs-12 mail-agileits-w3layouts">
 								<i class="fas fa-mobile-alt" aria-hidden="true"></i>
 								<div class="contact-right">
-									<p>Phone</p><span>+1 (100)222-23-33</span>
+									<p>Phone</p><span>( 021 ) 22802417</span>
 								</div>
 							</div>
 							<div class="col-lg-4 col-sm-6 col-xs-12 mail-agileits-w3layouts">
 								<i class="far fa-envelope" aria-hidden="true"></i>
 								<div class="contact-right">
-									<p>Email</p><a href="mailto:info@example.com">info@example.com</a>
+									<p>Email</p><a href="mailto:info.sditnurulyaqin@gmail.com">info.sditnurulyaqin@gmail.com</a>
 								</div>
 							</div>
 							<div class="col-lg-4 col-sm-6 col-xs-12 mail-agileits-w3layouts mail-agileits-w3layouts1">
 								<i class="fas fa-map-marker" aria-hidden="true"></i>
 								<div class="contact-right">
-									<p>Address</p><span>7784 Diamonds street, California, US.</span>
+									<p>Address</p><span>SDI No. 50, Batu Ampar, Kramat Jati 13520</span>
 								</div>
 							</div>
 							<div class="clearfix"></div>
