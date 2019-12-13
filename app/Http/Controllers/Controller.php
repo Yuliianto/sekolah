@@ -91,4 +91,12 @@ class Controller extends BaseController
     {
         return view('web.check-nopendaftaran');
     }
+    public function get_detail(Request $request)
+    {
+        $nik = $request->nik;
+        $pendaftar = New_pendaftar::where('xn1',$nik)->first();
+        $detail = New_pendaftar_details::where('pendaftar_account_id',$nik)
+                                            ->where('pendaftar_detail_type_id',1)->first();
+        return var_dump($detail);
+    }
 }
