@@ -12,23 +12,32 @@
 	<div class="inner_content_info_agileits py-5">
 		<div class="container  py-md-3">
 		<div class="w3-head-all mb-3">
-		         <h3>Our Services</h3>
+		         <h3>SDIT NURUL YAQIN</h3>
 		       </div>
 			<div class="inner_sec_grids_info_w3ls row">
 				<div class="col-md-6 banner_bottom_left">
-					<h4>Our popular Courses for<span>Professionals</span></h4>
-					<p>Pellentesque convallis diam consequat magna vulputate malesuada. Cras a ornare elit. Nulla viverra pharetra sem, eget
-						pulvinar neque pharetra ac.</p>
+					<h4>ALAMAT <span>KAMI</span></h4>
+					<p>
+						<BR> Jalan                                : SDI No. 50
+						<BR> Kelurahan                            : Batu Ampar
+						<BR> Kecamatan                            : Kramat Jati
+						<BR> Kabupaten/Kota Madya                 : Jakarta Timur
+						<BR> Kode Pos                             : 13520
+						<BR> Provinsi                             : DKI Jakarta
+						<BR> Telepon/Fax                          : ( 021 ) 22802417
+						<BR> Tahun Operasional                    : 2014
+					</p>
 					<ul class="some_agile_facts">
-						<li><span class="fas fa-band-aid" aria-hidden="true"></span> BUSINESS & ACCOUNTING</li>
-						<li><span class="fas fa-medkit" aria-hidden="true"></span>HEALTH & PSYCHOLOGY</li>
-						<li><span class="fas fa-flask" aria-hidden="true"></span> SCIENCE & TECHNOLOGY</li>
+						<li><span class="fas fa-graduation-cap" aria-hidden="true"></span>dr. SALLY AMINAH, M.Pd.I</li>
+						<li><span class="fas fa-graduation-cap" aria-hidden="true"></span>AKREDITASI A - TH 2016 - 2021</li>
+						<li><span class="fas fa-graduation-cap" aria-hidden="true"></span>NOMOR INDUK SEKOLAH : 100910</li>
+						<li><span class="fas fa-graduation-cap" aria-hidden="true"></span>NOMOR POKOK SEKOLAH NASIONAL : 69762791</li>
 											</ul>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="col-md-6 banner_bottom_right">
 					<div class="agileits_w3layouts_banner_bottom_grid">
-						<img src="images/s1.jpg" alt=" " class="img-responsive img-fluid" />
+						<img src="images/1.jpg" alt=" " class="img-responsive img-fluid" />
 					</div>
 				</div>
 				<div class="clearfix"> </div>
@@ -75,28 +84,27 @@
 	</div>
 	<!-- //choose -->
 <!-- stats -->
-	<div class="stats">
+<div class="stats">
 		<div class="container">
 		<div class="wthree_head_section stats_head">
-					<h3>We are always ahead 
-Professional Education for Your Future.</h3>
+					<h3>ACTIVITY IN SDIT NURUL YAQIN</h3>
 				</div>
 		<div class="row">
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 
 			w3layouts_stats_left w3_counter_grid">
 				<span class="fas fa-smile" aria-hidden="true"></span>
-				<p class="counter">6000</p>
-				<h3>HAPPY CUSTOMERS</h3>
+				<p class="counter">700</p>
+				<h3>STUDENT</h3>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6   w3layouts_stats_left w3_counter_grid1">
 				<span class="fas fa-bookmark" aria-hidden="true"></span>
-				<p class="counter">165</p>
-				<h3>APPROVED COURSES</h3>
+				<p class="counter">19</p>
+				<h3>EXTRAKULIKULER</h3>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6  w3layouts_stats_left w3_counter_grid2">
 				<span class="fas fa-users" aria-hidden="true"></span>
-				<p class="counter">30</p>
-				<h3>CERTIFIED TEACHERS</h3>
+				<p class="counter">73</p>
+				<h3>TEACHERS</h3>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6  w3layouts_stats_left w3_counter_grid3">
 				<span class="fas fa-trophy" aria-hidden="true"></span>

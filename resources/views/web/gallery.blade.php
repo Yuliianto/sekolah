@@ -20,10 +20,10 @@
 					<div class="agile_gallery_grid">
 						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g1.jpg" class="img-fluid">
 							<div class="agile_gallery_grid1">
-								<img src="images/g1.jpg" alt=" " class="img-responsive img-fluid" />
+								<img src="images/galery1.jpg" alt=" " class="img-responsive img-fluid" />
 								<div class="w3layouts_gallery_grid1_pos">
-									<h3>Success</h3>
-									<p> Path</p>
+									<h3>Kelulusan</h3>
+									<p>Angkatan 3</p>
 								</div>
 							</div>
 						</a>
@@ -31,10 +31,10 @@
 					<div class="agile_gallery_grid">
 						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g2.jpg" class="img-fluid">
 							<div class="agile_gallery_grid1">
-								<img src="images/g2.jpg" alt=" " class="img-responsive img-fluid" />
+								<img src="images/DSC_0201.jpg" alt=" " class="img-responsive img-fluid" />
 								<div class="w3layouts_gallery_grid1_pos">
-									<h3>Success</h3>
-									<p> Path</p>
+									<h3>Kelulusan</h3>
+									<p>Angkatan 3</p>
 								</div>
 							</div>
 						</a>
@@ -42,10 +42,10 @@
 					<div class="agile_gallery_grid">
 						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g3.jpg" class="img-fluid">
 							<div class="agile_gallery_grid1">
-								<img src="images/g3.jpg" alt=" " class="img-responsive img-fluid" />
+								<img src="images/DSC_0122.jpg" alt=" " class="img-responsive img-fluid" />
 								<div class="w3layouts_gallery_grid1_pos">
-									<h3>Success</h3>
-									<p> Path</p>
+									<h3>Kelulusan</h3>
+									<p>Angkatan 3</p>
 								</div>
 							</div>
 						</a>
@@ -55,10 +55,10 @@
 					<div class="agile_gallery_grid">
 						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g4.jpg" class="img-fluid">
 							<div class="agile_gallery_grid1">
-								<img src="images/g4.jpg" alt=" " class="img-responsive img-fluid" />
+								<img src="images/Jogja114.jpg" alt=" " class="img-responsive img-fluid" />
 								<div class="w3layouts_gallery_grid1_pos">
-									<h3>Success</h3>
-									<p> Path</p>
+									<h3>Tour Jogja</h3>
+									<p> Angkatan 6</p>
 								</div>
 							</div>
 						</a>
@@ -66,10 +66,10 @@
 					<div class="agile_gallery_grid">
 						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g5.jpg" class="img-fluid">
 							<div class="agile_gallery_grid1">
-								<img src="images/g5.jpg" alt=" " class="img-responsive img-fluid" />
+								<img src="images/Jogja005.jpg" alt=" " class="img-responsive img-fluid" />
 								<div class="w3layouts_gallery_grid1_pos">
-									<h3>Success</h3>
-									<p> Path</p>
+									<h3>Tour Jogja</h3>
+									<p>Angkatan 6</p>
 								</div>
 							</div>
 						</a>
@@ -77,10 +77,10 @@
 					<div class="agile_gallery_grid">
 						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g6.jpg " class="img-fluid">
 							<div class="agile_gallery_grid1">
-								<img src="images/g6.jpg" alt=" " class="img-responsive img-fluid" />
+								<img src="images/Jogja480.jpg" alt=" " class="img-responsive img-fluid" />
 								<div class="w3layouts_gallery_grid1_pos">
-									<h3>Success</h3>
-									<p> Path</p>
+									<h3>Tour Jogja</h3>
+									<p> Angkatan 6</p>
 								</div>
 							</div>
 						</a>
@@ -90,10 +90,10 @@
 					<div class="agile_gallery_grid">
 						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g7.jpg" class="img-fluid">
 							<div class="agile_gallery_grid1">
-								<img src="images/g7.jpg" alt=" " class="img-responsive img-fluid" />
+								<img src="images/IMG_0029.jpg" alt=" " class="img-responsive img-fluid" />
 								<div class="w3layouts_gallery_grid1_pos">
-									<h3>Success</h3>
-									<p> Path</p>
+									<h3>Maulid Nabi</h3>
+									<p> Hadroh</p>
 								</div>
 							</div>
 						</a>
@@ -101,10 +101,10 @@
 					<div class="agile_gallery_grid">
 						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g8.jpg" class="img-fluid">
 							<div class="agile_gallery_grid1">
-								<img src="images/g8.jpg" alt=" " class="img-responsive img-fluid" />
+								<img src="images/IMG_0172.jpg" alt=" " class="img-responsive img-fluid" />
 								<div class="w3layouts_gallery_grid1_pos">
-									<h3>Success</h3>
-									<p> Path</p>
+									<h3>Maulid Nabi</h3>
+									<p> Lomba Puisi</p>
 								</div>
 							</div>
 						</a>
@@ -112,10 +112,10 @@
 					<div class="agile_gallery_grid">
 						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g9.jpg" class="img-fluid">
 							<div class="agile_gallery_grid1">
-								<img src="images/g9.jpg" alt=" " class="img-responsive img-fluid" />
+								<img src="images/IMG_0346.jpg" alt=" " class="img-responsive img-fluid" />
 								<div class="w3layouts_gallery_grid1_pos">
-									<h3>Success</h3>
-									<p> Path</p>
+									<h3>Maulid Nabi</h3>
+									<p> Makan bersama </p>
 								</div>
 							</div>
 						</a>

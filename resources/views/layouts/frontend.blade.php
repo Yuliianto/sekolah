@@ -65,10 +65,10 @@
 							<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link {{ $page_name === 'about' ? 'active':'' }}" href="/about">About</a>
+							<a class="nav-link {{ $page_name === 'about' ? 'active':'' }}" href="/about">Visi & Misi</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link {{ $page_name === 'services' ? 'active':'' }}" href="/services">Services</a>
+							<a class="nav-link {{ $page_name === 'services' ? 'active':'' }}" href="/services">Profiles</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link {{ $page_name === 'gallery' ? 'active':'' }}" href="/gallery">Gallery</a>

@@ -4,7 +4,7 @@
 <!--Slider-->
 <div class="slider">
 	<div class="callbacks_container">
-		<ul class="rslides callbacks callbacks1" id="slider4">
+		<ul class="rslides callbacks callbacks1" id="/slider4">
 			<li>
 				<div class="slider-img1">
 					<div class="dot">
@@ -19,7 +19,7 @@
 					</div>
 				</div>
 			</li>
-			<li>
+			<!-- <li>
 				<div class="slider-img2">
 					<div class="dot">
 						<div class="container">
@@ -64,246 +64,40 @@
 						</div>
 					</div>
 				</div>
-			</li>
+			</li> -->
 			<div class="clearfix"></div>
 		</ul>
 </div>
 
 <!--//Slider-->
 <!-- About us -->
-	<div class="about-3 py-5">
-		<div class="container py-md-3">
-		<div class="w3-head-all mb-3">
-		         <h3>Welcome</h3>
-		       </div>
-			<div class="d-flex">
-				<div class="about1"> 
-					<h4>WE ARE THE LEADERS IN THE ONLINE EDUCATION.</h4>
-					<p class="details">Nullam pulvinar vulputate aliquam. Pellentesque venenatis ut mi ac porta. Praesent interdum nibh libero, id malesuada libero aliquet quis. Donec at odio nibh.</p>
-					<ul class="about-list">
-						<li>
-							<span class="fas fa-chess-rook" aria-hidden="true"></span>
-							<div class="in-block">
-								<h5>Our Mission</h5>
-								<p>Suspendisse maximus leo vel facilisis porta. Aliquam posuere mollis auctor. Nunc eget massa eleifend, finibus felis eu, tincidunt eros.</p>
-							</div>
-						</li>
-						<li>
-						<span class="fab fa-accessible-icon" aria-hidden="true"></span>
-							<div class="in-block">
-								<h5>Our Activity</h5>
-								<p>Suspendisse maximus leo vel facilisis porta. Aliquam posuere mollis auctor. Nunc eget massa eleifend, finibus felis eu, tincidunt eros.</p>
-							</div>
-						</li>
-						<li>
-						<span class="fas fa-bus" aria-hidden="true"></span>
-							<div class="in-block">
-								<h5>Our Vission</h5>
-								<p>Suspendisse maximus leo vel facilisis porta. Aliquam posuere mollis auctor. Nunc eget massa eleifend, finibus felis eu, tincidunt eros.</p>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="about2">
-					
-				</div>
-			</div>
-			
-		</div>
-	</div>
-	<!-- //About us -->
-
-<!-- /services-home -->
-<div class="programs py-5">
-<div class="w3-head-all mb-3">
-		         <h3>Our programs</h3>
-		       </div>
-	<div class="grids_sec_2">
-		<div class="row style-grids_main">
-			<div class="col-md-6 grid_sec_info">
-				<div class="style-grid-2-text_info" data-aos="fade-right">
-					<h3>WHY DID THAT STUDENT FAIL AND HOW NOT TO FAIL?</h3>
-					<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias consequatur.sed quia non numquam eius modi
-						tempora incidunt ut labore .</p>
-					<div class="bnr-button">
-						<a href="#" class="read" data-toggle="modal" data-target="#exampleModalCenter" role="button">Read more </a>
-					</div>
-
-				</div>
-			</div>
-			<div class="col-md-6 style-image-2">
-			</div>
-			<div class="col-md-6 style-image-2 second">
-			</div>
-			<div class="col-md-6 grid_sec_info">
-				<div class="style-grid-2-text_info" data-aos="fade-right">
-					<h3>15 STUDENT-CENTERED INSTRUCTIONAL STRATEGIES</h3>
-					<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias consequatur.sed quia non numquam eius modi
-						tempora incidunt ut labore .</p>
-					<div class="bnr-button">
-						<a href="#" class="read" data-toggle="modal" data-target="#exampleModalCenter" role="button">Read more </a>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</div>
-	</div>
-	<!-- //services-home -->
-<!-- features -->
-	<div class="features py-5">  
-		<div class="container-fluid  py-md-3">  
-	<div class="w3-head-all mb-3">
-		         <h3>Our Training</h3>
-		       </div>
-		<div class="tabs w3-agileits-tabs"> 
-			<!-- Nav tabs -->
-			<ul class="nav nav-tabs" role="tablist">
-				<li class="active"><a href="#home" aria-controls="home" data-toggle="tab"><span>Popular Courses</span></a></li>
-				<li><a href="#profile" aria-controls="profile" data-toggle="tab"><span>Best Teachers</span></a></li>
-				<li><a href="#messages" aria-controls="messages" data-toggle="tab"><span>Certification</span></a></li>
-				<li><a href="#settings" aria-controls="settings" data-toggle="tab"><span>Placements</span></a></li>
-			</ul>
-			<!-- Tab panes --> 
-			<div class="tab-content">
-				<div role="tabpanel" class="tab-pane active row" id="home"> 
-					<div class="col-lg-6  col-md-12 features-right">
-						<div class="agileits-mid"> 
-							<h6>- Our Features</h6>
-							<h3> Mauris commodo </h3>
-						</div>
-						<p>Fusce eget erat nunc. Sed fringilla sem vitae mi interdum commodo. Aliquam neque odio, viverra eget nisl id, vulputate malesuada lorem. Praesent quis ullamcorper lorem vulputate malesuada lorem.  </p>
-					</div>
-					<div class="col-lg-6 col-md-12 features-left agileinfo-img">
-					
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div role="tabpanel" class="tab-pane row" id="profile"> 
-					<div class="col-lg-6 col-md-12 features-right">
-						<div class="agileits-mid"> 
-							<h6>- Our Features</h6>
-							<h3> Mauris commodo </h3>
-						</div>
-						<p>Fusce eget erat nunc. Sed fringilla sem vitae mi interdum commodo. Aliquam neque odio, viverra eget nisl id, vulputate malesuada lorem. Praesent quis ullamcorper lorem vulputate malesuada lorem.  </p>
-					</div>
-					<div class="col-lg-6 col-md-12 features-left agileinfo-img2">
-					
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div role="tabpanel" class="tab-pane row" id="messages"> 
-					<div class="col-lg-6 col-md-12 features-right w3-agile">
-						<div class="agileits-mid"> 
-							<h6>- Our Features</h6>
-							<h3> Mauris commodo </h3>
-						</div>
-						<p>Fusce eget erat nunc. Sed fringilla sem vitae mi interdum commodo. Aliquam neque odio, viverra eget nisl id, vulputate malesuada lorem. Praesent quis ullamcorper lorem vulputate malesuada lorem.  </p>
-					</div>
-					<div class="col-lg-6 col-md-12 features-left agileinfo-img3">
-					
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-				<div role="tabpanel" class="tab-pane row" id="settings"> 
-					<div class="col-lg-6 col-md-12 features-right">
-						<div class="agileits-mid"> 
-							<h6>- Our Features</h6>
-							<h3> Mauris commodo </h3>
-						</div>
-						<p>Fusce eget erat nunc. Sed fringilla sem vitae mi interdum commodo. Aliquam neque odio, viverra eget nisl id, vulputate malesuada lorem. Praesent quis ullamcorper lorem vulputate malesuada lorem.  </p>
-					</div>
-					<div class="col-lg-6 col-md-12 features-left agileinfo-img4">
-					
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div> 
-		</div><!-- /tabs -->  
-	</div>
-	</div>
-	<!-- //features --> 
-	<!-- agile_testimonials -->
-	<!-- Clients -->
-<section class="clients-main py-5" id="testimonials">
-		<div class="container py-md-3">
-		<div class="w3-head-all mb-3">
-		         <h3>Clients Reviews</h3>
-		       </div>
-			<!-- Owl-Carousel -->
-			<div class="cli-ent">
-				<section class="slider">
-					<div class="flexslider">
-						<ul class="slides">
-							<li>
-								<div class="item g1">
-									<div class="agile-dish-caption">
-									<img class="lazyOwl" src="images/test1.jpg" alt="" />
-										<h5 class="text-capitalize font-italic">Michael</h5>
-										<h4 class="text-capitalize">Great Industrial work</h4>
-									</div>
-									
-									<div class="clearfix"></div>
-									<p class="para-w3-agile text-center"><span class="fa fa-quote-left" aria-hidden="true"></span> Phasellus iaculis sapien in tellus gravida, a placerat lacus elementum. Nulla vitae lacus nec elit mollis pretium. Sedminc sed nunc lectus. Integer vehicula elit eget dignissim congue. Aliquam sed ultricies tortor. Curabitur ut odio vestibulum consectetur adipisthn</p>
-								</div>
-							</li>
-							<li>
-								<div class="item g1">
-									<div class="agile-dish-caption">
-									<img class="lazyOwl" src="images/test2.jpg" alt="" />
-										<h5 class="text-capitalize font-italic">libero</h5>
-										<h4 class="text-capitalize">High quality materials</h4>
-									</div>
-									
-									<div class="clearfix"></div>
-									<p class="para-w3-agile text-center"><span class="fa fa-quote-left" aria-hidden="true"></span> Phasellus iaculis sapien in tellus gravida, a placerat lacus elementum. Nulla vitae lacus nec elit mollis pretium. Sedminc sed nunc lectus. Integer vehicula elit eget dignissim congue. Aliquam sed ultricies tortor. Curabitur ut odio vestibulum consectetur adipisthn</p>
-								</div>
-							</li>
-							<li>
-								<div class="item g1">
-									<div class="agile-dish-caption">
-									<img class="lazyOwl" src="images/test3.jpg" alt="" />
-										<h5 class="text-capitalize font-italic">Alex</h5>
-										<h4 class="text-capitalize">Innovative Industrial Solutions</h4>
-									</div>
-									
-									<div class="clearfix"></div>
-									<p class="para-w3-agile text-center"><span class="fa fa-quote-left" aria-hidden="true"></span> Phasellus iaculis sapien in tellus gravida, a placerat lacus elementum. Nulla vitae lacus nec elit mollis pretium. Sedminc sed nunc lectus. Integer vehicula elit eget dignissim congue. Aliquam sed ultricies tortor. Curabitur ut odio vestibulum consectetur adipisthn</p>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</section>
-			</div>
-			<!--// Owl-Carousel -->
-		</div>
-</section>
-<!--// Clients -->
+	
+<!-- //About us -->
+<!--CONTENT NYA GW BACKUP-->
 
 <!-- //agile_testimonials -->
 	<!-- stats -->
 	<div class="stats">
 		<div class="container">
 		<div class="wthree_head_section stats_head">
-					<h3>We are always ahead 
-Professional Education for Your Future.</h3>
+					<h3>ACTIVITY IN SDIT NURUL YAQIN</h3>
 				</div>
 		<div class="row">
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 
 			w3layouts_stats_left w3_counter_grid">
 				<span class="fas fa-smile" aria-hidden="true"></span>
-				<p class="counter">6000</p>
-				<h3>HAPPY CUSTOMERS</h3>
+				<p class="counter">700</p>
+				<h3>STUDENT</h3>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6   w3layouts_stats_left w3_counter_grid1">
 				<span class="fas fa-bookmark" aria-hidden="true"></span>
-				<p class="counter">165</p>
-				<h3>APPROVED COURSES</h3>
+				<p class="counter">19</p>
+				<h3>EXTRAKULIKULER</h3>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6  w3layouts_stats_left w3_counter_grid2">
 				<span class="fas fa-users" aria-hidden="true"></span>
-				<p class="counter">30</p>
-				<h3>CERTIFIED TEACHERS</h3>
+				<p class="counter">73</p>
+				<h3>TEACHERS</h3>
 			</div>
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6  w3layouts_stats_left w3_counter_grid3">
 				<span class="fas fa-trophy" aria-hidden="true"></span>

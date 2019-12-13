@@ -13,34 +13,14 @@
 	<div class="about py-5">
 		<div class="container  py-md-3">
 			<div class="w3-head-all mb-3">
-		         <h3>About More</h3>
-		       </div>
-			<div class="agile_about_grids row">
-				<div class="col-md-6 agile_about_grid_left">
-				<div class="row">
-					<div class="col-md-6 agile_about_grid_left1">
-						<img src="images/ab1.jpg" alt=" " class="img-responsive img-fluid" />
-					</div>
-					<div class="col-md-6 agile_about_grid_left1">
-						<img src="images/ab2.jpg" alt=" " class="img-responsive img-fluid" />
-					</div>
-					</div>
-					<div class="clearfix"> </div>
-					<img class="agile_about_grid_left_img img-responsive img-fluid" src="images/ab3.jpg" alt=" " />
+		         <h3>Visi</h3>
+		    </div>
+			<div class="agile_about_grids">
+
+				<div class="col-md-12">
+					<h4 class='text-center'>Membentuk Generasi Yang Mulia Dalam Pekerti,Unggul Dalam Prestasi, Teladan Bagi Negeri dan Bertaqwa Pada Ilahi</h4>
 				</div>
-				<div class="col-md-6 agile_about_grid_right">
-					<h4>voluptatibus maiores alias consequatur</h4>
-					<p>Et harum quidem rerum facilis est et expedita <span>distinctio</span>. 
-						Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil 
-						impedit quo minus id <span>quod</span> maxime placeat facere possimus, omnis voluptas 
-						assumenda est, omnis dolor repellendus. Temporibus <span>autem</span> quibusdam et aut
-						officiis debitis.<i>impedit quo minus id <span>quod</span> maxime placeat facere possimus, omnis voluptas 
-						assumenda est, omnis dolor repellendus. Temporibus <span>autem</span> quibusdam et aut
-						officiis debitis.</i></p>
-					<div class="about_more">
-						<a href="#" class="read" data-toggle="modal" data-target="#exampleModalCenter" role="button">Read more </a>
-					</div>
-				</div>
+				
 				<div class="clearfix"> </div>
 			</div>
 		</div>
@@ -49,40 +29,52 @@
 <!-- Latest -->
 <div class="latest py-5">
 	<div class="container  py-md-3">
-	<div class="w3-head-all mb-3">
-		         <h3>Our plans</h3>
-		       </div>
-		<div class="news_grids row">
+		<div class="w3-head-all mb-3">
+			<h3>MISI</h3>
+			<blockquote class="blockquote">
+			  <footer class="blockquote-footer">Menumbuhkembangkan <cite title="Source Title">perilaku terpuji dan praktik nyata</cite> sehigga siswa dapat menjadi teladan bagi teman dan masyarakatnya</footer>
+			</blockquote>
+			<blockquote class="blockquote">
+			  <footer class="blockquote-footer">Menyelenggarakan pembelajaran untuk menumbuhkembangkan kemampuan <cite title="Source Title">berpikir aktif, kreatif dan aktif</cite>dalam memecahkan masalah</footer>
+			</blockquote>
+			<blockquote class="blockquote">
+			  <footer class="blockquote-footer">Menyelenggarakan <cite title="Source Title">pengembangan diri</cite> sehingga siswa dapat berkembang sesuai dengan minat dan bakatnya</footer>
+			</blockquote>
+			<blockquote class="blockquote">
+			  <footer class="blockquote-footer">Melaksanakan dan menyelenggarakan kegiatan <cite title="Source Title">cinta tanah air</cite> dalam pembelajaran</footer>
+			</blockquote>
+			<blockquote class="blockquote">
+			  <footer class="blockquote-footer">Menumbuh kembangkan<cite title="Source Title"> lingkungan dan perilaku religius</cite> sehingga siswa dapat mengamalkan dan mengahayati agama islam secara nyata</footer>
+			</blockquote>
+		</div>
+		
+		<!--<div class="news_grids row">
 			<div class="col-lg-4">
 				<div class="news_grid1">
 					<div class="news_grid_info">
-						<p class="date">On Jan 20th, 2018</p>
-						<h3>Career plan</h3>
-						<p>Vestibulum ut tincidunt lectus, vitae faucibus felis. Vivam uspretium leo eu iaculis lobortis.</p>
-						<a href="#" class="read" data-toggle="modal" data-target="#exampleModalCenter" role="button">Read more </a>
+						<h3>Perilaku terpuji</h3>
+						<p>Menumbuhkembangkan perilaku terpuji dan praktik nyata sehigga siswa dapat menjadi teladan bagi teman dan masyarakatnya.</p>
+						
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-4">
 				<div class="news_grid2">
 					<div class="news_grid_info">
-						<p class="date">On Jan 20th, 2018</p>
-						<h3>Placement plan</h3>
-						<p>Vestibulum ut tincidunt lectus, vitae faucibus felis. Vivam uspretium leo eu iaculis lobortis.</p>
-						<a href="#" class="read" data-toggle="modal" data-target="#exampleModalCenter" role="button">Read more </a>
+						<h3>Kemampuan berpikir</h3>
+						<p>Menyelenggarakan pembelajaran untuk menumbuhkembangkan kemampuan berpikir aktif, kreatif dan aktif dalam memecahkan masalah.</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-lg-4">
 				<div class="news_grid3">
 					<div class="news_grid_info">
-						<p class="date">On Jan 20th, 2018</p>
-						<h3>Online Test</h3>
-						<p>Vestibulum ut tincidunt lectus, vitae faucibus felis. Vivam uspretium leo eu iaculis lobortis.</p>
-						<a href="#" class="read" data-toggle="modal" data-target="#exampleModalCenter" role="button">Read more </a>
+						<h3>Pengembangan diri</h3>
+						<p>Menyelenggarakan pengembangan diri sehingga siswa dapat berkembang sesuai dengan minat dan bakatnya.</p>
+
 					</div>
 				</div>
-			</div>
+			</div>-->
 			<div class="clearfix"> </div>
 		</div>
 	</div>
@@ -92,19 +84,19 @@
 	<div class="offers py-5">
 		<div class="container  py-md-3">
 			<div class="w3-head-all mb-3 news_head">
-		         <h3>Latest News</h3>
+		         <h3>PELAKSANAAN</h3>
 		       </div>
 			<div class="offers-grids row">
 				<div class="col-md-6 wthree-offers-left">
 					<div class="offers-left-heading">
-						<h4>Quisque eu ullamcorper dui. Nullam commodo ornare ipsum.</h4>
+						<h4>Tujuan</h4>
 					</div>
 					<div class="offers-left-grids">
 						<div class="offers-number">
 							<p>1</p>
 						</div>
 						<div class="offers-text">
-							<p>Integer egestas non lorem eget aliquet. Nulla egestas felis et maximus elementum. Morbi a dui ac nunc mollis rhoncus. Mauris eu erat vitae enim congue placerat. Integer consequat aliquet facilisis. Phasellus ut venenatis nisi, et lobortis sem.</p>
+							<p>Mendidik siswa berakhlaq mulia, peduli sesama dengan menghidupkan senyum, salam dan sapa</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
@@ -113,31 +105,42 @@
 							<p>2</p>
 						</div>
 						<div class="offers-text">
-							<p>Integer egestas non lorem eget aliquet. Nulla egestas felis et maximus elementum. Morbi a dui ac nunc mollis rhoncus. Mauris eu erat vitae enim congue placerat. Integer consequat aliquet facilisis.</p>
+							<p>Memberikan dasar – dasar pengetahuan, kemampuan, dan keterampilan yang terkini untuk bisa berkompetisi dalam kehidupan secara global</p>
+						</div>
+						<div class="clearfix"> </div>
+					</div>
+					<div class="offers-left-grids offers-left-middle">
+						<div class="offers-number">
+							<p>3</p>
+						</div>
+						<div class="offers-text">
+							<p>Menanamkan rasa kebangsaan, kebanggaan terhadap budaya, dan cinta tanah air dalam bermasyarakat</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
 					<div class="offers-left-grids">
 						<div class="offers-number">
-							<p>3</p>
+							<p>4</p>
 						</div>
 						<div class="offers-text">
-							<p>Integer egestas non lorem eget aliquet. Nulla egestas felis et maximus elementum. Morbi a dui ac nunc mollis rhoncus. Mauris eu erat vitae enim congue placerat.</p>
+							<p>Mewujudkan siswa beriman dan bertaqwa kepada Allah SWT</p>
 						</div>
 						<div class="clearfix"> </div>
 					</div>
 				</div>
 				<div class="col-md-6 wthree-offers-right">
-					<h5>Cras consequat et velit quis molestie. Etiam bibendum laoreet enim, nec malesuada ex fermentum et. Donec molestie diam nec lorem accumsan bibendum.</h5>
-					<p>Vivamus est sem, pellentesque vel libero sit amet, varius tempor orci. Integer egestas metus vitae ultrices tristique. Fusce lectus dui, venenatis vitae justo nec, aliquet feugiat nunc. </p>
+					<div class="offers-left-heading">
+						<h4>Target</h4>
+					</div>
 					<ul>
-						<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Phasellus sem leo, interdum quis risus</a></li>
-						<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Nullam egestas nisi id malesuada aliquet </a></li>
-						<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Donec condimentum purus urna venenatis</a></li>
-						<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Ut congue, nisl id tincidunt lobor mollis</a></li>
-						<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Cum sociis natoque penatibus et magnis</a></li>
-						<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Suspendisse nec magna id ex pretium</a></li>
-						<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Ut congue, nisl id tincidunt lobor mollis</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Hafal Al Quran juz 30 dan surat – surat pilihan</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Diterima di sekolah Negeri atau Swasta unggulan </a></li>
+						<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Terbiasa sholat dengan baik dan benar</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Terbiasa membaca doa dan zikir harian</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Terbiasa berakhlak Islami</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Mampu berkomunikasi dengan baik</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Dapat mengoperasionalkan Komputer</a></li>
+						<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Memiliki keberanian dan kemandirian</a></li>
 					</ul>
 				</div>
 				<div class="clearfix"> </div>
@@ -146,7 +149,7 @@
 	</div>
 	<!-- offers -->
 	<!-- team -->
-<div class="team py-5">
+<!-- <div class="team py-5">
 	<div class="container  py-md-3">
 		<div class="w3-head-all mb-3">
 		         <h3>Our Team</h3>
@@ -215,7 +218,7 @@
 			<div class="clearfix"></div>
 		</div>
 	</div>
-</div>
+</div> -->
 <!-- //team -->
 
 
