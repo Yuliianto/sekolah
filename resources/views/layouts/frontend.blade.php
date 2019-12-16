@@ -44,6 +44,7 @@
 </head>
 
 <body>
+
 @section('navigator')
 
 <!-- Navigation -->
@@ -107,7 +108,7 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title text-uppercase text-center" id="exampleModalLongTitle"> Success path</h5>
+        <h5 class="modal-title text-uppercase text-center" id="exampleModalLongTitle"> SDIT NURUL YAQIN</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

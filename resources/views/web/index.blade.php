@@ -11,7 +11,7 @@
 						<div class="container" style="cursor: pointer;">
 							<div class="slider_banner_info_w3ls">
 								<h1 class="text-uppercase mb-3">Pendaftaran siswa baru</h1>
-								<p>telah dibuka pendaftaran siswa baru gelombang III, SDIT NURUL YAQIN. Untuk pendaftaran..</p>
+								<p>telah dibuka pendaftaran siswa baru 2019-2020, SDIT NURUL YAQIN. Untuk pendaftaran..</p>
 
 								<a href="/student-register" class="read" role="button">KLIK DISINI</a>
 							</div>
@@ -64,8 +64,8 @@
 						</div>
 					</div>
 				</div>
-			</li> -->
-			<div class="clearfix"></div>
+			</li> 
+			<div class="clearfix"></div>-->
 		</ul>
 </div>
 
@@ -116,11 +116,11 @@
 
 <!-- //agile_testimonials -->
 	<!-- stats -->
-	<div class="stats">
+	<div class="stats mt-3">
 		<div class="container">
-		<div class="wthree_head_section stats_head">
-					<h3>ACTIVITY IN SDIT NURUL YAQIN</h3>
-				</div>
+			<div class=" mt-3 wthree_head_section stats_head">
+				<h3>ACTIVITY IN SDIT NURUL YAQIN</h3>
+			</div>
 		<div class="row">
 			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 
 			w3layouts_stats_left w3_counter_grid">
@@ -225,7 +225,7 @@
 			<div class="row w3_agile-footer-grids py-5 my-4">
 				<div class="col-lg-3 col-sm-12 w3_agile-footer1 f1">
 					<h2 class="mb-3">
-						<a href="index.html">Success path</a>
+						<a href="index.html">SDIT NURUL YAQIN</a>
 					</h2>
 					<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem atus error sit volupt unde.</p>
 				</div>
