@@ -15,15 +15,15 @@ Route::get('/', function () {
 						'title'		=> 'Home :: SDIT Nurul Yaqin' );
     return view('web.index',$meta_data);
 });
-Route::get('/about', function () {
-	$meta_data = array('page_name' => 'about',
-						'title'		=> 'About :: SDIT Nurul Yaqin' );
-    return view('web.about',$meta_data);
+Route::get('/visimisi', function () {
+	$meta_data = array('page_name' => 'visimisi',
+						'title'		=> 'Visi dan misi :: SDIT Nurul Yaqin' );
+    return view('web.visimisi',$meta_data);
 });
-Route::get('/services', function () {
-	$meta_data = array('page_name' => 'Services',
-						'title'		=> 'Services :: SDIT Nurul Yaqin' );
-    return view('web.services',$meta_data);
+Route::get('/profiles', function () {
+	$meta_data = array('page_name' => 'profiles',
+						'title'		=> 'Profiles :: SDIT Nurul Yaqin' );
+    return view('web.profiles',$meta_data);
 });
 Route::get('/contact', function () {
 	$meta_data = array('page_name' => 'Contact',

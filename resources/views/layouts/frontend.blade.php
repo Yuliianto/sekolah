@@ -30,7 +30,7 @@
 	<link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" media="all" /> <!-- Style-CSS --> 
 	<link rel="stylesheet" href="{{ asset('css/fontawesome-all.css') }}"> <!-- Font-Awesome-Icons-CSS -->
 	<!-- //css files -->
-	<link href="css/easy-responsive-tabs.css" rel='stylesheet' type='text/css'/>
+	<link rel='stylesheet' href="css/easy-responsive-tabs.css" type='text/css'/>
 	<link rel="stylesheet" href="{{ asset('css/jquery-ui.css') }}" /><!-- Calendar -->
 	<!-- testimonials css -->
 	<link rel="stylesheet" href="{{ asset('css/flexslider.css') }}" type="text/css" media="screen" property="" /><!-- flexslider css -->
@@ -66,10 +66,10 @@
 							<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link {{ $page_name === 'about' ? 'active':'' }}" href="/about">Visi & Misi</a>
+							<a class="nav-link {{ $page_name === 'visimisi' ? 'active':'' }}" href="/visimisi">Visi & Misi</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link {{ $page_name === 'services' ? 'active':'' }}" href="/services">Profiles</a>
+							<a class="nav-link {{ $page_name === 'profiles' ? 'active':'' }}" href="/profiles">Profiles</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link {{ $page_name === 'gallery' ? 'active':'' }}" href="/gallery">Gallery</a>

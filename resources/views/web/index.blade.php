@@ -4,7 +4,7 @@
 <!--Slider-->
 <div class="slider">
 	<div class="callbacks_container">
-		<ul class="rslides callbacks callbacks1" id="/slider4">
+		<ul class="rslides callbacks callbacks1" id="slider4">
 			<li>
 				<div class="slider-img1">
 					<div class="dot">
@@ -64,18 +64,19 @@
 						</div>
 					</div>
 				</div>
-			</li> 
-			<div class="clearfix"></div>-->
+			</li>
+			<div class="clearfix"></div> -->
 		</ul>
+	</div>
 </div>
 
 <!--//Slider-->
 <!-- About us -->
-	<!-- <div class="about-3 py-5">
+	<div><!-- <div class="about-3 py-5"> -->
 		<div class="container py-md-3">
-		<div class="w3-head-all mb-3">
-		         <h3>Welcome</h3>
-		       </div>
+			<div class="w3-head-all mb-3">
+		         <h3 class='py-mt-3'>Welcome</h3>
+		    </div>
 			<div class="d-flex">
 				<div class="about1"> 
 					<h4>WE ARE THE LEADERS IN THE ONLINE EDUCATION.</h4>
@@ -110,42 +111,41 @@
 			</div>
 			
 		</div>
-	</div> -->
+	</div>
 <!-- //About us -->
 <!--CONTENT NYA GW BACKUP-->
 
 <!-- //agile_testimonials -->
 	<!-- stats -->
-	<div class="stats mt-3">
-		<div class="container">
-			<div class=" mt-3 wthree_head_section stats_head">
-				<h3>ACTIVITY IN SDIT NURUL YAQIN</h3>
+	<div class="stats">
+			<div class="container">
+				<div class=" mt-3 wthree_head_section stats_head">
+					<h3>ACTIVITY IN SDIT NURUL YAQIN</h3>
+				</div>
+				<div class="row">
+					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 w3layouts_stats_left w3_counter_grid">
+						<span class="fas fa-smile" aria-hidden="true"></span>
+						<p class="counter">436</p>
+						<h3>STUDENT</h3>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6   w3layouts_stats_left w3_counter_grid1">
+						<span class="fas fa-bookmark" aria-hidden="true"></span>
+						<p class="counter">9</p>
+						<h3>EXTRAKULIKULER</h3>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6  w3layouts_stats_left w3_counter_grid2">
+						<span class="fas fa-users" aria-hidden="true"></span>
+						<p class="counter">41</p>
+						<h3>TEACHERS</h3>
+					</div>
+					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6  w3layouts_stats_left w3_counter_grid3">
+						<span class="fas fa-trophy" aria-hidden="true"></span>
+						<p class="counter">200</p>
+						<h3>AWARDS WON</h3>
+					</div>
+						<div class="clearfix"> </div>
+				</div>
 			</div>
-		<div class="row">
-			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 
-			w3layouts_stats_left w3_counter_grid">
-				<span class="fas fa-smile" aria-hidden="true"></span>
-				<p class="counter">436</p>
-				<h3>STUDENT</h3>
-			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6   w3layouts_stats_left w3_counter_grid1">
-				<span class="fas fa-bookmark" aria-hidden="true"></span>
-				<p class="counter">9</p>
-				<h3>EXTRAKULIKULER</h3>
-			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6  w3layouts_stats_left w3_counter_grid2">
-				<span class="fas fa-users" aria-hidden="true"></span>
-				<p class="counter">41</p>
-				<h3>TEACHERS</h3>
-			</div>
-			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6  w3layouts_stats_left w3_counter_grid3">
-				<span class="fas fa-trophy" aria-hidden="true"></span>
-				<p class="counter">200</p>
-				<h3>AWARDS WON</h3>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-		</div>
 	</div>
 	<!-- //stats -->
 

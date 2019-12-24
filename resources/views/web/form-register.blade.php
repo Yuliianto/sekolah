@@ -225,63 +225,93 @@
                   </ol>
                 </nav>
 
-                <form>
-                  
-                  <h1>
-                    <center><label for="KeteranganPendidikan"><B>Keterangan Pendidikan Calon Siswa</B></label><center>
-                  </h1>
+                <!-- <form> -->
+                <!-- pendidikan anak calon siswa -->
+                <h3>
+                  <center> Keterangan Pendidikan Calon Siswa </center>
+                </h3>
+                <div class="form-group">
+                  <label for="namatk">Nama TK/RA</label>
+                  <input type="text" class="form-control" id="namatk" name="namatk" placeholder="isi kan nama TK asal">
+                </div>
+                <div class="form-group">
+                  <label for="alamattk">Alamat TK/RA</label>
+                  <input type="text" class="form-control" id="alamattk" name="alamattk" placeholder="alamat TK asal">
+                </div>
+
+
+               <!-- Upload foto dan berkas berkas -->
+                <h3>
+                  <center>Upload</center>
+                </h3>
                   
                   <div class="form-group">
-                    <label for="namatk">Nama TK/RA</label>
-                    <input type="text" class="form-control" id="namatk" name="namatk" placeholder="isi kan nama TK asal">
+				          	<label>Gambar</label><br>
+				          	<input type="file" name="foto">
+				          	<br>
+				          </div>	
+
+                <div class="form-group form-file-upload form-file-multiple">
+                <label for="ktp">KTP ORANG TUA</label>
+                  <input type="file"  multiple="" class="inputFileHidden">
+                  <div class="input-group">
+                      <input type="text" class="form-control inputFileVisible" placeholder="Single File">
+                      <span class="input-group-btn">
+                          <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <i class="material-icons">attach_file</i>
+                          </button>
+                      </span>
                   </div>
-                  <div class="form-group">
-                    <label for="alamattk">Alamat TK/RA</label>
-                    <input type="text" class="form-control" id="alamattk" name="alamattk" placeholder="alamat TK asal">
+                </div>
+                <div class="form-group form-file-upload form-file-multiple">
+                <label for="ktp">KARTU KELUARGA</label>
+                  <input type="file" multiple="" class="inputFileHidden">
+                  <div class="input-group">
+                      <input type="text" class="form-control inputFileVisible" placeholder="Single File">
+                      <span class="input-group-btn">
+                          <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <i class="material-icons">attach_file</i>
+                          </button>
+                      </span>
                   </div>
-
-
-                  <h1>
-                    <center><label for="KeteranganPendidikan"><B>Upload</B></label><center>
-                  </h1>
-
-                  <div class="form-group form-file-upload form-file-multiple">
-                    <label for="ktp">KTP</label>
-                      <input type="file" multiple="" class="inputFileHidden">
-                      <div class="input-group">
-                          <input type="text" class="form-control inputFileVisible" placeholder="Single File">
-                          <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
-                                  <i class="material-icons">attach_file</i>
-                              </button>
-                          </span>
-                      </div>
-                    </div>
-                    <div class="form-group form-file-upload form-file-multiple">
-                    <label for="ktp">KK</label>
-                      <input type="file" multiple="" class="inputFileHidden">
-                      <div class="input-group">
-                          <input type="text" class="form-control inputFileVisible" placeholder="Single File">
-                          <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
-                                  <i class="material-icons">attach_file</i>
-                              </button>
-                          </span>
-                      </div>
-                    </div>
-                    <div class="form-group form-file-upload form-file-multiple">
-                    <label for="ktp">Lain-lain</label>
-                      <input type="file" multiple="" class="inputFileHidden">
-                      <div class="input-group">
-                          <input type="text" class="form-control inputFileVisible" placeholder="Single File">
-                          <span class="input-group-btn">
-                              <button type="button" class="btn btn-fab btn-round btn-primary">
-                                  <i class="material-icons">attach_file</i>
-                              </button>
-                          </span>
-                      </div>
-                    </div>                  
-                </form>
+                </div>
+                <div class="form-group form-file-upload form-file-multiple">
+                  <label for="ktp">KARTU IDENTITAS ANAK(KIA)</label>
+                  <input type="file" multiple="" class="inputFileHidden">
+                  <div class="input-group">
+                      <input type="text" class="form-control inputFileVisible" placeholder="Single File">
+                      <span class="input-group-btn">
+                          <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <i class="material-icons">attach_file</i>
+                          </button>
+                      </span>
+                  </div>
+                </div>
+                <div class="form-group form-file-upload form-file-multiple">
+                  <label for="ktp">AKTE ANAK</label>
+                  <input type="file" multiple="" class="inputFileHidden">
+                  <div class="input-group">
+                      <input type="text" class="form-control inputFileVisible" placeholder="Single File">
+                      <span class="input-group-btn">
+                          <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <i class="material-icons">attach_file</i>
+                          </button>
+                      </span>
+                  </div>
+                </div>     
+                <div class="form-group form-file-upload form-file-multiple">
+                  <label for="ktp">Lain-lain</label>
+                  <input type="file" multiple="" class="inputFileHidden">
+                  <div class="input-group">
+                      <input type="text" class="form-control inputFileVisible" placeholder="Single File">
+                      <span class="input-group-btn">
+                          <button type="button" class="btn btn-fab btn-round btn-primary">
+                              <i class="material-icons">attach_file</i>
+                          </button>
+                      </span>
+                  </div>
+                </div>                       
+                <!-- </form> -->
             </div>
         </div>
     </div>
