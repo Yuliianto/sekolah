@@ -17,7 +17,7 @@ The above copyright notice and this permission notice shall be included in all c
 <html lang="en">
 
 <head>
-    <title>Hello, world!</title>
+    <title>asdfasdf</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
@@ -32,6 +32,9 @@ The above copyright notice and this permission notice shall be included in all c
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
   crossorigin="anonymous"></script>
+  
+  <!-- Logo website -->
+  <!-- <link rel="icon" type="image/gif" href="{{ asset('images/logo-nurul-yaqin.png') }}" /> -->
 
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -57,7 +60,7 @@ The above copyright notice and this permission notice shall be included in all c
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
-                        @guest
+                        <!-- @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
@@ -84,7 +87,7 @@ The above copyright notice and this permission notice shall be included in all c
                                     </form>
                                 </div>
                             </li>
-                        @endguest
+                        @endguest -->
                     </ul>
                 </div>
             </div>

@@ -35,6 +35,16 @@ Route::get('/gallery', function () {
 						'title'		=> 'Gallery :: SDIT Nurul Yaqin' );
     return view('web.gallery',$meta_data);
 });
+Route::get('/register', function () {
+	$meta_data = array('page_name' => 'gallery',
+						'title'		=> 'Register :: SDIT Nurul Yaqin' );
+    return view('layout.guest',$meta_data);
+});
+// Route::get('/gallery', function () {
+// 	$meta_data = array('page_name' => 'gallery',
+// 						'title'		=> 'Gallery :: SDIT Nurul Yaqin' );
+//     return view('web.gallery',$meta_data);
+// });
 
 
 

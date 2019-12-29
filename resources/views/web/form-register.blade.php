@@ -96,10 +96,14 @@
                         </select>
                         <p></p>
                         <label for="nik">NIK</label>
-                        <input type="text" name="nik" class="form-control" placeholder="948893888">
+                        <input type="text" name="nik" class="form-control" placeholder="317508170xxxxxx">
                         <p></p>
                         <label for="kewarganegaraan">Kewarga negaraan</label>
-                        <input type="text" name="kewarganegaraan" class="form-control" placeholder="WNI">
+                        <select class="form-control selectpicker" data-style="btn btn-link" id="kewarganegaraan" name="kewarganegaraan">
+                          <option value="">-silahkan pilih-</option>
+                          <option value="wni">WNI</option>
+                          <option value="wna">WNA</option>
+                        </select>
                       </div>
                       </div>
                       <div class="row">
@@ -130,7 +134,12 @@
                 <form>
                   <div class="form-group">
                     <label for="email">Email Orang Tua</label>
-                    <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="name@example.com">
+                                @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                   </div>
                   <p><p>
                   <div class="form-group">
@@ -193,10 +202,10 @@
                       <label for="penyakit">Penyakit yang pernah di derita</label>
                       <select class="form-control selectpicker" data-style="btn btn-link" id="penyakit" name="penyakit" onchange="showDiv('hidden_div', this)">
                               <option value="-">Tidak Ada</option>
-                              <option value="tbc">TBC</option>
-                              <option value="cacar">Cacar</option>
-                              <option value="campak">Campak</option>
-                              <option value="alergi">Alergi</option>
+                              <option value="TBC">TBC</option>
+                              <option value="Cacar">Cacar</option>
+                              <option value="Campak">Campak</option>
+                              <option value="Alergi">Alergi</option>
                               <option value="dll">DLL</option>
                       </select>
                       <div id="hidden_div">
@@ -245,12 +254,31 @@
                   <center>Upload</center>
                 </h3>
                   
-                  <div class="form-group">
-				          	<label>Gambar</label><br>
-				          	<input type="file" name="foto">
+                    <label>Foto</label><br>
+				          	<input type="file" class="form-control" name="foto">
 				          	<br>
-				          </div>	
 
+				          	<label>KTP ORANG TUA</label><br>
+				          	<input type="file" class="form-control" name="ktportu">
+				          	<br>
+
+				          	<label>KARTU KELUARGA</label><br>
+				          	<input type="file" class="form-control" name="kk">
+				          	<br>
+
+				          	<label>KARTU IDENTITAS ANAK(KIA)</label><br>
+				          	<input type="file" class="form-control" name="kia">
+				          	<br>
+                    
+				          	<label>AKTE ANAK</label><br>
+				          	<input type="file" class="form-control" name="akte">
+				          	<br>
+                    
+				          	<label>Lain-lain(kartu imunisasi)</label><br>
+				          	<input type="file" class="form-control" name="kimun">
+				          	<br>
+                    
+<!-- 
                 <div class="form-group form-file-upload form-file-multiple">
                 <label for="ktp">KTP ORANG TUA</label>
                   <input type="file"  multiple="" class="inputFileHidden">
@@ -310,7 +338,7 @@
                           </button>
                       </span>
                   </div>
-                </div>                       
+                </div>                        -->
                 <!-- </form> -->
             </div>
         </div>
@@ -345,7 +373,7 @@
         let _nik_Anak        =$("input[name=nik]").val();
         let _bahasa          =$("select[name=bahasa]").val();
         let _status_anak     =$("input[name=status_anak]").val();
-        let _kewarga_negaraan=$("input[name=kewarganegaraan]").val();
+        let _kewarga_negaraan=$("select[name=kewarganegaraan]").val();
         let _email           =$("input[name=email]").val();
         let _notelp          =$("input[name=notelp]").val();
         let _alamat          =$("textarea[name=alamat]").val();
@@ -405,7 +433,7 @@
           if (tgl) {
               umur  = usia(tgl);
           }
-          if (umur >= 6 && umur <= 8) {
+          if (umur >= 6 ) {
             $.ajax({
               method: "post",
               url: "/do_register",
