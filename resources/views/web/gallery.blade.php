@@ -31,7 +31,7 @@
 					<div class="agile_gallery_grid">
 						<a title="Donec sapien massa, placerat ac sodales ac, feugiat quis est." href="images/g2.jpg" class="img-fluid">
 							<div class="agile_gallery_grid1">
-								<img src="images/DSC_0201.jpg" alt=" " class="img-responsive img-fluid" />
+								<img src="images/DSC_0483.jpg" alt=" " class="img-responsive img-fluid" />
 								<div class="w3layouts_gallery_grid1_pos">
 									<h3>Kelulusan</h3>
 									<p>Angkatan 3</p>

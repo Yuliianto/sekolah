@@ -11,10 +11,11 @@
 						<div class="container" style="cursor: pointer;">
 							<div class="slider_banner_info_w3ls">
 								<h1 class="text-uppercase mb-3">Pendaftaran siswa baru</h1>
-								<p>telah dibuka pendaftaran siswa baru 2019-2020, SDIT NURUL YAQIN. Untuk pendaftaran..</p>
-
-								<a href="/student-register" class="read" role="button">DAFTAR</a>
-								<a href="/cek-pendaftaran" class="read" role="button">CEK PENDAFTARAN</a>
+								<p>Telah dibuka pendaftaran siswa baru 2019-2020, SDIT NURUL YAQIN. Untuk pendaftaran..</p>
+								<div class="d-flex justify-content-around">
+									<a href="/student-register" class="read" role="button">DAFTAR</a>
+									<a href="/cek-pendaftaran" class="read" role="button">CEK PENDAFTARAN</a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -73,46 +74,71 @@
 
 <!--//Slider-->
 <!-- About us -->
-	<div><!-- <div class="about-3 py-5"> -->
-		<div class="container py-md-3">
+	<!-- <div class="about-3 py-5"> -->
+<DIV class="CONTAINER" style="background-color:white;">
+	<div class="container py-md-3">
 			<div class="w3-head-all mb-3">
-		         <h3 class='py-mt-3'>Welcome</h3>
-		    </div>
-			<div class="d-flex">
-				<div class="about1"> 
-					<h4>WE ARE THE LEADERS IN THE ONLINE EDUCATION.</h4>
-					<p class="details">Nullam pulvinar vulputate aliquam. Pellentesque venenatis ut mi ac porta. Praesent interdum nibh libero, id malesuada libero aliquet quis. Donec at odio nibh.</p>
-					<ul class="about-list">
-						<li>
-							<span class="fas fa-chess-rook" aria-hidden="true"></span>
-							<div class="in-block">
-								<h5>Our Mission</h5>
-								<p>Suspendisse maximus leo vel facilisis porta. Aliquam posuere mollis auctor. Nunc eget massa eleifend, finibus felis eu, tincidunt eros.</p>
-							</div>
-						</li>
-						<li>
-						<span class="fab fa-accessible-icon" aria-hidden="true"></span>
-							<div class="in-block">
-								<h5>Our Activity</h5>
-								<p>Suspendisse maximus leo vel facilisis porta. Aliquam posuere mollis auctor. Nunc eget massa eleifend, finibus felis eu, tincidunt eros.</p>
-							</div>
-						</li>
-						<li>
-						<span class="fas fa-bus" aria-hidden="true"></span>
-							<div class="in-block">
-								<h5>Our Vission</h5>
-								<p>Suspendisse maximus leo vel facilisis porta. Aliquam posuere mollis auctor. Nunc eget massa eleifend, finibus felis eu, tincidunt eros.</p>
-							</div>
-						</li>
-					</ul>
-				</div>
-				<div class="about2">
-					
-				</div>
+				<P>	
+				 	<h4 class="blockquote text-center">&nbsp; </h4> 
+				 	<h4 class="blockquote text-center" >Assalamu'alaikum Warahmatullahi Wabarakatuh</h4> 
+				</p>
 			</div>
-			
 		</div>
+</div>	
+<DIV class="CONTAINER">
+<br><br>
+	<div class="container py-md-3">
+			<div class="row">
+				<div class="col">
+					<div class="about1"> 
+						<h4>Selamat Datang</h4>
+						<p class="details text-justify text-muted">Dengan mengucap puji dan syukur kehadirat Allah SWT, pembaharuan website SDIT NURUL YAQIN telah selesai dan secara bertahap website ini dapat dijadikan sebagai “jembatan” informasi bagi para Siswa/i, guru dan masyarakat luas yang membutuhkan informasi berkaitan dengan SDIT NURUL YAQIN. Website ini disusun lebih baik secara kualitas tampilan dan disesuaikan tata letaknya agar lebih mudah diakses bagi yang membutuhkan informasi seputar berita, prestasi, video-video aktifitas/ kegiatan, informasi pendaftaran siswa baru, dan informasi-informasi lainnya seputar akademik. Kepada semua pihak yang telah memberikan kontribusinya serta membantu sampai dengan penerbitan website ini, kami mengucapkan banyak terima kasih</p>
+						<br>
+						<footer class="blockquote-footer ">Kepala Sekolah <cite title="Source Title">SDIT Nurul Yaqin</cite></footer>
+							<!--<li>
+							<span class="fab fa-accessible-icon" aria-hidden="true"></span>
+								<div class="in-block">
+									<h5>Our Activity</h5>
+									<p>Suspendisse maximus leo vel facilisis porta. Aliquam posuere mollis auctor. Nunc eget massa eleifend, finibus felis eu, tincidunt eros.</p>
+								</div>
+							</li>
+							<li>
+							<span class="fas fa-bus" aria-hidden="true"></span>
+								<div class="in-block">
+									<h5>Our Vission</h5>
+									<p>Suspendisse maximus leo vel facilisis porta. Aliquam posuere mollis auctor. Nunc eget massa eleifend, finibus felis eu, tincidunt eros.</p>
+								</div>
+							</li>-->
+					</div>
+				</div>
+				
+				<div class="col">
+					<div class="about2">
+						<div class="img-responsive img-fluid"> <image src="images/galery1.jpg" class=""></image> </div>
+					</div>
+				</div>
+
+			</div>	
+			<br><br>		
 	</div>
+</DIV>
+
+
+
+<div class="container" >
+		<ul class="about-list" >
+				<li>
+					<span class="fas fa-chess-rook" aria-hidden="true"></span>
+					<div class="in-block">
+						<h5>Filosofi</h5>
+						<p class="font-weight-light text-muted" >Kami percaya bahwa murid di sekolah itu istimewa, memiliki bakat dan kekuatannya sendiri, dan potensinya dapat berkembang hingga mencapai tingkat penuh, kasih yang dikembangkan untuk belajar dan berprestasi serta melalui perolehan keterampilan berpikir kritis.</p>
+						<br><br>
+					</div>
+				</li>
+		</ul> 
+</div>
+
+	
 <!-- //About us -->
 <!--CONTENT NYA GW BACKUP-->
 
