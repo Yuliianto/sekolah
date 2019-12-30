@@ -13,7 +13,8 @@
 								<h1 class="text-uppercase mb-3">Pendaftaran siswa baru</h1>
 								<p>telah dibuka pendaftaran siswa baru 2019-2020, SDIT NURUL YAQIN. Untuk pendaftaran..</p>
 
-								<a href="/student-register" class="read" role="button">KLIK DISINI</a>
+								<a href="/student-register" class="read" role="button">DAFTAR</a>
+								<a href="/cek-pendaftaran" class="read" role="button">CEK PENDAFTARAN</a>
 							</div>
 						</div>
 					</div>
