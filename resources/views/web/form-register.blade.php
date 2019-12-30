@@ -209,7 +209,7 @@
                               <option value="dll">DLL</option>
                       </select>
                       <div id="hidden_div">
-                        <input type="text" class="form-control" id="penyakit" name="penyakit" placeholder="isi penyakit..">
+                        <input type="text" class="form-control" id="penyakitdll" name="penyakitdll" placeholder="isi penyakit..">
                       </div>
                   </div>
 
@@ -383,6 +383,7 @@
         let _tinggi          =$("input[name=tinggi]").val();
         let _golongandarah   =$("select[name=golongandarah]").val();
         let _penyakit        =$("select[name=penyakit]").val();
+        let _penyakitdll        =$("select[name=penyakitdll]").val();
         let _kebutuhankhusus =$("input[name=kebutuhankhusus]").val();
         let _kelainanlainnya =$("input[name=kelainanlainnya]").val(); 
         let _namatk          =$("input[name=namatk]").val();
@@ -417,6 +418,7 @@
 						            tinggi         : _tinggi,
                         golongandarah  : _golongandarah,
 						            penyakit       : _penyakit,
+                        penyakitdll       : _penyakitdll,
                         kebutuhankhusus: _kebutuhankhusus,
                         kelainanlainnya: _kelainanlainnya
 
