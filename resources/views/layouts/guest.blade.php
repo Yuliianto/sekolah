@@ -17,7 +17,7 @@ The above copyright notice and this permission notice shall be included in all c
 <html lang="en">
 
 <head>
-    <title>asdfasdf</title>
+    <title>{{ config('app.name', 'Home') }}</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
@@ -28,6 +28,8 @@ The above copyright notice and this permission notice shall be included in all c
     <!-- Material Kit CSS -->
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- Icon -->
+    <link rel="icon" type="image/gif" href="{{ asset('images/logo-nurul-yaqin.png') }}" />
     <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -44,8 +46,10 @@ The above copyright notice and this permission notice shall be included in all c
     
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Home') }}
+                <a class="navbar-brand text-uppercase" href="{{ url('/') }}">
+                    <img src="{{ asset('images/logo-nurul-yaqin.png') }}" style="width: 40px; height: 40px;">   
+                     SDIT NURUL YAQIN 
+                    
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

@@ -36,7 +36,7 @@ Route::get('/gallery', function () {
     return view('web.gallery',$meta_data);
 });
 Route::get('/register', function () {
-	$meta_data = array('page_name' => 'gallery',
+	$meta_data = array('page_name' => 'register',
 						'title'		=> 'Register :: SDIT Nurul Yaqin' );
     return view('layout.guest',$meta_data);
 });
@@ -57,7 +57,9 @@ Route::post('/do_register','Controller@do_register');
 Route::get('/check-nomor','Controller@check_nomor');
 Route::post('/get_detail','Controller@get_detail');
 
-
+Route::get('/cek-pendaftaran',function(){
+	return view('web.check-nopendaftaran');	
+});
 
 Route::get('/backend',function(){
 	return view('backend.home');

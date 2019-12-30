@@ -505,7 +505,7 @@ ul.about-list li span{
     color: #000000;
 }
 .about2 {
-    background: url(../images/ah.jpg) no-repeat;
+    /* background: url(../images/galery1.jpg) no-repeat; */
     background-size: cover;
     background-position: center;
     /* background-attachment: fixed; */
