@@ -75,23 +75,22 @@
 <!--//Slider-->
 <!-- About us -->
 	<!-- <div class="about-3 py-5"> -->
-<DIV class="CONTAINER" style="background-color:white;">
+<DIV  style="background-color:white;">
 	<div class="container py-md-3">
 			<div class="w3-head-all mb-3">
 				<P>	
 				 	<h4 class="blockquote text-center">&nbsp; </h4> 
-				 	<h4 class="blockquote text-center" >Assalamu'alaikum Warahmatullahi Wabarakatuh</h4> 
+				 	<h4 class="font-weight-normal text-center" style="color:#505359;">Assalamu'alaikum Warahmatullahi Wabarakatuh</h4> 
 				</p>
 			</div>
 		</div>
 </div>	
 <DIV class="CONTAINER">
-<br><br>
+	<br><br>
 	<div class="container py-md-3">
-			<div class="row">
-				<div class="col">
+			<div class="d-flex">
 					<div class="about1"> 
-						<h4>Selamat Datang</h4>
+						<h4 >Selamat Datang</h4>
 						<p class="details text-justify text-muted">Dengan mengucap puji dan syukur kehadirat Allah SWT, pembaharuan website SDIT NURUL YAQIN telah selesai dan secara bertahap website ini dapat dijadikan sebagai “jembatan” informasi bagi para Siswa/i, guru dan masyarakat luas yang membutuhkan informasi berkaitan dengan SDIT NURUL YAQIN. Website ini disusun lebih baik secara kualitas tampilan dan disesuaikan tata letaknya agar lebih mudah diakses bagi yang membutuhkan informasi seputar berita, prestasi, video-video aktifitas/ kegiatan, informasi pendaftaran siswa baru, dan informasi-informasi lainnya seputar akademik. Kepada semua pihak yang telah memberikan kontribusinya serta membantu sampai dengan penerbitan website ini, kami mengucapkan banyak terima kasih</p>
 						<br>
 						<footer class="blockquote-footer ">Kepala Sekolah <cite title="Source Title">SDIT Nurul Yaqin</cite></footer>
@@ -110,37 +109,41 @@
 								</div>
 							</li>-->
 					</div>
-				</div>
 				
-				<div class="col">
 					<div class="about2">
-						<div class="img-responsive img-fluid"> <image src="images/galery1.jpg" class=""></image> </div>
+						<div> <image src="images/galery1.jpg" class="img-fluid" ></image> </div>
 					</div>
-				</div>
 
-			</div>	
-			<br><br>		
+			</div>		
 	</div>
+	<br><br>	
 </DIV>
 
 
+<div style="background-color:#5A635D;" >
+	<div class="container">
+		<br><br>
+			<ul class="about-list" >
 
-<div class="container" >
-		<ul class="about-list" >
-				<li>
-					<span class="fas fa-chess-rook" aria-hidden="true"></span>
-					<div class="in-block">
-						<h5>Filosofi</h5>
-						<p class="font-weight-light text-muted" >Kami percaya bahwa murid di sekolah itu istimewa, memiliki bakat dan kekuatannya sendiri, dan potensinya dapat berkembang hingga mencapai tingkat penuh, kasih yang dikembangkan untuk belajar dan berprestasi serta melalui perolehan keterampilan berpikir kritis.</p>
-						<br><br>
-					</div>
-				</li>
-		</ul> 
+					<li>
+						<span class="fas fa-chess-rook" aria-hidden="true"></span>
+						<div class="in-block">
+
+							<h1 style="color:#EADFF2;">Filosofi</h5>
+							<p class="font-weight-light " >Kami percaya bahwa murid di sekolah itu istimewa, memiliki bakat dan kekuatannya sendiri, dan potensinya dapat berkembang hingga mencapai tingkat penuh, kasih yang dikembangkan untuk belajar dan berprestasi serta melalui perolehan keterampilan berpikir kritis.</p>
+
+						</div>
+					</li>
+			</ul>
+		<br><br>
+	</div>
 </div>
 
 	
 <!-- //About us -->
 <!--CONTENT NYA GW BACKUP-->
+
+
 
 <!-- //agile_testimonials -->
 	<!-- stats -->
