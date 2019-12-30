@@ -16,14 +16,14 @@ class CreateContentsTable extends Migration
         Schema::dropIfExists('contents');
         Schema::create('contents', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('content_type_id');
-            $table->integer('xn1')->nullable();
-            $table->integer('xn2')->nullable();
-            $table->integer('xn3')->nullable();
-            $table->integer('xn4')->nullable();
-            $table->integer('xn5')->nullable();
-            $table->integer('xn6')->nullable();
-            $table->integer('xn7')->nullable();
+            $table->bigInteger('content_type_id');
+            $table->bigInteger('xn1')->nullable();
+            $table->bigInteger('xn2')->nullable();
+            $table->bigInteger('xn3')->nullable();
+            $table->bigInteger('xn4')->nullable();
+            $table->bigInteger('xn5')->nullable();
+            $table->bigInteger('xn6')->nullable();
+            $table->bigInteger('xn7')->nullable();
             $table->text('xs1')->nullable();
             $table->text('xs2')->nullable();
             $table->text('xs3')->nullable();
