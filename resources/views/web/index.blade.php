@@ -88,8 +88,7 @@
 <DIV class="CONTAINER">
 	<br><br>
 	<div class="container py-md-3">
-			<div class="row">
-				<div class="col">
+			<div class="d-flex">
 					<div class="about1"> 
 						<h4 >Selamat Datang</h4>
 						<p class="details text-justify text-muted">Dengan mengucap puji dan syukur kehadirat Allah SWT, pembaharuan website SDIT NURUL YAQIN telah selesai dan secara bertahap website ini dapat dijadikan sebagai “jembatan” informasi bagi para Siswa/i, guru dan masyarakat luas yang membutuhkan informasi berkaitan dengan SDIT NURUL YAQIN. Website ini disusun lebih baik secara kualitas tampilan dan disesuaikan tata letaknya agar lebih mudah diakses bagi yang membutuhkan informasi seputar berita, prestasi, video-video aktifitas/ kegiatan, informasi pendaftaran siswa baru, dan informasi-informasi lainnya seputar akademik. Kepada semua pihak yang telah memberikan kontribusinya serta membantu sampai dengan penerbitan website ini, kami mengucapkan banyak terima kasih</p>
@@ -110,13 +109,10 @@
 								</div>
 							</li>-->
 					</div>
-				</div>
 				
-				<div class="col">
 					<div class="about2">
-						<div class="img-responsive img-fluid"> <image src="images/galery1.jpg" class=""></image> </div>
+						<div> <image src="images/galery1.jpg" class="img-fluid" ></image> </div>
 					</div>
-				</div>
 
 			</div>		
 	</div>
