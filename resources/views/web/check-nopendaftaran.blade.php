@@ -17,7 +17,7 @@
                   <i class="material-icons">group</i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Nomor pendaftaran" name="nik">
+              <input type="text" class="form-control" placeholder="Nomor pendaftaran" name="nik" required>
             </div>
           </div>
         </div>
