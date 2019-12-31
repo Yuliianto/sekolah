@@ -8,12 +8,14 @@ use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 
 // Import Model 
 
 use App\New_pendaftares as New_pendaftar;
 use App\New_pendaftar_details as New_pendaftar_details;
+use App\Mail\Pendaftares;
 
 class Controller extends BaseController
 {
@@ -79,8 +81,11 @@ class Controller extends BaseController
                 $details->save();      
 
             }
-
-    		return "sukses";
+            $send = $this->send_email($param->keterangan->nik_Anak,$param->tempat_tinggal->email);
+          
+            return "sukses";
+          
+    		
     	} catch (Exception $e) {
     		return "Gagal store data!";
     	}
@@ -103,5 +108,12 @@ class Controller extends BaseController
         return view('web.detail-pendaftar',['dt_pendaftaran'=>$pendaftar,
                                             'detail'=>$detail,
                                             'detail2'=>$detail2]);
+    }
+
+    public function send_email($nik,$reciver)
+    {
+        $to = $reciver;
+        return Mail::to($to)
+                        ->send(new Pendaftares($nik));
     }
 }
