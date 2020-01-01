@@ -44,10 +44,10 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Nama Lengkap" name="name">
+                                <input type="text" class="form-control" placeholder="Nama Lengkap" name="name" required> 
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Nama Panggilan" name="nama-panggilan">
+                                <input type="text" class="form-control" placeholder="Nama Panggilan" name="nama-panggilan" required>
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                         <label for="jenis_kelamin">Jenis Kelamin</label> <br>
                         <div class="form-check form-check-radio form-check-inline">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="laki-laki" name="jenis-kelamin"> laki-laki
+                                <input class="form-check-input" type="radio" name="jenis_kelamin" id="jenis_kelamin" value="laki laki" name="jenis-kelamin" required> laki-laki
                                 <span class="circle">
                                     <span class="check"></span>
                                 </span>
@@ -75,10 +75,10 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Tempat lahir" name="tempat-lahir">
+                                <input type="text" class="form-control" placeholder="Tempat lahir" name="tempat-lahir" required>
                             </div>
                             <div class="col">
-                                <input type="date" name="tanggal-lahir" class="form-control" placeholder="Tanggal lahir">
+                                <input type="date" name="tanggal-lahir" class="form-control" placeholder="Tanggal lahir" required>
                             </div>
                         </div>
                     </div>
@@ -88,7 +88,7 @@
                     <div class="row">
                       <div class="col">
                         <label for="agama">Agama</label>
-                        <select class="form-control selectpicker" data-style="btn btn-link" id="agama" name="agama">
+                        <select class="form-control selectpicker" data-style="btn btn-link" id="agama" name="agama" required>
                           <option value="Islam">Islam</option>
                           <option value="Khatolik">Khatolik</option>
                           <option value="Protestan">Protestan</option>
@@ -97,7 +97,7 @@
                         </select>
                         <p></p>
                         <label for="nik">NIK</label>
-                        <input type="text" name="nik" class="form-control" placeholder="317508170xxxxxx">
+                        <input type="number" name="nik" class="form-control" placeholder="317508170xxxxxx">
                         <p></p>
                         <label for="kewarganegaraan">Kewarga negaraan</label>
                         <select class="form-control selectpicker" data-style="btn btn-link" id="kewarganegaraan" name="kewarganegaraan">
@@ -111,13 +111,13 @@
                       <div class="col">
                         <div class="form-group">
                           <label for="anakke">Anak ke</label>
-                          <input type="number" name="anakke" class="form-control" placeholder="2">
+                          <input type="number" name="anakke" class="form-control" placeholder="2" required>
                         </div>
                       </div>
                       <div class="col">
                         <div class="form-group">
                           <label>dari</label>
-                          <input type="number" name="dari" class="form-control" placeholder="2">
+                          <input type="number" name="dari" class="form-control" placeholder="2" required>
                         </div>
                       </div>
                     </div>
@@ -135,7 +135,7 @@
                 
                   <div class="form-group">
                     <label for="email">Email Orang Tua</label>
-                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="name@example.com">
+                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="name@example.com" required>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -145,17 +145,17 @@
                   <p><p>
                   <div class="form-group">
                     <label for="notelp">Nomor What's App Aktif</label>
-                    <input type="number" class="form-control" id="notelp" name="notelp" placeholder="08121828xxx">
+                    <input type="number" class="form-control" id="notelp" name="notelp" placeholder="08121828xxx" required>
                   </div>
                   <div class="form-group">
                     <label for="alamat">Alamat tempat tinggal :</label>
-                    <textarea class="form-control" id="alamat" rows="3" name="alamat"  placeholder="Jalan kerja bakti xxxxx"></textarea>
+                    <textarea class="form-control" id="alamat" rows="3" name="alamat"  placeholder="Jalan kerja bakti xxxxx" required></textarea>
                   </div>
                   <div class="form-group">
                     <div class="row">
                       <div class="col">
                         <label for="tinggalbersama">Selama sekolah tinggal bersama : </label>
-                        <select class="form-control selectpicker" data-style="btn btn-link" id="tinggalbersama" name="tinggalbersama">
+                        <select class="form-control selectpicker" data-style="btn btn-link" id="tinggalbersama" name="tinggalbersama" required>
                           <option value="orangtua">Orang Tua</option>
                           <option value="saudara">Saudara</option>
                           <option value="nenek-kakek">Nenek/Kakek</option>
@@ -163,7 +163,7 @@
                        </div>
                        <div class="col">
                         <label for="jaraksekolah">Jarak dari rumah ke sekolah : </label>
-                        <input type="number" class="form-control" id="jaraksekolah" name="jaraksekolah" placeholder="20 meter">
+                        <input type="number" class="form-control" id="jaraksekolah" name="jaraksekolah" placeholder="20 meter" required>
                       </div>
                     </div>  
                   </div>
@@ -181,16 +181,16 @@
                 
                   <div class="form-group">
                     <label for="beratbadan">Berat badan :</label>
-                    <input type="number" class="form-control" id="beratbadan" name="beratbadan"placeholder="00">
+                    <input type="number" class="form-control" id="beratbadan" name="beratbadan"placeholder="00" required>
                   </div>
                   <div class="form-group">
                     <label for="tinggi">Tinggi :</label>
-                    <input type="number" class="form-control" id="tinggi" name="tinggi" placeholder="000">
+                    <input type="number" class="form-control" id="tinggi" name="tinggi" placeholder="000" required>
                   </div>
                   
                   <div class="form-group">
                     <label for="golongandarah">Golongan Darah</label>
-                    <select class="form-control selectpicker" data-style="btn btn-link" id="golongandarah" name="golongandarah" >
+                    <select class="form-control selectpicker" data-style="btn btn-link" id="golongandarah" name="golongandarah" required>
                             <option value="-">Pilih</option>
                             <option value="A">A</option>
                             <option value="B">B</option>
@@ -201,7 +201,7 @@
 
                   <div class="form-group">
                       <label for="penyakit">Penyakit yang pernah di derita</label>
-                      <select class="form-control selectpicker" data-style="btn btn-link" id="penyakit" name="penyakit" onchange="showDiv('hidden_div', this)">
+                      <select class="form-control selectpicker" data-style="btn btn-link" id="penyakit" name="penyakit" onchange="showDiv('hidden_div', this)" required>
                               <option value="-">Tidak Ada</option>
                               <option value="TBC">TBC</option>
                               <option value="Cacar">Cacar</option>
@@ -216,11 +216,11 @@
 
                   <div class="form-group">
                     <label for="kebutuhankhusus">Kebutuhan Khusus </label>
-                    <input type="kebutuhankhusus" class="form-control" id="kebutuhankhusus" name="kebutuhankhusus" placeholder="kosongkan jika tidak ada ..">
+                    <input type="kebutuhankhusus" class="form-control" id="kebutuhankhusus" name="kebutuhankhusus" placeholder="kosongkan jika tidak ada .." required>
                   </div>
                   <div class="form-group">
                     <label for="kelainanlainnya">Kelainan Jasmani Lainnya </label>
-                    <input type="kelainanlainnya" class="form-control" id="kelainanlainnya" name="kelainanlainnya" placeholder="kosongkan jika tidak ada ..">
+                    <input type="kelainanlainnya" class="form-control" id="kelainanlainnya" name="kelainanlainnya" placeholder="kosongkan jika tidak ada .." required>
                   </div>
                  
             </div>
@@ -242,11 +242,11 @@
                 </h3>
                 <div class="form-group">
                   <label for="namatk">Nama TK/RA</label>
-                  <input type="text" class="form-control" id="namatk" name="namatk" placeholder="isi kan nama TK asal">
+                  <input type="text" class="form-control" id="namatk" name="namatk" placeholder="isi kan nama TK asal" required>
                 </div>
                 <div class="form-group">
                   <label for="alamattk">Alamat TK/RA</label>
-                  <input type="text" class="form-control" id="alamattk" name="alamattk" placeholder="alamat TK asal">
+                  <input type="text" class="form-control" id="alamattk" name="alamattk" placeholder="alamat TK asal" required>
                 </div>
 
 
@@ -388,7 +388,7 @@
         let _tinggi          =$("input[name=tinggi]").val();
         let _golongandarah   =$("select[name=golongandarah]").val();
         let _penyakit        =$("select[name=penyakit]").val();
-        let _penyakitdll        =$("select[name=penyakitdll]").val();
+        let _penyakitdll     =$("input[name=penyakitdll]").val();
         let _kebutuhankhusus =$("input[name=kebutuhankhusus]").val();
         let _kelainanlainnya =$("input[name=kelainanlainnya]").val(); 
         let _namatk          =$("input[name=namatk]").val();

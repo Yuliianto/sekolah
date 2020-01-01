@@ -26,12 +26,16 @@
                   <i class="material-icons">group</i>
                 </span>
               </div>
+<<<<<<< HEAD
               @isset($id)
                 <input type="text" class="form-control" placeholder="Nomor pendaftaran" name="nik" value="{{ $id }}">
               @endisset
               @empty($id)
                 <input type="text" class="form-control" placeholder="Nomor pendaftaran" name="nik" >
               @endempty
+=======
+              <input type="text" class="form-control" placeholder="Nomor pendaftaran" name="nik" required>
+>>>>>>> a7a27920abcda77d7b80083f0e6a62eddcdb5815
             </div>
           </div>
         </div>
