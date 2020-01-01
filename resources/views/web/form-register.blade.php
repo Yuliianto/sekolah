@@ -32,13 +32,14 @@
     </div>
     <div class="card-body min-vh-100">
         <div class="tab-content">
+          
             <div class="tab-pane active" id="keterangan">
                 <nav aria-label="breadcrumb" role="navigation">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item active" aria-current="page">Keterangan</li>
                     </ol>
                 </nav>
-                <form>
+                
                 <h3><center><b>ISI BIODATA</b></center></h3>
                     <div class="form-group">
                         <div class="row">
@@ -121,7 +122,7 @@
                       </div>
                     </div>
                   </div>
-                </form>
+                
             </div>
 
             <div class="tab-pane" id="alamat">
@@ -131,7 +132,7 @@
                     <li class="breadcrumb-item active" aria-current="page">Alamat</li>
                   </ol>
                 </nav>
-                <form>
+                
                   <div class="form-group">
                     <label for="email">Email Orang Tua</label>
                     <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="name@example.com">
@@ -166,7 +167,7 @@
                       </div>
                     </div>  
                   </div>
-                </form>
+                
             </div>
 
             <div class="tab-pane" id="kesehatan">
@@ -177,7 +178,7 @@
                     <li class="breadcrumb-item active" aria-current="page">Kesehatan</li>
                   </ol>
                 </nav>
-                <form>
+                
                   <div class="form-group">
                     <label for="beratbadan">Berat badan :</label>
                     <input type="number" class="form-control" id="beratbadan" name="beratbadan"placeholder="00">
@@ -221,7 +222,7 @@
                     <label for="kelainanlainnya">Kelainan Jasmani Lainnya </label>
                     <input type="kelainanlainnya" class="form-control" id="kelainanlainnya" name="kelainanlainnya" placeholder="kosongkan jika tidak ada ..">
                   </div>
-                </form> 
+                 
             </div>
 
             <div class="tab-pane" id="pendidikan">
@@ -234,7 +235,7 @@
                   </ol>
                 </nav>
 
-                <!-- <form> -->
+                <!--  -->
                 <!-- pendidikan anak calon siswa -->
                 <h3>
                   <center> Keterangan Pendidikan Calon Siswa </center>
@@ -253,30 +254,31 @@
                 <h3>
                   <center>Upload</center>
                 </h3>
-                  
+                  <form id="my_form" enctype="multipart/form-data">
                     <label>Foto</label><br>
-				          	<input type="file" class="form-control" name="foto">
+				          	<input type="file" class="form-control" name="multi_file[]">
 				          	<br>
 
 				          	<label>KTP ORANG TUA</label><br>
-				          	<input type="file" class="form-control" name="ktportu">
+				          	<input type="file" class="form-control" name="multi_file[]">
 				          	<br>
 
 				          	<label>KARTU KELUARGA</label><br>
-				          	<input type="file" class="form-control" name="kk">
+				          	<input type="file" class="form-control" name="multi_file[]">
 				          	<br>
 
 				          	<label>KARTU IDENTITAS ANAK(KIA)</label><br>
-				          	<input type="file" class="form-control" name="kia">
+				          	<input type="file" class="form-control" name="multi_file[]">
 				          	<br>
                     
 				          	<label>AKTE ANAK</label><br>
-				          	<input type="file" class="form-control" name="akte">
+				          	<input type="file" class="form-control" name="multi_file[]">
 				          	<br>
                     
 				          	<label>Lain-lain(kartu imunisasi)</label><br>
-				          	<input type="file" class="form-control" name="kimun">
+				          	<input type="file" class="form-control" name="multi_file[]">
 				          	<br>
+                  </form>
                     
 <!-- 
                 <div class="form-group form-file-upload form-file-multiple">
@@ -338,15 +340,18 @@
                           </button>
                       </span>
                   </div>
-                </div>                        -->
-                <!-- </form> -->
+                </div>                        
+              -->
+                
             </div>
+          
         </div>
     </div>
 </div>
 
     <script type="text/javascript">
       
+
       function usia(_tgllahir) {
         let lahir = new Date(_tgllahir);
         let now = new Date();
@@ -389,7 +394,7 @@
         let _namatk          =$("input[name=namatk]").val();
         let _alamattk        =$("input[name=alamattk]").val();
 
-
+        
           var data_siswa = {
                   keterangan:{
                           nama_lengkap   : _nama_lengkap,
@@ -404,6 +409,7 @@
                           // bahasa   : _bahasa,
                           // status_anak   : _status_anak,
                           kewarga_negaraan   : _kewarga_negaraan
+                          // multi_file  : _file
                   },
                   tempat_tinggal:{	
 						              email   : _email,
@@ -435,10 +441,11 @@
           if (tgl) {
               umur  = usia(tgl);
           }
-          if (umur >= 6 ) {
+          if (umur >= 6) {
             $.ajax({
               method: "post",
               url: "/do_register",
+              // url: "/test_req",
               data: {param: str}
             })
             .done(function( result ) {

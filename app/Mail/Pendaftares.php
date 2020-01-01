@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Crypt;
 
 
 use App\New_pendaftares as New_pendaftar;
@@ -18,6 +19,7 @@ class Pendaftares extends Mailable
     protected $dt_pendaftaran;
     protected $detail;
     protected $detail2;
+    protected $id;
     /**
      * Create a new message instance.
      *
@@ -35,6 +37,7 @@ class Pendaftares extends Mailable
         $this->dt_pendaftaran= $pendaftar;
         $this->detail= $detail;
         $this->detail2= $detail2;
+        $this->id = Crypt::encryptString($nik);
     }
 
     /**
@@ -44,8 +47,9 @@ class Pendaftares extends Mailable
      */
     public function build()
     {
-        return $this->from('yulianto401.juli@gmail.com')->view('emails.detail-pendaftar',['dt_pendaftaran'=>$this->dt_pendaftaran,
+        return $this->from('SDIT_nurulyaqin@mandiriteam.my.id')->subject('Verifikasi Pendaftaran Siswa')->view('emails.detail-pendaftar',['dt_pendaftaran'=>$this->dt_pendaftaran,
                                             'detail'=>$this->detail,
-                                            'detail2'=>$this->detail2]);
+                                            'detail2'=>$this->detail2,
+                                            'id'=>$this->id]);
     }
 }

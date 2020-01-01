@@ -8,6 +8,15 @@
 <div class="card">
     <!-- Do what you wont -->
     <div class="container">
+      @isset($id)
+      <p></p>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>ID Pendaftar : {{ $id }}</strong> silakan klik form dibawah kemdian tekan enter untuk lanjut
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      @endisset
         <div class="card">
           <div class="card-body">
             Check Nomor pendaftaran
@@ -17,7 +26,12 @@
                   <i class="material-icons">group</i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="Nomor pendaftaran" name="nik">
+              @isset($id)
+                <input type="text" class="form-control" placeholder="Nomor pendaftaran" name="nik" value="{{ $id }}">
+              @endisset
+              @empty($id)
+                <input type="text" class="form-control" placeholder="Nomor pendaftaran" name="nik" >
+              @endempty
             </div>
           </div>
         </div>

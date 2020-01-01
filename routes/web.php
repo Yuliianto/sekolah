@@ -10,6 +10,8 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Support\Facades\Crypt;
+
 Route::get('/', function () {
 	$meta_data = array('page_name' => 'home',
 						'title'		=> 'Home :: SDIT Nurul Yaqin' );
@@ -61,8 +63,20 @@ Route::get('/cek-pendaftaran',function(){
 	return view('web.check-nopendaftaran');	
 });
 
+Route::get('/cek-pendaftaran/{id}',function(Request $req, $id){
+	$plainTxtId = Crypt::decryptString($id);
+	return view('web.check-nopendaftaran',['id'=>$plainTxtId]);	
+});
+
+
 Route::get('/backend',function(){
 	return view('backend.home');
+});
+
+Route::post('/test_req',function(Request $req)
+{	
+	$param = json_decode($req);
+	print_r($param);
 });
 
 // Route::get('/login',function(){

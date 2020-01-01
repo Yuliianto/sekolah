@@ -106,5 +106,19 @@
                 </tr>
             </tbody>
         </table>
+        <form>
+            <div class="form-group form-file-upload form-file-multiple">
+                <input type="file" multiple="" class="inputFileHidden">
+                <div class="input-group">
+                    <input type="text" class="form-control inputFileVisible" placeholder="Single File">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-fab btn-round btn-primary">
+                            <i class="material-icons">attach_file</i>
+                        </button>
+                    </span>
+                </div>
+            </div>
+        </form>
     </div>
 </div>
+

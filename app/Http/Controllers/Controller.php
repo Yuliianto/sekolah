@@ -9,6 +9,8 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Crypt;
 
 
 // Import Model 
@@ -47,12 +49,13 @@ class Controller extends BaseController
                 $details->pendaftar_account_id  = $param->keterangan->nik_Anak;
                 $details->xs1       = $param->keterangan->nama_lengkap;
                 $details->xs2       = $param->keterangan->nama_Panggilan;
-                $details->xs2       = $param->keterangan->tempat_Lahir;
-                $details->xs3       = $param->keterangan->tanggal_lahir;
-                $details->xs4       = $param->keterangan->agama;
-                $details->xn1       = $param->keterangan->anak_Ke;
-                $details->xn2       = $param->keterangan->dari;
-                $details->xn3       = $param->keterangan->nik_Anak;
+                $details->xs3       = $param->keterangan->jenis_kelamin;
+                $details->xs4       = $param->keterangan->tanggal_lahir;
+                $details->xs5       = $param->keterangan->tempat_Lahir;
+                $details->xs6       = $param->keterangan->agama;
+                $details->xn1       = $param->keterangan->nik_Anak;
+                $details->xn2       = $param->keterangan->anak_Ke;
+                $details->xn3       = $param->keterangan->dari;
                 // $details->xs5       = $param->keterangan->bahasa;
                 // $details->xs6       = $param->keterangan->status_anak;
                 $details->xs7       = $param->keterangan->kewarga_negaraan;
@@ -64,26 +67,30 @@ class Controller extends BaseController
                 $details->pendaftar_detail_type_id = 2;
                 $details->pendaftar_account_id = $param->keterangan->nik_Anak;
 
-                $details->xs5       = $param->tempat_tinggal->email;
-                $details->xs6       = $param->tempat_tinggal->notelp;
-                $details->xs8       = $param->tempat_tinggal->alamat;
-                $details->xs9       = $param->tempat_tinggal->tinggalbersama;
-                $details->xn4       = $param->tempat_tinggal->jaraksekolah;
+                $details->xs1       = $param->tempat_tinggal->email;
+                $details->xs2       = $param->tempat_tinggal->notelp;
+                $details->xs3       = $param->tempat_tinggal->alamat;
+                $details->xs4       = $param->tempat_tinggal->tinggalbersama;
+                $details->xn1       = $param->tempat_tinggal->jaraksekolah;
 
-                $details->xn5       = $param->kesehatan->beratbadan;
-                $details->xn6       = $param->kesehatan->tinggi;
-                $details->xs10      = $param->kesehatan->golongandarah;
-                $details->xs11      = $param->kesehatan->penyakit;
-                $details->xs1       = $param->kesehatan->kebutuhankhusus;
-                $details->xs4       = $param->kesehatan->kelainanlainnya;
-                $details->xs2       = $param->pendidikan->namatk;
-                $details->xs3       = $param->pendidikan->alamattk;
+
+                $details->xn2       = $param->kesehatan->beratbadan;
+                $details->xn3       = $param->kesehatan->tinggi;
+                $details->xs5       = $param->kesehatan->golongandarah;
+                $details->xs6       = $param->kesehatan->penyakit;
+                $details->xs7       = $param->kesehatan->kebutuhankhusus;
+                $details->xs8       = $param->kesehatan->kelainanlainnya;
+                $details->xs9       = $param->pendidikan->namatk;
+                $details->xs10       = $param->pendidikan->alamattk;
                 $details->save();      
+
 
             }
             $send = $this->send_email($param->keterangan->nik_Anak,$param->tempat_tinggal->email);
+
+
           
-            return "sukses";
+            return "success";
           
     		
     	} catch (Exception $e) {
@@ -116,4 +123,5 @@ class Controller extends BaseController
         return Mail::to($to)
                         ->send(new Pendaftares($nik));
     }
+
 }

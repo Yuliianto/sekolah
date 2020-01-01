@@ -1,10 +1,11 @@
 <div class="row">
     <div class="col-12">
-        <label class="h3">
-            Detail Biodata Calon Siswa
-        </label>
-        <p>dashboard ini berfungsi untuk melihat hasil pendaftaran calon siswa</p>
-    </div>
+        <h3 class="h3">
+            Informasi Pendaftara Siswa
+        </h3>
+        <p>Kami telah menerima permintaan pendafataran siswa dengan ringkasan data sebagai berikut,<br>
+           jika anda merasa tidak melakukan mohon abaikan pesan ini : </p>
+    </div><P></P>
     <div class="col-6">
         <table class="table">
             <thead>
@@ -108,3 +109,9 @@
         </table>
     </div>
 </div>
+
+<p>untuk melanjutkan pendaftaran silakan verifikasi dan unggah berkas yang dibutuhkan dengan cara klik <a href="mandiriteam.my.id/cek-pendaftaran/{{ $id }}"><button>verifikasi</button></a></p>
+
+----------------
+Panitia 
+SDIT Nurul Yaqin
