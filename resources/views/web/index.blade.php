@@ -80,17 +80,18 @@
 			<div class="w3-head-all mb-3">
 				<P>	
 				 	<h4 class="blockquote text-center">&nbsp; </h4> 
-				 	<h4 class="font-weight-normal text-center" style="color:#505359;">Assalamu'alaikum Warahmatullahi Wabarakatuh</h4> 
+				 	<h4 class="font-weight-normal text-center" style="color:#505359;">Assalamu'alaikum Warahmatullahi Wabarakatuh, Selamat Datang</h4> 
 				</p>
 			</div>
 		</div>
 </div>	
+
 <DIV class="CONTAINER">
 	<br><br>
 	<div class="container py-md-3">
 			<div class="d-flex">
 					<div class="about1"> 
-						<h4 >Selamat Datang</h4>
+						<h4>Kata Sambutan</h4>
 						<p class="details text-justify text-muted">Dengan mengucap puji dan syukur kehadirat Allah SWT, pembaharuan website SDIT NURUL YAQIN telah selesai dan secara bertahap website ini dapat dijadikan sebagai “jembatan” informasi bagi para Siswa/i, guru dan masyarakat luas yang membutuhkan informasi berkaitan dengan SDIT NURUL YAQIN. Website ini disusun lebih baik secara kualitas tampilan dan disesuaikan tata letaknya agar lebih mudah diakses bagi yang membutuhkan informasi seputar berita, prestasi, video-video aktifitas/ kegiatan, informasi pendaftaran siswa baru, dan informasi-informasi lainnya seputar akademik. Kepada semua pihak yang telah memberikan kontribusinya serta membantu sampai dengan penerbitan website ini, kami mengucapkan banyak terima kasih</p>
 						<br>
 						<footer class="blockquote-footer ">Kepala Sekolah <cite title="Source Title">SDIT Nurul Yaqin</cite></footer>
