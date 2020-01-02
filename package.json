@@ -13,6 +13,13 @@
         "axios": "^0.19",
         "bootstrap": "^4.0.0",
         "cross-env": "^5.1",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^5.0.0",
+        "gulp-clean": "^0.4.0",
+        "gulp-install": "^1.1.0",
+        "gulp-open": "^3.0.1",
+        "gulp-sass": "^4.0.1",
+        "gulp-sourcemaps": "^2.6.4",
         "jquery": "^3.2",
         "laravel-mix": "^4.0.7",
         "lodash": "^4.17.13",
@@ -20,14 +27,7 @@
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
-        "vue-template-compiler": "^2.6.10",
-        "gulp": "^3.9.1",
-        "gulp-autoprefixer": "^5.0.0",
-        "gulp-clean": "^0.4.0",
-        "gulp-install": "^1.1.0",
-        "gulp-sass": "^4.0.1",
-        "gulp-sourcemaps": "^2.6.4",
-        "gulp-open": "^3.0.1"
+        "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
         "material-dashboard": "^2.1.0"
