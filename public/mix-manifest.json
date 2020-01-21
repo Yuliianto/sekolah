@@ -1,4 +1,14 @@
 {
     "/js/app.js": "/js/app.js",
-    "/css/app.css": "/css/app.css"
+    "/css/app.css": "/css/app.css",
+    "/js/head.js": "/js/head.js",
+    "/material-dashboard/js/core/bootstrap-material-design.min.js": "/material-dashboard/js/core/bootstrap-material-design.min.js",
+    "/material-dashboard/js/core/jquery.min.js": "/material-dashboard/js/core/jquery.min.js",
+    "/material-dashboard/js/core/popper.min.js": "/material-dashboard/js/core/popper.min.js",
+    "/material-dashboard/js/plugins/bootstrap-notify.js": "/material-dashboard/js/plugins/bootstrap-notify.js",
+    "/material-dashboard/js/plugins/chartist.min.js": "/material-dashboard/js/plugins/chartist.min.js",
+    "/material-dashboard/js/plugins/perfect-scrollbar.jquery.min.js": "/material-dashboard/js/plugins/perfect-scrollbar.jquery.min.js",
+    "/material-dashboard/js/material-dashboard.js": "/material-dashboard/js/material-dashboard.js",
+    "/material-dashboard/js/material-dashboard.js.map": "/material-dashboard/js/material-dashboard.js.map",
+    "/material-dashboard/js/material-dashboard.min.js": "/material-dashboard/js/material-dashboard.min.js"
 }

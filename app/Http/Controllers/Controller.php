@@ -124,4 +124,13 @@ class Controller extends BaseController
                         ->send(new Pendaftares($nik));
     }
 
+    public function file_save(Request $req){
+        $name = $req->file('file')->getClientOriginalName();
+        $pendaftar = New_pendaftar::where('xn1',$req->id)->first();
+        // echo date_format($pendaftar->created_at,'Y/m/d');die();
+        $extension = $req->file('file')->extension();
+        $path = Storage::putFileAs(date_format($pendaftar->created_at,'Y/m/d'),$req->file('file'), $req->id."_".$name);
+        return $path;
+    }
+
 }

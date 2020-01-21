@@ -28,7 +28,7 @@
         </div>
         </div>
 
-            <button class="btn btn-primary" id="check">Daftar<i class="material-icons">done_outline</i></button>
+            
     </div>
     <div class="card-body min-vh-100">
         <div class="tab-content">
@@ -249,9 +249,13 @@
                   <input type="text" class="form-control" id="alamattk" name="alamattk" placeholder="alamat TK asal" required>
                 </div>
 
+                <div class="form-group">
+                  <button class="btn btn-primary" id="check">Daftar &nbsp; <i class="material-icons">done_outline</i></button>
+                </div>
+
 
                <!-- Upload foto dan berkas berkas -->
-                <h3>
+                <!-- <h3>
                   <center>Upload</center>
                 </h3>
                   <form id="my_form" enctype="multipart/form-data">
@@ -278,7 +282,7 @@
 				          	<label>Lain-lain(kartu imunisasi)</label><br>
 				          	<input type="file" class="form-control" name="multi_file[]">
 				          	<br>
-                  </form>
+                  </form> -->
                     
 <!-- 
                 <div class="form-group form-file-upload form-file-multiple">

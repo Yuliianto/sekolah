@@ -28,21 +28,31 @@ The above copyright notice and this permission notice shall be included in all c
     <!-- Material Kit CSS -->
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('dropzone/dropzone.min.css') }}" rel="stylesheet">
+
+
+    <script type="text/javascript" src="{{ asset('dropzone/dropzone.min.js') }}"></script>
     <!-- Icon -->
     <link rel="icon" type="image/gif" href="{{ asset('images/logo-nurul-yaqin.png') }}" />
-    <script
+    <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
+    <!-- <script
   src="https://code.jquery.com/jquery-3.4.1.min.js"
   integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script> -->
   
   <!-- Logo website -->
   <!-- <link rel="icon" type="image/gif" href="{{ asset('images/logo-nurul-yaqin.png') }}" /> -->
 
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
+
 </head>
 
 <body>
+
+
     
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -100,11 +110,22 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="row justify-content-md-center"> 
             <div class="col-md-8 col-sm-12">
                 @yield('content')    
+
+
+
             </div>
         </div>  
     </div>
 
-    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/core/bootstrap-material-design.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/core/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/core/popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/plugins/bootstrap-notify.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/plugins/chartist.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.js.map') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.min.js') }}"></script>
 
     <script type="text/javascript">
         $.ajaxSetup({
@@ -113,6 +134,7 @@ The above copyright notice and this permission notice shall be included in all c
             }
         });
     </script>
+
 </body>
 
 </html>

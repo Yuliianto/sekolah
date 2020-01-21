@@ -20,7 +20,7 @@
         "gulp-open": "^3.0.1",
         "gulp-sass": "^4.0.1",
         "gulp-sourcemaps": "^2.6.4",
-        "jquery": "^3.2",
+        "jquery": "^3.4.1",
         "laravel-mix": "^4.0.7",
         "lodash": "^4.17.13",
         "popper.js": "^1.12",
@@ -30,6 +30,8 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "bootstrap4-notify": "^4.0.3",
+        "bower": "^1.8.8",
         "material-dashboard": "^2.1.0"
     }
 }

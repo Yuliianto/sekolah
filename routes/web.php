@@ -11,6 +11,7 @@
 |
 */
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
 	$meta_data = array('page_name' => 'home',
@@ -62,11 +63,14 @@ Route::post('/get_detail','Controller@get_detail');
 Route::get('/cek-pendaftaran',function(){
 	return view('web.check-nopendaftaran');	
 });
+Route::post("/verify","HomeController@verify");
 
 Route::get('/cek-pendaftaran/{id}',function(Request $req, $id){
 	$plainTxtId = Crypt::decryptString($id);
 	return view('web.check-nopendaftaran',['id'=>$plainTxtId]);	
 });
+
+Route::post('/file-upload',"Controller@file_save");
 
 
 Route::get('/backend',function(){

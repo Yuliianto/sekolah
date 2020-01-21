@@ -28,6 +28,8 @@
   <!-- Material Kit CSS -->
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+  <!-- <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script> -->
 </head>
 
 <body>
@@ -52,6 +54,30 @@
             <a class="nav-link" href="#0">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
+            </a>
+          </li>
+          <li class="nav-item active  ">
+            <a class="nav-link" href="#0">
+              <i class="material-icons">verified_user</i>
+              <p>Verify</p>
+            </a>
+          </li>
+          <li class="nav-item active  ">
+            <a class="nav-link" href="#0">
+              <i class="material-icons">folder_open</i>
+              <p>Document</p>
+            </a>
+          </li>
+          <li class="nav-item active  ">
+            <a class="nav-link" href="#0">
+              <i class="material-icons">autorenew</i>
+              <p>Waiting Grade</p>
+            </a>
+          </li>
+          <li class="nav-item active  ">
+            <a class="nav-link" href="#0">
+              <i class="material-icons">notifications_active</i>
+              <p>Completed</p>
             </a>
           </li>
           <!-- your sidebar here -->
@@ -141,8 +167,17 @@
     </div>
   </div>
 
-
     <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/core/bootstrap-material-design.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/core/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/core/popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/plugins/bootstrap-notify.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/plugins/chartist.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.js.map') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.min.js') }}"></script>
 </body>
 
 </html>
