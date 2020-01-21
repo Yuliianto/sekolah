@@ -28,7 +28,7 @@
   <!-- Material Kit CSS -->
   <!-- Styles -->
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+  <meta name="csrf-token" content="{{ csrf_token() }}"> 
   <!-- <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script> -->
 </head>
 
@@ -51,13 +51,13 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active  ">
-            <a class="nav-link" href="#0">
+            <a class="nav-link" href="/home">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
           <li class="nav-item active  ">
-            <a class="nav-link" href="#0">
+            <a class="nav-link" href="/verify-page">
               <i class="material-icons">verified_user</i>
               <p>Verify</p>
             </a>
@@ -178,6 +178,81 @@
     <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.js') }}"></script>
     <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.js.map') }}"></script>
     <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.min.js') }}"></script>
+
+    <script type="text/javascript">
+      
+      $("#btn-del").click(function(){
+        $(".modal-body  input[name=id]").val($( this ).val());
+      });
+
+
+    </script>
+
+
+
+    <!-- Modal -->
+<div class="modal fade" id="remarkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Data</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Alasan untuk menghapus data?
+
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">remark</label>
+          <input type="hidden" name="id">
+          <textarea class="form-control" id="remark" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <span class="btn btn-primary" id="delete-ok" data-dismiss="modal" onclick ="del()">Delete</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script type="text/javascript">
+    function del(){
+       let _nik    =$("input[name=id]").val();
+        let _remark =$("#remark").val() 
+            $.ajax({
+              method: "post",
+              url: "/do_delete",
+              data: {nik: _nik, remark:_remark}
+            })
+            .done(function( result ) {
+              // $("#result .card-body").html(result);
+              // let res = JSON.stringify( result );
+              // alert(result);
+               $.notify({
+                    icon: "add_alert",
+                    message: "Delete data success"
+
+                },{
+                    type: 'success',
+                    timer: 4000,
+                    placement: {
+                        from: "top",
+                        align: "center"
+                    }
+                });
+            });
+    }
+
+  </script>
+  <script type="text/javascript">
+      $.ajaxSetup({
+          headers: {
+              'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          }
+      });
+  </script>
 </body>
 
 </html>

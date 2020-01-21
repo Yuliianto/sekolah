@@ -119,3 +119,5 @@ Route::post('/test_req',function(Request $req)
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/verify-page', 'HomeController@verify_page');
+Route::post('/do_delete', 'HomeController@delete_data');

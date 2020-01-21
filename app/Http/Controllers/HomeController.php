@@ -56,4 +56,28 @@ class HomeController extends Controller
         $verify = New_pendaftar::where('xn1',$nik)->update(['pendaftar_status_id'=>2]);
         return $nik;
     }
+
+
+    public function delete_data(Request $req){
+        $nik = $req->nik;
+        $remark = $req->remark;
+        $verify = New_pendaftar::where('xn1',$nik)->update(['pendaftar_status_id'=>6,'xs20'=>$remark]);
+        return $nik;
+    }
+
+    public function verify_page(){
+        $pendaftar = DB::select("
+            select a.xn1, d.name, a.xn2, a.xs1, a.created_at, b.xs3, b.xs4, b.xs5, b.xs6, b.xs7 
+            from 
+                        new_pendaftares a
+                        inner join sdit_nurulyaqin.new_pendaftar_details b on a.xn1 = b.pendaftar_account_id 
+                        inner join sdit_nurulyaqin.new_pendaftar_details c on a.xn1 = c.pendaftar_account_id 
+                        inner join sdit_nurulyaqin.new_pendaftar_statuses d on a.pendaftar_status_id = d.id  
+            where 
+                        b.pendaftar_detail_type_id =1
+                        and c.pendaftar_detail_type_id =2
+                        and a.pendaftar_status_id =2 ");
+        // print_r($pendaftar);die();
+        return view('backend.verify',['pendaftar'=>$pendaftar]);
+    }
 }
