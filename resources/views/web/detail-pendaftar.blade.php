@@ -3,7 +3,13 @@
         <label class="h3">
             Detail Biodata Calon Siswa
         </label>
-        <p>dashboard ini berfungsi untuk melihat hasil pendaftaran calon siswa</p>
+        <p>
+            dashboard ini berfungsi untuk melihat hasil pendaftaran calon siswa
+            <br>
+            <div class="badge badge-primary text-wrap" >
+              
+            </div>
+        </p>
     </div>
     <div class="col-6">
         <table class="table">
@@ -24,45 +30,45 @@
                 </tr>
                 <tr>
                     <td>Keterangan</td>
-                    <td>anak ke <label class="text-bold">{{ $detail->xn1 }}</label> dari <label class="text-bold">{{ $detail->xn2 }} bersaudara</label></td>
+                    <td>anak ke <label class="text-bold">{{ $detail->xn2 }}</label> dari <label class="text-bold">{{ $detail->xn3 }} bersaudara</label></td>
                 </tr>
                 <tr>
                     <td>Kontak</td>
-                    <td>{{ $detail2->xs6 }}</td>
+                    <td>{{ $detail2->xs2 }}</td>
                 </tr>
                 <tr>
                     <td>Email Orang Tua</td>
-                    <td>{{ $detail2->xs5 }}</td>
+                    <td>{{ $detail2->xs1 }}</td>
                 </tr>
                 <tr>
                     <td>Tinggal Bersama</td>
-                    <td>{{ $detail2->xs9 }}</td>
+                    <td>{{ $detail2->xs4 }}</td>
                 </tr>
                 <tr>
                     <td>Alamat</td>
-                    <td>{{ $detail2->xs8 }}</td>
+                    <td>{{ $detail2->xs3 }}</td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>Jarak Sekolah</td>
                     <td>{{ $detail2->xn4 }}</td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td>Golongan Darah</td>
-                    <td>{{ $detail2->xs10 }}</td>
+                    <td>{{ $detail2->xs5 }}</td>
                 </tr>
                 <tr>
                     <td>Penyakit</td>
-                    <td>{{ $detail2->xs11 }}</td>
+                    <td>{{ $detail2->xs6 }}</td>
                 </tr>
                 <tr>
                     <td>Berkebutuhan Khusus</td>
-                    <td>{{ $detail2->xs1 }}</td>
+                    <td>{{ $detail2->xs7 }}</td>
                 </tr>
 
-                <tr>
+                <!-- <tr>
                     <td>Kelainan</td>
                     <td>{{ $detail2->xs4 }}</td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td>Tgl Daftar</td>
                     <td>{{ $dt_pendaftaran->created_at }}</td>
@@ -98,7 +104,7 @@
                 </tr>
                 <tr>
                     <td>Asal TK</td>
-                    <td>{{ $detail2->xs2 }}</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Alamat TK</td>
@@ -106,9 +112,13 @@
                 </tr>
             </tbody>
         </table>
-        
-        
 
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 text-center">
+            <iframe src="https://www.classmarker.com/online-test/start/?quiz=fyn5e2c3250ae006&cm_fn={{ $dt_pendaftaran->xs1 }}&cm_ln={{ $detail->xs2 }}&cm_e={{ $detail2->xs1 }}&cm_user_id={{ $detail->xn1 }}&cm_access_list_item=456
+" frameborder= "0" style="width:100%;max-width:700px;" height="800"></iframe>
     </div>
 </div>
 <script type="text/javascript">

@@ -30,6 +30,10 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <meta name="csrf-token" content="{{ csrf_token() }}"> 
   <!-- <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script> -->
+  
+  <link href="{{ asset('dropzone/dropzone.min.css') }}" rel="stylesheet">
+  <script type="text/javascript" src="{{ asset('dropzone/dropzone.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
 </head>
 
 <body>
@@ -217,6 +221,27 @@
   </div>
 </div>
 
+
+<div class="modal fade bd-example-modal-lg" id="lookUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Data</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <span class="btn btn-primary" id="delete-ok" data-dismiss="modal" onclick ="del()">Delete</span> -->
+      </div>
+    </div>
+  </div>
+</div>
+
   <script type="text/javascript">
     function del(){
        let _nik    =$("input[name=id]").val();
@@ -245,6 +270,32 @@
             });
     }
 
+    $(".btn-lookup").click(function(){
+      let _nik    =$(this).val();
+        
+            $.ajax({
+              method: "post",
+              url: "/get-calon",
+              data: {nik: _nik}
+            })
+            .done(function( result ) {
+              $("#lookUp .modal-body").html(result);
+              // let res = JSON.stringify( result );
+              // alert(result);
+               // $.notify({
+               //      icon: "add_alert",
+               //      message: "Delete data success"
+
+               //  },{
+               //      type: 'success',
+               //      timer: 4000,
+               //      placement: {
+               //          from: "top",
+               //          align: "center"
+               //      }
+               //  });
+            });
+    });
   </script>
   <script type="text/javascript">
       $.ajaxSetup({

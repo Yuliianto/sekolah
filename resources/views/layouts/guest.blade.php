@@ -29,8 +29,6 @@ The above copyright notice and this permission notice shall be included in all c
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('dropzone/dropzone.min.css') }}" rel="stylesheet">
-
-
     <script type="text/javascript" src="{{ asset('dropzone/dropzone.min.js') }}"></script>
     <!-- Icon -->
     <link rel="icon" type="image/gif" href="{{ asset('images/logo-nurul-yaqin.png') }}" />
@@ -133,6 +131,8 @@ The above copyright notice and this permission notice shall be included in all c
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+
+        
     </script>
 
 </body>

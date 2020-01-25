@@ -95,10 +95,50 @@
         </div>
         
     </div>
+
 </div>
   
     <script type="text/javascript">
-    
+      Dropzone.autoDiscover =false;
+      var _id = $("input[name=id]").val();
+      var myDropZone = new Dropzone($('#myDropzone').get(0), {
+      acceptedFiles: ".pdf,.doc,.docx,.jpg,.jpeg,.png",
+      maxFilesize: 2, // MB
+      addRemoveLinks: true,
+      
+      removedfile: function(file) {
+        var name = file.name;
+        let _id = $("input[name=id]").val();
+
+        $.ajax({
+          type: "post",
+          url: "/remove",
+          data: { file: name, id:_id },
+          dataType: 'html'
+        });
+
+        // remove the thumbnail
+        var previewElement;
+        return (previewElement = file.previewElement) != null ? (previewElement.parentNode.removeChild(file.previewElement)) : (void 0);
+      },
+      init: function() {
+        var me = this;
+
+        $.get("/list-file/"+_id, function(data) {
+          // if any files already in server show all here
+          data = JSON.parse(data);
+          if (data.length > 0) {
+            $.each(data, function(key, value) {
+              var mockFile = value;
+              me.emit("addedfile", mockFile);
+              me.emit("thumbnail", mockFile,value.file_url);
+              me.emit("complete", mockFile);
+            });
+          }
+        });
+      }
+      });
+
       $("input").keypress(function(e){
         if (e.which == 13) {
           let _nik   =$("input[name=nik]").val();

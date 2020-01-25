@@ -73,7 +73,7 @@
                                           <td>2012</td>
                                           <td class="text-right">&euro; 89,241</td>
                                           <td class="td-actions text-right">
-                                              <button type="button" rel="tooltip" class="btn btn-info btn-round">
+                                              <button type="button" rel="tooltip" class="btn btn-info btn-round btn-lookup" data-toggle="modal" data-target="#lookUp" id="vesibility" value="{{ $column->xn1 }}">
                                                   <i class="material-icons">visibility</i>
                                               </button>
                                               <button type="button" rel="tooltip" class="btn btn-danger btn-round" data-toggle="modal" data-target="#remarkModal" id="btn-del" value="{{ $column->xn1 }}">

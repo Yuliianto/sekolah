@@ -70,18 +70,18 @@ Route::get('/cek-pendaftaran/{id}',function(Request $req, $id){
 	return view('web.check-nopendaftaran',['id'=>$plainTxtId]);	
 });
 
-Route::post('/file-upload',"Controller@file_save");
-
 
 Route::get('/backend',function(){
 	return view('backend.home');
 });
+Route::post('get-calon','HomeController@lookUp');
 
 Route::post('/test_req',function(Request $req)
 {	
 	$param = json_decode($req);
 	print_r($param);
 });
+
 
 // Route::get('/login',function(){
 // 	return view('auth.login');
@@ -121,3 +121,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/verify-page', 'HomeController@verify_page');
 Route::post('/do_delete', 'HomeController@delete_data');
+
+//Upload
+Route::get('/list-file/{id}','Upload@list_file');
+Route::post('/file-upload',"Upload@file_save");
+Route::post('/remove','Upload@remove_file');

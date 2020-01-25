@@ -14,8 +14,8 @@
           						<div class="ct-chart" id="dailySalesChart"></div>
           					</div>
           					<div class="card-body">
-          						<h4 class="card-title">Daily Sales</h4>
-          						<p class="card-category"><span class="text-success"><i class="fa fa-long-arrow-up"></i> 55%  </span>increase in today sales.</p>
+          						<h4 class="card-title">Total Pendaftar</h4>
+          						<p class="card-category"><span class="text-success"><i class="fa fa-long-arrow-up"></i> {{ $count }}  </span>increase in today sales.</p>
           					</div>
           					<div class="card-footer">
           						<div class="stats">
@@ -73,14 +73,14 @@
                                           <td>2012</td>
                                           <td class="text-right">&euro; 89,241</td>
                                           <td class="td-actions text-right">
-                                              <button type="button" rel="tooltip" class="btn btn-info btn-round">
+                                              <button type="button" rel="tooltip" class="btn btn-info btn-round btn-lookup" data-toggle="modal" data-target="#lookUp" id="person" value="{{ $column->xn1 }}">
                                                   <i class="material-icons">person</i>
                                               </button>
-                                              <button type="button" rel="tooltip" class="btn btn-success btn-round">
+                                              <button type="button" rel="tooltip" class="btn btn-success btn-round btn-lookup" data-toggle="modal" data-target="#lookUp" id="edit" value="{{ $column->xn1 }}">
                                                   <i class="material-icons">edit</i>
                                               </button>
-                                              <button type="button" rel="tooltip" class="btn btn-danger btn-round">
-                                                  <i class="material-icons">close</i>
+                                              <button type="button" rel="tooltip" class="btn btn-danger btn-round" data-toggle="modal" data-target="#remarkModal" id="btn-del" value="{{ $column->xn1 }}">
+                                                  <i class="material-icons">delete</i>
                                               </button>
                                           </td>
                                       </tr>

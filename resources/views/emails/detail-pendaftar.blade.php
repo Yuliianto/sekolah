@@ -5,8 +5,11 @@
         </h3>
         <p>Kami telah menerima permintaan pendafataran siswa dengan ringkasan data sebagai berikut,<br>
            jika anda merasa tidak melakukan mohon abaikan pesan ini : </p>
-    </div><P></P>
-    <div class="col-6">
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 text-center">
+        
         <table class="table">
             <thead>
                 <tr>
@@ -25,54 +28,52 @@
                 </tr>
                 <tr>
                     <td>Keterangan</td>
-                    <td>anak ke <label class="text-bold">{{ $detail->xn1 }}</label> dari <label class="text-bold">{{ $detail->xn2 }} bersaudara</label></td>
+                    <td>anak ke <label class="text-bold">{{ $detail->xn2 }}</label> dari <label class="text-bold">{{ $detail->xn3 }} bersaudara</label></td>
                 </tr>
                 <tr>
                     <td>Kontak</td>
-                    <td>{{ $detail2->xs6 }}</td>
+                    <td>{{ $detail2->xs2 }}</td>
                 </tr>
                 <tr>
                     <td>Email Orang Tua</td>
-                    <td>{{ $detail2->xs5 }}</td>
+                    <td>{{ $detail2->xs1 }}</td>
                 </tr>
                 <tr>
                     <td>Tinggal Bersama</td>
-                    <td>{{ $detail2->xs9 }}</td>
+                    <td>{{ $detail2->xs4 }}</td>
                 </tr>
                 <tr>
                     <td>Alamat</td>
-                    <td>{{ $detail2->xs8 }}</td>
+                    <td>{{ $detail2->xs3 }}</td>
                 </tr>
-                <tr>
+                <!-- <tr>
                     <td>Jarak Sekolah</td>
                     <td>{{ $detail2->xn4 }}</td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td>Golongan Darah</td>
-                    <td>{{ $detail2->xs10 }}</td>
+                    <td>{{ $detail2->xs5 }}</td>
                 </tr>
                 <tr>
                     <td>Penyakit</td>
-                    <td>{{ $detail2->xs11 }}</td>
+                    <td>{{ $detail2->xs6 }}</td>
                 </tr>
                 <tr>
                     <td>Berkebutuhan Khusus</td>
-                    <td>{{ $detail2->xs1 }}</td>
+                    <td>{{ $detail2->xs7 }}</td>
                 </tr>
 
-                <tr>
+                <!-- <tr>
                     <td>Kelainan</td>
                     <td>{{ $detail2->xs4 }}</td>
-                </tr>
+                </tr> -->
                 <tr>
                     <td>Tgl Daftar</td>
                     <td>{{ $dt_pendaftaran->created_at }}</td>
                 </tr>
             </tbody>
         </table>
-    </div>
 
-    <div class="col-4">
         <table class="table">
             <thead>
                 <tr>
@@ -99,7 +100,7 @@
                 </tr>
                 <tr>
                     <td>Asal TK</td>
-                    <td>{{ $detail2->xs2 }}</td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td>Alamat TK</td>
@@ -110,8 +111,8 @@
     </div>
 </div>
 
-<p>untuk melanjutkan pendaftaran silakan verifikasi dan unggah berkas yang dibutuhkan dengan cara klik <a href="mandiriteam.my.id/cek-pendaftaran/{{ $id }}"><button>verifikasi</button></a></p>
+<p>untuk melanjutkan pendaftaran silakan verifikasi dan unggah berkas yang dibutuhkan dengan cara klik <a href="localhost:8000/cek-pendaftaran/{{ $id }}"><button>verifikasi</button></a></p>
 
 ----------------
 Panitia 
-SDIT Nurul Yaqin
+
