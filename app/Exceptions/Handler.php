@@ -47,11 +47,6 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        if ($exception instanceof Illuminate\\Contracts\\Filesystem\\FileNotFoundException) {
-            return response()->json(['guid' => 0,
-                                     'code' => 0,
-                                     'message'=>'Tidak ada File']);
-        }
         return parent::render($request, $exception);
     }
 }

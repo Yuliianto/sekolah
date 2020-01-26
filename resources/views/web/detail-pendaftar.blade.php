@@ -117,8 +117,10 @@
 </div>
 <div class="row">
     <div class="col-12 text-center">
-            <iframe src="https://www.classmarker.com/online-test/start/?quiz=fyn5e2c3250ae006&cm_fn={{ $dt_pendaftaran->xs1 }}&cm_ln={{ $detail->xs2 }}&cm_e={{ $detail2->xs1 }}&cm_user_id={{ $detail->xn1 }}&cm_access_list_item=456
-" frameborder= "0" style="width:100%;max-width:700px;" height="800"></iframe>
+            
+          <iframe src="http://localhost/CI-class/" class="col-12" style="min-height: 500px; border: 0px;">
+            <p>Your browser does not support iframes.</p>
+          </iframe>
     </div>
 </div>
 <script type="text/javascript">

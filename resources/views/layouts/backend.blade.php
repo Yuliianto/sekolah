@@ -84,6 +84,12 @@
               <p>Completed</p>
             </a>
           </li>
+          <li class="nav-item active  ">
+            <a class="nav-link" href="/exam-dashboard">
+              <i class="material-icons">assignment</i>
+              <p>Create Exam</p>
+            </a>
+          </li>
           <!-- your sidebar here -->
         </ul>
       </div>

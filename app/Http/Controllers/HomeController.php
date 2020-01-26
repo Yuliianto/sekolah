@@ -16,6 +16,10 @@ use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use App\New_pendaftares as New_pendaftar;
 use App\New_pendaftar_details as New_pendaftar_details;
 use App\Mail\Pendaftares;
+use App\User;
+use App\Ciclassmhs as Mhs;
+use App\Ciclassmhs as Mahasiswa;
+use App\Ciclassusers as CIusers;
 
 class HomeController extends Controller
 {
@@ -97,11 +101,6 @@ class HomeController extends Controller
                                       'documents'=>$data_file]);
     }
 
-    public function verify(Request $req){
-        $nik = $req->nik;
-        $verify = New_pendaftar::where('xn1',$nik)->update(['pendaftar_status_id'=>2]);
-        return $nik;
-    }
 
 
     public function delete_data(Request $req){

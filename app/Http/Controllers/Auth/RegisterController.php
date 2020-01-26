@@ -7,6 +7,9 @@ use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Ciclassdosens as Dosen;
+use App\Ciclassmhs as Mahasiswa;
+use App\Ciclassusers as CIusers;
 
 class RegisterController extends Controller
 {
@@ -63,6 +66,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $dosen = Dosen::create([
+            'nik' => $data['email'],
+            'nama' => $data['name'],
+            'ttl' => date('Y-m-d'),
+            'gender'=>'laki - laki',
+            'agama'=>'islam'
+        ]);
+        $ciusers = CIusers::create([
+            'username' => $data['email'],
+            'email' => $data['email'],
+            'is_dosen' => 1,
+            'password' => Hash::make($data['password']),
+        ]);
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],

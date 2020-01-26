@@ -12,6 +12,8 @@
 */
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Http\Request;
+use App\Ciclassusers;
+use App\User;
 
 Route::get('/', function () {
 	$meta_data = array('page_name' => 'home',
@@ -63,7 +65,7 @@ Route::post('/get_detail','Controller@get_detail');
 Route::get('/cek-pendaftaran',function(){
 	return view('web.check-nopendaftaran');	
 });
-Route::post("/verify","HomeController@verify");
+Route::post("/verify","Controller@verify");
 
 Route::get('/cek-pendaftaran/{id}',function(Request $req, $id){
 	$plainTxtId = Crypt::decryptString($id);
@@ -75,11 +77,16 @@ Route::get('/backend',function(){
 	return view('backend.home');
 });
 Route::post('get-calon','HomeController@lookUp');
-
-Route::post('/test_req',function(Request $req)
+Route::get('/exam-dashboard',function(){
+	$users = App\Ciclassusers::find(1);
+	return view('backend.exam');
+});
+Route::get('/test_req',function(Request $req)
 {	
-	$param = json_decode($req);
-	print_r($param);
+	$a= User::all();
+	echo "<pre>";
+	print_r($a);
+	echo "</pre>";
 });
 
 

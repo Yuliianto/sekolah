@@ -19,6 +19,11 @@ use App\New_pendaftares as New_pendaftar;
 use App\New_pendaftar_details as New_pendaftar_details;
 use App\Mail\Pendaftares;
 
+use App\User;
+use App\Ciclassmhs as Mhs;
+use App\Ciclassmhs as Mahasiswa;
+use App\Ciclassusers as CIusers;
+
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
@@ -115,6 +120,39 @@ class Controller extends BaseController
         return view('web.detail-pendaftar',['dt_pendaftaran'=>$pendaftar,
                                             'detail'=>$detail,
                                             'detail2'=>$detail2]);
+    }
+
+
+    public function verify(Request $req){
+        $nik = $req->nik;
+        $verify = New_pendaftar::where('xn1',$nik)->update(['pendaftar_status_id'=>2]);
+        $param = DB::select("
+            select a.xn1 as nik, d.name, a.xn2, a.xs1 as nama, a.created_at, b.xs3 as jenkel, b.xs4 as tgl_lahir, b.xs5 as tempat_lahir, b.xs6, b.xs7, c.xs9 as asal_sekolah, c.xs10 as alamat_asel, c.xs1 as email
+            from 
+                        new_pendaftares a
+                        left join sdit_nurulyaqin.new_pendaftar_details b on a.xn1 = b.pendaftar_account_id 
+                        left join sdit_nurulyaqin.new_pendaftar_details c on a.xn1 = c.pendaftar_account_id 
+                        left join sdit_nurulyaqin.new_pendaftar_statuses d on a.pendaftar_status_id = d.id  
+            where 
+                        b.pendaftar_detail_type_id =1
+                        and c.pendaftar_detail_type_id = 2
+                        
+                        and a.xn1 = ".$req->nik);
+        $mhs = Mhs::create([
+            'nim' => $param[0]->nik,
+            'nama' => $param[0]->nama,
+            'ttl' => date('Y-m-d'),
+            'gender'=>'laki - laki',
+            'agama'=>'islam'
+        ]);
+        $ciusers = CIusers::create([
+            'username' => $param[0]->email,
+            'email' => $param[0]->email,
+            'is_dosen' => '0',
+            'password' => 'default',
+        ]);
+
+        return $nik;
     }
 
     public function send_email($nik,$reciver)
