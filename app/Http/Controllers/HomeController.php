@@ -20,6 +20,7 @@ use App\User;
 use App\Ciclassmhs as Mhs;
 use App\Ciclassmhs as Mahasiswa;
 use App\Ciclassusers as CIusers;
+use App\Contents as DataContent;
 
 class HomeController extends Controller
 {
@@ -54,7 +55,8 @@ class HomeController extends Controller
         $count = New_pendaftar::where('pendaftar_status_id','1')->count();
         // print_r($pendaftar);die();
         return view('backend.home',['pendaftar'=>$pendaftar
-                                    ,'count'=>$count]);
+                                    ,'count'=>$count
+                                    ,'active_mn'=>'home']);
     }
 
     public function lookUp(Request $req){
@@ -120,9 +122,167 @@ class HomeController extends Controller
                         inner join sdit_nurulyaqin.new_pendaftar_statuses d on a.pendaftar_status_id = d.id  
             where 
                         b.pendaftar_detail_type_id =1
-                        and c.pendaftar_detail_type_id =2
-                        and a.pendaftar_status_id =2 ");
+                        and c.pendaftar_detail_type_id =2 ");
         // print_r($pendaftar);die();
-        return view('backend.verify',['pendaftar'=>$pendaftar]);
+        return view('backend.verify',['pendaftar'=>$pendaftar,
+                                      'active_mn'=>'verify']);
+    }
+
+    public function frontend(){
+        $kontent = new DataContent();
+        $negara = DB::select(
+            "SELECT * FROM Contents WHERE content_type_id = 1 and xs1='NEGARA'"
+        );
+        $kontak = DB::select("
+            SELECT * FROM CONTENTS WHERE content_type_id = 1 AND XS1 = 'KONTAK'
+            ");
+
+        $lk_alamat = $kontent::where('content_type_id',1)
+                                ->where('xs1','ALAMAT')
+                                ->first();
+
+        $profil = $kontent::where('content_type_id',1)
+                                ->where('xs1','LOGO')
+                                ->first();
+        $lk_visimisi = $kontent::where('content_type_id',1)
+                                ->where('xs1','VISI_MISI')
+                                ->first();
+        $ls_content = $kontent::where('content_type_id',2)->get();
+        return view('backend.frontend',['dt_negara'=>$negara,
+                                        'list_kontak'=> $kontak,
+                                        'lk_alamat'=>$lk_alamat,
+                                        'lk_visimisi'=>$lk_visimisi,
+                                        'ls_content'=>$ls_content,
+                                        'profil'=>$profil,
+                                        'active_mn'=>'frontend']);
+    }
+    public function edit(Request $req){
+
+        $kontent = new DataContent();
+        $negara = DB::select(
+            "SELECT * FROM Contents WHERE content_type_id = 1 and xs1='NEGARA'"
+        );
+        $kontak = DB::select("
+            SELECT * FROM CONTENTS WHERE content_type_id = 1 AND XS1 = 'KONTAK'
+            ");
+
+        $lk_alamat = $kontent::where('content_type_id',1)
+                                ->where('xs1','ALAMAT')
+                                ->first();
+
+        $lk_visimisi = $kontent::where('content_type_id',1)
+                                ->where('xs1','VISI_MISI')
+                                ->first();
+        $dt_content = $kontent::where('id',$req->judul)->first();
+        return view('backend.fm_edit',['dt_negara'=>$negara,
+                                        'list_kontak'=> $kontak,
+                                        'lk_alamat'=>$lk_alamat,
+                                        'lk_visimisi'=>$lk_visimisi,
+                                        'dt_content'=>$dt_content,
+                                        'id_content'=>$req->judul,
+                                        'active_mn'=>'frontend']);
+    }
+    public function view_list_content(){
+        $kontent = new DataContent();
+        $ls_content = $kontent::where('content_type_id',2)->get();
+        return view("backend.view_ls_content",['ls_content'=>$ls_content]   );
+    }
+    public function update_address(Request $request){
+        $address = new DataContent();
+
+        $address::where('content_type_id',1)->where('xs1','ALAMAT')
+                ->update(
+                    ['xs2'=>$request->address,
+                     'xs3'=>$request->address2,
+                     'xs4'=>$request->city,
+                     'xs5'=>$request->state,
+                     'xs6'=>$request->zip,
+                     'xs7'=>$request->kontak]
+                );
+        $profil = new DataContent();
+        $profil::where('content_type_id',1)->where('xs1','LOGO')
+                    ->update([
+                              'xs2'=>$request->logo  ]);
+        echo "Update DONE!";
+    }
+
+    public function update_kontak(Request $request){
+        $kontak = new DataContent();
+        $kontak->xs1 = 'KONTAK';
+        $kontak->content_type_id= 1;
+        $kontak->xs3 = $request->kontakNumber;
+        $kontak->xs4 = $request->kontakName;
+        $kontak->create_at = date('y-m-d');
+        $kontak->save();
+        // redirect('/frontend');
+        echo "Update DONE!";
+    }
+
+    public function update_visi_misi(Request $request){
+        
+        $address = new DataContent();
+
+        $address::where('content_type_id',1)->where('xs1','VISI_MISI')
+                ->update(
+                    ['xs2'=>$request->iVisi,
+                     'xs3'=>$request->iMisi,
+                     'create_at' => date('y-m-d')]
+                );
+        return redirect('/frontend');
+    }
+
+    public function create_content(Request $request){
+        $content = new DataContent();
+        $content->content_type_id =2;
+        $content->xn1 = ($request->highlight == 1 ?  1:0);
+        $content->xs1 = $request->title;
+        $content->xs2 = $request->content_val;
+        $content->create_at = date('y-m-d');
+        
+        $content->save();
+        
+        
+        
+        /*
+
+        title: title,
+        content_val : content_val,
+        highlight : highlight
+        */
+        $param = array(
+            "judul" => $request->title,
+            "content_val" => $request->content_val,
+            "highlight" => $request->highlight
+        );
+        // return json_encode($negara);
+        
+    }
+
+
+    public function update_content(Request $request){
+        $content = DataContent::find($request->id_content);
+        $content->content_type_id =2;
+        $content->xn1 = ($request->highlight == 1 ?  1:0);
+        $content->xs1 = $request->title;
+        $content->xs2 = $request->content_val;
+        $content->create_at = date('y-m-d');
+        
+        $content->save();
+        
+        
+        
+        /*
+
+        title: title,
+        content_val : content_val,
+        highlight : highlight
+        */
+        $param = array(
+            "judul" => $request->title,
+            "content_val" => $request->content_val,
+            "highlight" => $request->highlight
+        );
+        // return json_encode($negara);
+        
     }
 }

@@ -50,22 +50,28 @@ class Upload extends Controller
             $isFoto = Storage::get("public/".$path."/".$req->id."_foto.jpg");    
             $files = Storage::allFiles('public/'.$path);
             
+            // echo $path.'/'.$req->id;
+            // print_r($files);die();
+            $seq =0;
             foreach ($files as $key => $file) {
                 if (substr($file, 18,16)==$req->id) {
-                    $data_file[$key] = array(
+                    $data_file[$seq] = array(
                         'name' => $file,
                         'size' => Storage::size($file),
                         'file_url' => Storage::url($file) 
-                    );
+                    ); 
+                    $seq++;
                 }
+                // echo substr($file,0); die();
             }
         } catch (FileNotFoundException $e) {
             $data_file= array();
         }
-
+        
         // header("Content-type: text/json");
         // header("Content-type: application/json");
-        echo json_encode($data_file);
+        // echo count($data_file);die();
+        return json_encode($data_file);
     }
     public function remove_file(Request $req){
         $file_path = "./".$req->file;

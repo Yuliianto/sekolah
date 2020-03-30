@@ -34,6 +34,11 @@
   <link href="{{ asset('dropzone/dropzone.min.css') }}" rel="stylesheet">
   <script type="text/javascript" src="{{ asset('dropzone/dropzone.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
+
+  <!-- Text Editor Trial -->
+<link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.6/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.6/js/froala_editor.pkgd.min.js"></script>
+  <!-- END ! -->
 </head>
 
 <body>
@@ -46,27 +51,24 @@
   -->
       <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-          SDIT
-        </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Portal
+          {{ $active_mn }}
         </a>
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active  ">
+          <li class="nav-item  {{ $active_mn === 'home' ? 'active':'' }}   ">
             <a class="nav-link" href="/home">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>
-          <li class="nav-item active  ">
+          <li class="nav-item  {{ $active_mn === 'verify' ? 'active' : '' }}  ">
             <a class="nav-link" href="/verify-page">
               <i class="material-icons">verified_user</i>
-              <p>Verify</p>
+              <p>Pendaftar</p>
             </a>
           </li>
-          <li class="nav-item active  ">
+          <!-- <li class="nav-item active  ">
             <a class="nav-link" href="#0">
               <i class="material-icons">folder_open</i>
               <p>Document</p>
@@ -83,11 +85,18 @@
               <i class="material-icons">notifications_active</i>
               <p>Completed</p>
             </a>
-          </li>
-          <li class="nav-item active  ">
+          </li> -->
+          <li class="nav-item  {{ $active_mn === 'exam' ? 'active':'' }} ">
             <a class="nav-link" href="/exam-dashboard">
               <i class="material-icons">assignment</i>
               <p>Create Exam</p>
+            </a>
+          </li>
+
+          <li class="nav-item {{ $active_mn === 'frontend' ? 'active':'' }}  ">
+            <a class="nav-link" href="/frontend">
+              <i class="material-icons">brush</i>
+              <p>Frontend</p>
             </a>
           </li>
           <!-- your sidebar here -->
@@ -249,6 +258,45 @@
 </div>
 
   <script type="text/javascript">
+function get_data_content(){
+  $.ajax({
+    method:"get",
+    url:"/get-tbody-content"}
+    ).done(function( result ){
+      $("#tbody-content").html(result);
+  });
+}
+
+function del_content(_id){
+  $.ajax({
+    method:"get",
+    url:"/del_content/"+_id
+  }).done(function( result ){
+    if (result ==='done') {
+      get_data_content();
+    }
+  });
+}
+
+
+
+      get_data_content();
+    $( document ).ready(function(){
+
+      $("#form-content").hide();
+      $("#add").click(function(){
+        $("#content-list").hide();
+        $("#form-content").show();
+        $(this).hide();
+      });
+      $("#close-content").click(function(){
+        get_data_content();
+        $("#form-content").hide();
+        $("#add").show();
+        $("#content-list").show();
+      });
+    });
+
     function del(){
        let _nik    =$("input[name=id]").val();
         let _remark =$("#remark").val() 
@@ -302,6 +350,103 @@
                //  });
             });
     });
+
+    $('#update-address').click(function(){
+      let address = $("#inputAddress").val();
+      let address2 = $("#inputAddress2").val();
+      let city = $("#inputCity").val();
+      let state = $("#inputState").val();
+      let zip = $("#inputZip").val();
+      let kontak = $("#inputKontak").val();
+      let logo = $("#inputLogo").val();
+
+      $.ajax(
+      {
+        method : "POST",
+        url: "/update-address",
+        data : {
+          address:address,
+          address2:address2,
+          city:city,
+          state:state,
+          zip:zip,
+          kontak : kontak,
+          logo: logo
+        }
+      }
+        ).done(function( result ){
+        console.log(result);
+      });
+    });
+
+    $("#update-kontak").click(function(){
+      let kontakName = $("#iKontakname").val();
+      let kontakNumber = $("#iKontaknumber").val();
+      $.ajax(
+      {
+        method : "POST",
+        url: "/update-kontak",
+        data : {
+          kontakName : kontakName,
+          kontakNumber : kontakNumber
+        }
+      }
+        ).done(function( result ){
+          location.reload();
+      });
+    });
+// save
+    $("#save-content").click(function(){
+      let title = $("#inputTitle").val();
+      let content_val = $("#inputContent").val();
+      let highlight =$("#inputHighlight").val();
+      let dataParse = {
+        title: title,
+        content_val : content_val,
+        highlight : highlight
+      };
+
+      $.ajax({
+        method : "POST",
+        url: "/create-content",
+        data : dataParse
+      }).done(function( result ){
+        let dt_table = JSON.parse(result);
+        let strdata= "";
+        for(let i=0; i < dt_table.length; i++){
+          strdata +='';
+        }
+        console.log(dt_table.length);
+      });
+    });
+
+    // edit 
+
+    $("#edit-content").click(function(){
+      let title = $("#inputTitle").val();
+      let content_val = $("#inputContent").val();
+      let highlight =$("#inputHighlight").val();
+      let id_content = $("#id_content").val();
+      let dataParse = {
+        title: title,
+        id_content: id_content,
+        content_val : content_val,
+        highlight : highlight
+      };
+      console.log(dataParse);
+      $.ajax({
+        method : "POST",
+        url: "/update-content",
+        data : dataParse
+      }).done(function( result ){
+        let dt_table = JSON.parse(result);
+        let strdata= "";
+        for(let i=0; i < dt_table.length; i++){
+          strdata +='';
+        }
+        console.log(dt_table.length);
+      });
+    });
   </script>
   <script type="text/javascript">
       $.ajaxSetup({
@@ -309,6 +454,53 @@
               'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
           }
       });
+
+
+      var editor = new FroalaEditor('textarea',{
+        heightMin:320
+      });
+
+
+function edit_content(_id){
+  $.ajax({
+    method:"get",
+    url:"/edit_content/"+_id
+  }).done(function( result ){
+    
+      // get_data_content();
+      var form_data = JSON.parse( result );
+      $("#inputTitle").val(form_data.xs1);
+      $("#inputContent").val(form_data.xs2);
+
+      
+      $(function(){
+        editor[3].html.set(form_data.xs2);
+        $("#inputContent").froalaEditor('html.set', '<p>My custom paragraph.</p>');
+      });
+      
+      if (form_data.xn1 === 1) {
+        $("#inputHighlight").attr('checked','checked');
+        $("#inputHighlight").val('1');
+      }
+      $("#save-content").attr("id","submit_update");
+      
+      $("#content-list").hide();
+      $("#form-content").show();
+      $("#add").hide();
+  });
+  
+}
+
+(function () {
+      const editorInstance = new FroalaEditor('textarea', {
+        enter: FroalaEditor.ENTER_P,
+        events: {
+          contentChanged: function () {
+            console.log('content changed')
+          }
+        }
+      })
+    })()
   </script>
 </body>
 

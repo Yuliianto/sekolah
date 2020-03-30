@@ -23,6 +23,7 @@ use App\User;
 use App\Ciclassmhs as Mhs;
 use App\Ciclassmhs as Mahasiswa;
 use App\Ciclassusers as CIusers;
+use App\Contents as DataContent;
 
 class Controller extends BaseController
 {
@@ -146,7 +147,7 @@ class Controller extends BaseController
             'agama'=>'islam'
         ]);
         $ciusers = CIusers::create([
-            'username' => $param[0]->email,
+            'username' => $param[0]->nik,
             'email' => $param[0]->email,
             'is_dosen' => '0',
             'password' => 'default',

@@ -18,7 +18,7 @@
 			<div class="agile_about_grids">
 
 				<div class="col-md-12">
-					<h4 class='text-center'>Membentuk Generasi Yang Mulia Dalam Pekerti,Unggul Dalam Prestasi, Teladan Bagi Negeri dan Bertaqwa Pada Ilahi</h4>
+					<h4 class='text-center'>{!! $lk_visimisi->xs2 !!}</h4>
 				</div>
 				
 				<div class="clearfix"> </div>
@@ -31,21 +31,7 @@
 	<div class="container  py-md-3">
 		<div class="w3-head-all mb-3">
 			<h3>MISI</h3>
-			<blockquote class="blockquote">
-			  <footer class="blockquote-footer">Menumbuhkembangkan <cite title="Source Title">perilaku terpuji dan praktik nyata</cite> sehigga siswa dapat menjadi teladan bagi teman dan masyarakatnya</footer>
-			</blockquote>
-			<blockquote class="blockquote">
-			  <footer class="blockquote-footer">Menyelenggarakan pembelajaran untuk menumbuhkembangkan kemampuan <cite title="Source Title">berpikir aktif, kreatif dan aktif</cite>dalam memecahkan masalah</footer>
-			</blockquote>
-			<blockquote class="blockquote">
-			  <footer class="blockquote-footer">Menyelenggarakan <cite title="Source Title">pengembangan diri</cite> sehingga siswa dapat berkembang sesuai dengan minat dan bakatnya</footer>
-			</blockquote>
-			<blockquote class="blockquote">
-			  <footer class="blockquote-footer">Melaksanakan dan menyelenggarakan kegiatan <cite title="Source Title">cinta tanah air</cite> dalam pembelajaran</footer>
-			</blockquote>
-			<blockquote class="blockquote">
-			  <footer class="blockquote-footer">Menumbuh kembangkan<cite title="Source Title"> lingkungan dan perilaku religius</cite> sehingga siswa dapat mengamalkan dan mengahayati agama islam secara nyata</footer>
-			</blockquote>
+			{!! $lk_visimisi->xs3 !!}
 		</div>
 		
 		<!--<div class="news_grids row">
@@ -87,7 +73,8 @@
 		         <h3>PELAKSANAAN</h3>
 		       </div>
 			<div class="offers-grids row">
-				<div class="col-md-6 wthree-offers-left">
+				{!! $ct_pelaksanaan->xs2 !!}
+				<!-- <div class="col-md-6 wthree-offers-left">
 					<div class="offers-left-heading">
 						<h4>Tujuan</h4>
 					</div>
@@ -141,7 +128,7 @@
 						<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Mampu berkomunikasi dengan baik</a></li>
 						<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Dapat mengoperasionalkan Komputer</a></li>
 						<li><a href="#" data-toggle="modal" data-target="#myModal"><i class="fa fa-angle-right" aria-hidden="true"></i> Memiliki keberanian dan kemandirian</a></li>
-					</ul>
+					</ul> -->
 				</div>
 				<div class="clearfix"> </div>
 			</div>

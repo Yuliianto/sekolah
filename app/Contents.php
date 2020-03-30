@@ -7,4 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Contents extends Model
 {
     //
+    protected $primaryKey = 'id';
 }

@@ -53,10 +53,6 @@
                                           <th>Status</th>
                                           <th>Anak ke</th>
                                           <th>Name</th>
-                                          <th>Job Position</th>
-                                          <th>Since</th>
-                                          <th>Since</th>
-                                          <th class="text-right">Salary</th>
                                           <th class="text-right">Actions</th>
                                       </tr>
                                   </thead>
@@ -68,10 +64,6 @@
                                           <td>{{ $column->name }}</td>
                                           <td>{{ $column->xn2 }}</td>
                                           <td>{{ $column->xs1 }}</td>
-                                          <td>Design</td>
-                                          <td>2012</td>
-                                          <td>2012</td>
-                                          <td class="text-right">&euro; 89,241</td>
                                           <td class="td-actions text-right">
                                               <button type="button" rel="tooltip" class="btn btn-info btn-round btn-lookup" data-toggle="modal" data-target="#lookUp" id="person" value="{{ $column->xn1 }}">
                                                   <i class="material-icons">person</i>

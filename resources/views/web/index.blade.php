@@ -2,16 +2,18 @@
 
 @section('content')
 <!--Slider-->
+
 <div class="slider">
 	<div class="callbacks_container">
 		<ul class="rslides callbacks callbacks1" id="slider4">
+			@foreach( $contents as $content)
 			<li>
 				<div class="slider-img1">
 					<div class="dot">
 						<div class="container" style="cursor: pointer;">
 							<div class="slider_banner_info_w3ls">
-								<h1 class="text-uppercase mb-3">Pendaftaran siswa baru</h1>
-								<p>Telah dibuka pendaftaran siswa baru 2019-2020, SDIT NURUL YAQIN. Untuk pendaftaran..</p>
+								<h1 class="text-uppercase mb-3">{{ $content->xs1 }}</h1>
+								<p>{!! $content->xs2 !!}</p>
 								<div class="d-flex justify-content-around">
 									<a href="/student-register" class="read" role="button">DAFTAR</a>
 									<a href="/cek-pendaftaran" class="read" role="button">CEK PENDAFTARAN</a>
@@ -21,6 +23,7 @@
 					</div>
 				</div>
 			</li>
+			@endforeach
 			<!-- <li>
 				<div class="slider-img2">
 					<div class="dot">
@@ -91,8 +94,8 @@
 	<div class="container py-md-3">
 			<div class="d-flex">
 					<div class="about1"> 
-						<h4>Kata Sambutan</h4>
-						<p class="details text-justify text-muted">Dengan mengucap puji dan syukur kehadirat Allah SWT, pembaharuan website SDIT NURUL YAQIN telah selesai dan secara bertahap website ini dapat dijadikan sebagai “jembatan” informasi bagi para Siswa/i, guru dan masyarakat luas yang membutuhkan informasi berkaitan dengan SDIT NURUL YAQIN. Website ini disusun lebih baik secara kualitas tampilan dan disesuaikan tata letaknya agar lebih mudah diakses bagi yang membutuhkan informasi seputar berita, prestasi, video-video aktifitas/ kegiatan, informasi pendaftaran siswa baru, dan informasi-informasi lainnya seputar akademik. Kepada semua pihak yang telah memberikan kontribusinya serta membantu sampai dengan penerbitan website ini, kami mengucapkan banyak terima kasih</p>
+						<h4>{{ $ct_sambutan->xs1 }}</h4>
+						<p class="details text-justify text-muted">{{ $ct_sambutan->xs2 }}</p>
 						<br>
 						<footer class="blockquote-footer ">Kepala Sekolah <cite title="Source Title">SDIT Nurul Yaqin</cite></footer>
 							<!--<li>
@@ -130,8 +133,8 @@
 						<span class="fas fa-chess-rook" aria-hidden="true"></span>
 						<div class="in-block">
 
-							<h1 style="color:#EADFF2;">Filosofi</h5>
-							<p class="font-weight-light " >Kami percaya bahwa murid di sekolah itu istimewa, memiliki bakat dan kekuatannya sendiri, dan potensinya dapat berkembang hingga mencapai tingkat penuh, kasih yang dikembangkan untuk belajar dan berprestasi serta melalui perolehan keterampilan berpikir kritis.</p>
+							<h1 style="color:#EADFF2;">{{ $ct_filosofi->xs1 }}</h5>
+							<p class="font-weight-light " >{{ $ct_filosofi->xs2 }}</p>
 
 						</div>
 					</li>
@@ -156,23 +159,23 @@
 				<div class="row">
 					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 w3layouts_stats_left w3_counter_grid">
 						<span class="fas fa-smile" aria-hidden="true"></span>
-						<p class="counter">436</p>
-						<h3>STUDENT</h3>
+						<p class="counter">{{ $calon_pendaftar }}</p>
+						<h3>Calon Mahasiswa</h3>
 					</div>
 					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6   w3layouts_stats_left w3_counter_grid1">
 						<span class="fas fa-bookmark" aria-hidden="true"></span>
-						<p class="counter">9</p>
-						<h3>EXTRAKULIKULER</h3>
+						<p class="counter">{{ $user_verify }}</p>
+						<h3>Verifikasi</h3>
 					</div>
 					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6  w3layouts_stats_left w3_counter_grid2">
 						<span class="fas fa-users" aria-hidden="true"></span>
-						<p class="counter">41</p>
-						<h3>TEACHERS</h3>
+						<p class="counter">{{ $mhs }}</p>
+						<h3>Mahasiswa</h3>
 					</div>
 					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6  w3layouts_stats_left w3_counter_grid3">
 						<span class="fas fa-trophy" aria-hidden="true"></span>
-						<p class="counter">200</p>
-						<h3>AWARDS WON</h3>
+						<p class="counter">{{ $tidak_lulus }}</p>
+						<h3>Tidak Lulus</h3>
 					</div>
 						<div class="clearfix"> </div>
 				</div>

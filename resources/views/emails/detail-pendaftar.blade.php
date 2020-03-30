@@ -111,7 +111,7 @@
     </div>
 </div>
 
-<p>untuk melanjutkan pendaftaran silakan verifikasi dan unggah berkas yang dibutuhkan dengan cara klik <a href="localhost:8000/cek-pendaftaran/{{ $id }}"><button>verifikasi</button></a></p>
+<p>untuk melanjutkan pendaftaran silakan verifikasi dan unggah berkas yang dibutuhkan dengan cara klik <a href="localhost:8000/cek-pendaftaran/{{ $id }}">http://localhost:8000/cek-pendaftaran/{{ $id }}</a></p>
 
 ----------------
 Panitia 

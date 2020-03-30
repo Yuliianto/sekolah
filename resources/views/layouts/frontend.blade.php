@@ -54,7 +54,7 @@
 			<nav class="navbar navbar-expand-lg navbar-light">
 				<a class="navbar-brand text-uppercase" href="/">
 					<img src="{{ asset('images/logo-nurul-yaqin.png') }}" style="width: 40px; height: 40px;">
-					<label class=""> SDIT Nurul Yaqin </label>
+					<label class=""> {{ $profil->xs2 }} </label>
 					<!-- <i class="fab fa-studiovinari"></i> -->
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -73,7 +73,7 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link {{ $page_name === 'gallery' ? 'active':'' }}" href="/gallery">Gallery</a>
-						</li>
+						</li><!-- 
 						<li class="dropdown nav-item">
 							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Mamber Area
 								<b class="caret"></b>
@@ -86,7 +86,7 @@
 									<a href="/register">Register</a>
 								</li>
 							</ul>
-						</li>
+						</li> -->
 						<li class="nav-item">
 							<a class="nav-link {{ $page_name === 'contact' ? 'active':'' }}" href="/contact">Contact</a>
 						</li>

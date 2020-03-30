@@ -30,7 +30,7 @@
 							<div class="col-lg-4 col-sm-6 col-xs-12 mail-agileits-w3layouts mail-agileits-w3layouts1">
 								<i class="fas fa-map-marker" aria-hidden="true"></i>
 								<div class="contact-right">
-									<p>Address</p><span>SDI No. 50, Batu Ampar, Kramat Jati 13520</span>
+									<p>Address</p><span>{{ $lk_alamat->xs2 }}</span>
 								</div>
 							</div>
 							<div class="clearfix"></div>

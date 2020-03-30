@@ -132,7 +132,7 @@
                     <li class="breadcrumb-item active" aria-current="page">Alamat</li>
                   </ol>
                 </nav>
-                
+                <center class='h3'> Keterangan Alamat Calon Siswa </center>
                   <div class="form-group">
                     <label for="email">Email Orang Tua</label>
                     <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="name@example.com" required>
@@ -154,7 +154,7 @@
                   <div class="form-group">
                     <div class="row">
                       <div class="col">
-                        <label for="tinggalbersama">Selama sekolah tinggal bersama : </label>
+                        <label for="tinggalbersama">Selama kuliah tinggal bersama : </label>
                         <select class="form-control selectpicker" data-style="btn btn-link" id="tinggalbersama" name="tinggalbersama" required>
                           <option value="orangtua">Orang Tua</option>
                           <option value="saudara">Saudara</option>
@@ -178,7 +178,7 @@
                     <li class="breadcrumb-item active" aria-current="page">Kesehatan</li>
                   </ol>
                 </nav>
-                
+                <center class='h3'> Keterangan Kesehatan Calon Siswa </center>
                   <div class="form-group">
                     <label for="beratbadan">Berat badan :</label>
                     <input type="number" class="form-control" id="beratbadan" name="beratbadan"placeholder="00" required>
@@ -241,12 +241,12 @@
                   <center> Keterangan Pendidikan Calon Siswa </center>
                 </h3>
                 <div class="form-group">
-                  <label for="namatk">Nama TK/RA</label>
-                  <input type="text" class="form-control" id="namatk" name="namatk" placeholder="isi kan nama TK asal" required>
+                  <label for="namatk">Asal Sekolah</label>
+                  <input type="text" class="form-control" id="namatk" name="namatk" placeholder="Tulis nama sekolah" required>
                 </div>
                 <div class="form-group">
-                  <label for="alamattk">Alamat TK/RA</label>
-                  <input type="text" class="form-control" id="alamattk" name="alamattk" placeholder="alamat TK asal" required>
+                  <label for="alamattk">Alamat Sekolah</label>
+                  <input type="text" class="form-control" id="alamattk" name="alamattk" placeholder="Tulis alamat sekolah" required>
                 </div>
 
                 <div class="form-group">
