@@ -184,7 +184,7 @@
 	<!-- //stats -->
 
 
-<!-- appointment -->
+<!-- appointment --><!-- 
 <div class="appointment" id="appointment">
 <div class="container-fluid  py-md-3">
 <div class="row">
@@ -230,7 +230,7 @@
 		<div class="clearfix"> </div>
 		</div>
 		</div>
-</div>
+</div> -->
 <!-- //appointment -->
 
 <!-- footer -->
