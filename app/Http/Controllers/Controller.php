@@ -33,7 +33,7 @@ class Controller extends BaseController
     public function do_register(Request $request)
     {
     	$param = json_decode($request->param);
-    	
+    	$check= array();
     	$store = new New_pendaftar;
     	try {
     		
@@ -47,6 +47,7 @@ class Controller extends BaseController
     		
     		if ($store->save()) {
                 // type 1 keterangan
+                $check['pendaftar'] = true;
 
                 $details = new New_pendaftar_details; 
                 $lastid = DB::getPDO()->lastInsertID();
@@ -59,7 +60,7 @@ class Controller extends BaseController
                 $details->xs4       = $param->keterangan->tanggal_lahir;
                 $details->xs5       = $param->keterangan->tempat_Lahir;
                 $details->xs6       = $param->keterangan->agama;
-                $details->xn1       = $param->keterangan->nik_Anak;
+                // $details->xn1       = $param->keterangan->nik_Anak;
                 $details->xn2       = $param->keterangan->anak_Ke;
                 $details->xn3       = $param->keterangan->dari;
                 // $details->xs5       = $param->keterangan->bahasa;
@@ -88,7 +89,10 @@ class Controller extends BaseController
                 $details->xs8       = $param->kesehatan->kelainanlainnya;
                 $details->xs9       = $param->pendidikan->namatk;
                 $details->xs10       = $param->pendidikan->alamattk;
-                $details->save();      
+                if ($details->save()) {
+                    $check['detail_pendaftar'] = true;
+                }
+                      
 
 
             }
@@ -96,7 +100,13 @@ class Controller extends BaseController
 
 
           
-            return "success";
+            if ($send && !in_array(false, $check)) {
+                return response()->json([
+                    'guid'=>0,
+                    'code'=>1,
+                    'data'=>'Registrasi telah berhasil silakan check email anda'
+                ]);
+            }
           
     		
     	} catch (Exception $e) {
@@ -112,15 +122,18 @@ class Controller extends BaseController
     public function get_detail(Request $request)
     {
         $nik = $request->nik;
-        $pendaftar = New_pendaftar::where('xn1',$nik)->first();
+        $pendaftar = New_pendaftar::find($nik);
         $detail = New_pendaftar_details::where('pendaftar_account_id',$nik)
                                             ->where('pendaftar_detail_type_id',1)->first();
         $detail2 = New_pendaftar_details::where('pendaftar_account_id',$nik)
                                             ->where('pendaftar_detail_type_id',2)->first();
+        // print_r($pendaftar->pendaftar_status_id);die();
+        $status = New_pendaftar::find($nik)->status;
         
         return view('web.detail-pendaftar',['dt_pendaftaran'=>$pendaftar,
                                             'detail'=>$detail,
-                                            'detail2'=>$detail2]);
+                                            'detail2'=>$detail2,
+                                            'status'=>$status]);
     }
 
 

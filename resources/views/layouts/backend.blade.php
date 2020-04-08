@@ -39,6 +39,21 @@
 <link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.6/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.6/js/froala_editor.pkgd.min.js"></script>
   <!-- END ! -->
+<style type="text/css">
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
 </head>
 
 <body>
@@ -202,6 +217,7 @@
       
       $("#btn-del").click(function(){
         $(".modal-body  input[name=id]").val($( this ).val());
+        console.log($( this ).val());
       });
 
 
@@ -223,8 +239,12 @@
         Alasan untuk menghapus data?
 
         <div class="form-group">
+          <label for="id">ID number</label>
+          <input type="text" class="form-control" name="id" disabled="true">
+        </div>
+        <div class="form-group">
           <label for="exampleFormControlTextarea1">remark</label>
-          <input type="hidden" name="id">
+          <!-- <input type="text" class="form-control" name="id"> -->
           <textarea class="form-control" id="remark" rows="3"></textarea>
         </div>
       </div>
@@ -350,6 +370,29 @@ function del_content(_id){
                //  });
             });
     });
+// Generate
+
+
+    $("#generate").click(function(){
+      let kelas_id = $("select[name=kelas_id]").val();
+      
+      $.ajax(
+      {
+        method : "POST",
+        url: "/generate",
+        data : {
+          kelas_id : kelas_id
+          
+        }
+      }
+        ).done(function( result ){
+          if (result.message){
+              location.reload();
+          }
+      });
+    });
+// end Generate
+
 
     $('#update-address').click(function(){
       let address = $("#inputAddress").val();

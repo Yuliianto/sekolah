@@ -111,13 +111,13 @@
                       <div class="col">
                         <div class="form-group">
                           <label for="anakke">Anak ke</label>
-                          <input type="number" name="anakke" class="form-control" placeholder="2" required>
+                          <input type="number" name="anakke" class="form-control" placeholder="2" min="0" required>
                         </div>
                       </div>
                       <div class="col">
                         <div class="form-group">
                           <label>dari</label>
-                          <input type="number" name="dari" class="form-control" placeholder="2" required>
+                          <input type="number" name="dari" class="form-control" placeholder="2" min="0" required>
                         </div>
                       </div>
                     </div>
@@ -134,7 +134,7 @@
                 </nav>
                 <center class='h3'> Keterangan Alamat Calon Siswa </center>
                   <div class="form-group">
-                    <label for="email">Email Orang Tua</label>
+                    <label for="email">Email</label>
                     <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" placeholder="name@example.com" required>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -144,11 +144,11 @@
                   </div>
                   <p><p>
                   <div class="form-group">
-                    <label for="notelp">Nomor What's App Aktif</label>
+                    <label for="notelp">Nomor HP</label>
                     <input type="number" class="form-control" id="notelp" name="notelp" placeholder="08121828xxx" required>
                   </div>
                   <div class="form-group">
-                    <label for="alamat">Alamat tempat tinggal :</label>
+                    <label for="alamat">Alamat :</label>
                     <textarea class="form-control" id="alamat" rows="3" name="alamat"  placeholder="Jalan kerja bakti xxxxx" required></textarea>
                   </div>
                   <div class="form-group">
@@ -163,7 +163,7 @@
                        </div>
                        <div class="col">
                         <label for="jaraksekolah">Jarak dari rumah ke sekolah : </label>
-                        <input type="number" class="form-control" id="jaraksekolah" name="jaraksekolah" placeholder="20 meter" required>
+                        <input type="number" class="form-control" id="jaraksekolah" name="jaraksekolah" placeholder="20" required>
                       </div>
                     </div>  
                   </div>
@@ -353,8 +353,12 @@
     </div>
 </div>
 
+<div class="fixed-top loading" style="width: 100%; height: 100%; background: rgba(0,0,0,0.5);">
+<div class="loader fixed-top" style="margin: auto; top: 300px;"></div></div>
     <script type="text/javascript">
-      
+      $( document ).ready(function(){
+        $(".loading").css('display','none');
+      });
 
       function usia(_tgllahir) {
         let lahir = new Date(_tgllahir);
@@ -371,6 +375,7 @@
       }
       
       $("#check").click(function(){
+        $(".loading").css('display','block');
         let _nama_lengkap    =$("input[name=name]").val();
         let _nama_Panggilan  =$("input[name=nama-panggilan]").val();
         let _jenis_kelamin   =$("input[name=jenis_kelamin]").val();
@@ -445,7 +450,7 @@
           if (tgl) {
               umur  = usia(tgl);
           }
-          if (umur >= 6) {
+          if (true) {
             $.ajax({
               method: "post",
               url: "/do_register",
@@ -454,9 +459,30 @@
             })
             .done(function( result ) {
               // $("#result-data").html(result);
-              let res = JSON.stringify( result );
-              alert(res);
+              // let res = JSON.stringify( result );
+              
+              $(".loading").css('display','none');
+              
+              $.notify({
+                    icon: "add_alert",
+                    message: "Registrasi berhasil, Silikan check inbox email anda"
+
+                },{
+                    type: 'success',
+                    timer: 4000,
+                    placement: {
+                        from: "top",
+                        align: "center"
+                    }
+                });
+              setTimeout(function(){
+                window.open('https://accounts.google.com/');
+                location.replace('http://localhost:8000/');
+              },4000);
+              
+              
             });
+
           }else{
             alert("usia tidak memenuhi persyaratan");
           }
@@ -466,7 +492,12 @@
       function showDiv(divId, element){
           document.getElementById(divId).style.display = element.value == 'dll' ? 'block' : 'none';
       };
-      
+      $("input[name=nik]").keypress(function(e){
+          if(e.which===114){
+            $(this).val(Math.floor(Math.random() * 100)+9998765666789543);
+          }
+      });
+
     </script>
 @endsection
 

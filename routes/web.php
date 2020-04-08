@@ -282,6 +282,9 @@ Route::get('/register', function () {
                         'profil'=> $profil );
     return view('layout.guest',$meta_data);
 });
+Route::get('/ujian',function(){
+    return view('web.ujian');
+});
 // Route::get('/gallery', function () {
 // 	$meta_data = array('page_name' => 'gallery',
 // 						'title'		=> 'Gallery :: SDIT Nurul Yaqin' );
@@ -358,13 +361,15 @@ Route::get('/edit_content/{id}',function($_id){
         return "not working";
     }
 });
+Route::post('/generate','HomeController@generate');
 
 Route::get('/test_req',function(Request $req)
 {	
-	$a= User::all();
-	echo "<pre>";
-	print_r($a);
-	echo "</pre>";
+	return response()->json([
+                    'guid'=>0,
+                    'code'=>1,
+                    'data'=>'Registrasi telah berhasil silakan check email anda'
+                ]);
 });
 Route::get('/edit_fm/{judul}','HomeController@edit');
 

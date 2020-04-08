@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
+use GuzzleHttp\Exception\GuzzleException;
+use GuzzleHttp\Client;
 
 // Model
 use App\New_pendaftares as New_pendaftar;
@@ -114,7 +116,7 @@ class HomeController extends Controller
 
     public function verify_page(){
         $pendaftar = DB::select("
-            select a.xn1, d.name, a.xn2, a.xs1, a.created_at, b.xs3, b.xs4, b.xs5, b.xs6, b.xs7 
+            select a.xn1, d.name, a.xn2, a.xs1, a.created_at, c.xs3, c.xs2, b.xs5, b.xs6, b.xs7, a.xn3, c.xs9
             from 
                         new_pendaftares a
                         inner join sdit_nurulyaqin.new_pendaftar_details b on a.xn1 = b.pendaftar_account_id 
@@ -123,9 +125,36 @@ class HomeController extends Controller
             where 
                         b.pendaftar_detail_type_id =1
                         and c.pendaftar_detail_type_id =2 ");
-        // print_r($pendaftar);die();
+        $client = new Client();
+        $response = $client->request('GET','http://localhost/CI-class/index.php/web/daftar_kelas#');
+        // print_r($response->getStatusCode());echo "<br>";
+        // print_r($response->getHeaderLine('content-type'));echo "<br>";
+        $kuiz = json_decode($response->getBody()->getContents());
+
+        $detail_instance = new New_pendaftar();
+        $detail = $detail_instance::has('detail')->whereHas('detail',function($query){
+            $query->where('pendaftar_detail_type_id','<=',1);
+        })->get();
+        
         return view('backend.verify',['pendaftar'=>$pendaftar,
-                                      'active_mn'=>'verify']);
+                                      'active_mn'=>'verify',
+                                      'dt_tes'=>$detail,
+                                      'kuiz'=>$kuiz]);
+    }
+
+    public function generate(Request $req){
+        $kelas_id = $req->kelas_id;
+        $client = new Client();
+        $response = $client->request('GET','http://localhost/CI-class/index.php/web/getJawaban/'.$kelas_id);
+        $hasil = json_decode($response->getBody()->getContents());
+        foreach ($hasil->hasil as $value) {
+            $gate = new New_pendaftar();
+            $candidat = $gate::where('xn1',$value->nim)
+                                ->update([
+                                          'xn3'=>($value->total_benar/$hasil->jml_soal)*100  ]);
+
+        }
+        return response()->json(["guid"=>0,"code"=>0,"message"=>"success"]);
     }
 
     public function frontend(){

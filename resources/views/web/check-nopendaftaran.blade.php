@@ -59,34 +59,18 @@
             </div>
           </div>
         </div>
-        <div class="card" id="">
-          <div class="card-body">
-                
-        <label class="h3">
-            Upload Berkas dan Verifikasi Pendaftaran
-        </label>
-        <p>
-          Silakan upload berkas anda dengan ketentuan sebagai berikut
-          <ol>
-            <li>Nama file sesusai dengan jenis berkas contoh berkas Ijazah.jpg/Ijazah.pdf</li>
-            <li>Berkas file tidak boleh lebih dari 2 MB</li>
-            <li>Mohon diperhatikan kejelasan dan kualitas berkas</li>
-          </ol>
-          Setelah melakukan upload berkas silakan klik tombol verifikasi dan kami akan menyimpan berkas anda
 
-        </p>
+<div class="jumbotron">
+  <h1 class="display-4">Check Pendaftaran</h1>
+  <p class="lead">Untuk melanjutkan proses pendaftaran mohon untuk selesaikan tahapan yang ada di halaman ini </p>
+  <hr class="my-4">
+  <p>lakukan verikasi untuk lanjut proses berikutnya</p>
+  <p class="lead">
+    <button class="btn btn-primary btn-lg text-center" id="verify">verifikasi</button>
+    <a href="http://localhost:8000/ujian" target="_blank" class="btn btn-success btn-lg text-center" id="test">Test</a>
+  </p>
+</div>
 
-
-                <form action="/file-upload" class="dropzone" id="myDropzone">
-                  {{ csrf_field() }}
-                    <div class="fallback">
-                        <input name="file" type="file" multiple />
-                    </div>
-                    <input type="number" name="id" value="{{ $id }}" hidden="true">
-                </form>
-                <button class="btn btn-primary btn-lg text-center" id="verify">Verify</button>
-          </div>
-        </div>
         <div class="card" id="result">
           <div class="card-body">
             
@@ -94,8 +78,30 @@
           </div>
         </div>
         
-    </div>
 
+        <div class="card" id="panel-upload">
+          <div class="card-body">
+                
+       <!--  <label class="h3">
+            Upload Berkas dan Verifikasi Pendaftaran
+        </label> -->
+                <form action="/file-upload" class="dropzone" id="myDropzone">
+                  {{ csrf_field() }}
+                    <div class="fallback">
+                        <input name="file" type="file" multiple />
+                    </div>
+                    @isset($id)
+                    <input type="number" name="id" value="{{ $id }}" hidden="true">
+                    @endisset
+                    @empty($id)
+                    <input type="number" name="id" value="" hidden="true">
+                    @endempty
+                </form>
+                
+          </div>
+        </div>
+
+    </div>
 </div>
   
     <script type="text/javascript">
@@ -142,6 +148,8 @@
       $("input").keypress(function(e){
         if (e.which == 13) {
           let _nik   =$("input[name=nik]").val();
+          $("input[name=id]").val(_nik);
+          myDropZone;
             $.ajax({
               method: "post",
               url: "/get_detail",
@@ -178,7 +186,14 @@
                         align: "center"
                     }
                 });
+               location.reload();
             });
+      });
+
+      $( document ).ready(function(){
+        $("#panel-upload").css('display','none');
+        $("#verify").css('display','none');
+        $("#test").css("display",'none');
       });
     </script>
 @endsection

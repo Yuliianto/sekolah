@@ -6,9 +6,6 @@
         <p>
             dashboard ini berfungsi untuk melihat hasil pendaftaran calon siswa
             <br>
-            <div class="badge badge-primary text-wrap" >
-              
-            </div>
         </p>
     </div>
     <div class="col-6">
@@ -16,7 +13,9 @@
             <thead>
                 <tr>
                     <th class="text-center"></th>
-                    <th></th>
+                    <th>
+                        
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -110,6 +109,27 @@
                     <td>Alamat TK</td>
                     <td>{{ $detail2->xs3 }}</td>
                 </tr>
+
+                <tr>
+                    <td colspan="2"><label class="font-weight-bold">Hasil</label></td>
+                </tr>
+                <tr>
+                    <td>Nilai</td>
+                    <td><label class="font-weight-bold">{{ $detail2->xs3 }}</label></td>
+                </tr>
+                <tr>
+                    <td>Keterangan</td>
+                    <td><label class="font-weight-bold">{{ $detail2->xs3 }}</label></td>
+                </tr>
+                <tr>
+                    <td>Status Pendaftaran</td>
+                    <td>
+                        <div class="badge badge-primary text-wrap h5" >
+                            {{ $status->name }}
+                        </div>
+                    </td>
+                </tr>
+            
             </tbody>
         </table>
 
@@ -118,11 +138,17 @@
 <div class="row">
     <div class="col-12 text-center">
             
-          <iframe src="http://localhost/CI-class/" class="col-12" style="min-height: 500px; border: 0px;">
+          <!-- <iframe src="http://localhost/CI-class/" class="col-12" style="min-height: 500px; border: 0px;">
             <p>Your browser does not support iframes.</p>
-          </iframe>
+          </iframe> -->
     </div>
 </div>
 <script type="text/javascript">
-
+    if ("{{ $status->id }}" >= 2) {
+        $("#panel-upload").css('display','block');
+        $("#test").css("display",'block');
+    }else if("{{ $status->id }}" < 2){
+        $("#verify").css('display','block');
+        $("#test").css("display",'none');
+    }
 </script>

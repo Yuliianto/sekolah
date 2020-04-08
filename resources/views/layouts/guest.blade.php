@@ -45,7 +45,21 @@ The above copyright notice and this permission notice shall be included in all c
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
 
+<style type="text/css">
+.loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    animation: spin 2s linear infinite;
+}
 
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
 </head>
 
 <body>
@@ -126,6 +140,12 @@ The above copyright notice and this permission notice shall be included in all c
     <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.min.js') }}"></script>
 
     <script type="text/javascript">
+        $("input[type=number]").change(function() {
+            let _val = $(this).val();
+            if (_val < 0 ) {
+                $(this).val("0");
+            }
+        });
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
