@@ -125,7 +125,7 @@
                     <td>Status Pendaftaran</td>
                     <td>
                         <div class="badge badge-primary text-wrap h5" >
-                            {{ $status->name }}
+                            {{ $status->status->name }}
                         </div>
                     </td>
                 </tr>
@@ -144,10 +144,10 @@
     </div>
 </div>
 <script type="text/javascript">
-    if ("{{ $status->id }}" >= 2) {
+    if ("{{ $status->status->id }}" >= 2) {
         $("#panel-upload").css('display','block');
         $("#test").css("display",'block');
-    }else if("{{ $status->id }}" < 2){
+    }else if("{{ $status->status->id }}" < 2){
         $("#verify").css('display','block');
         $("#test").css("display",'none');
     }

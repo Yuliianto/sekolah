@@ -122,13 +122,14 @@ class Controller extends BaseController
     public function get_detail(Request $request)
     {
         $nik = $request->nik;
-        $pendaftar = New_pendaftar::find($nik);
+        $pendaftar = New_pendaftar::where('xn1',$nik)->first();
         $detail = New_pendaftar_details::where('pendaftar_account_id',$nik)
                                             ->where('pendaftar_detail_type_id',1)->first();
         $detail2 = New_pendaftar_details::where('pendaftar_account_id',$nik)
                                             ->where('pendaftar_detail_type_id',2)->first();
         // print_r($pendaftar->pendaftar_status_id);die();
-        $status = New_pendaftar::find($nik)->status;
+        $status = New_pendaftar::where('xn1',$nik)->has('status')->first();
+        
         
         return view('web.detail-pendaftar',['dt_pendaftaran'=>$pendaftar,
                                             'detail'=>$detail,
