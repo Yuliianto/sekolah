@@ -83,12 +83,13 @@
               <p>Pendaftar</p>
             </a>
           </li>
-          <!-- <li class="nav-item active  ">
-            <a class="nav-link" href="#0">
+          <li class="nav-item  {{ $active_mn === 'interview' ? 'active' : '' }} ">
+            <a class="nav-link" href="/interview">
               <i class="material-icons">folder_open</i>
-              <p>Document</p>
+              <p>Interview</p>
             </a>
           </li>
+          <!-- 
           <li class="nav-item active  ">
             <a class="nav-link" href="#0">
               <i class="material-icons">autorenew</i>
@@ -298,6 +299,18 @@ function del_content(_id){
   });
 }
 
+$("#inpt").keypress(function(event){
+  if (event.which === 13) {
+    let val = $(this).val();
+    $.ajax({
+              method: "post",
+              url: "/getPendaftarbyname",
+              data: {name: val}
+            }).done(function( result ){
+                $("#Tgetpendaftar").html(result);
+            });
+  }
+});
 
 
       get_data_content();
@@ -354,6 +367,7 @@ function del_content(_id){
             })
             .done(function( result ) {
               $("#lookUp .modal-body").html(result);
+              console.log("success");
               // let res = JSON.stringify( result );
               // alert(result);
                // $.notify({

@@ -303,20 +303,20 @@ Route::get('/check-nomor','Controller@check_nomor');
 Route::post('/get_detail','Controller@get_detail');
 
 Route::get('/cek-pendaftaran',function(){
-	return view('web.check-nopendaftaran');	
+    return view('web.check-nopendaftaran'); 
 });
 Route::post("/verify","Controller@verify");
 
 Route::get('/cek-pendaftaran/{id}',function(Request $req, $id){
-	$plainTxtId = Crypt::decryptString($id);
-	return view('web.check-nopendaftaran',['id'=>$plainTxtId]);	
+    $plainTxtId = Crypt::decryptString($id);
+    return view('web.check-nopendaftaran',['id'=>$plainTxtId]); 
 });
 
 Route::post('/update-visi-misi','HomeController@update_visi_misi');
 
 
 Route::get('/backend',function(){
-	return view('backend.home');
+    return view('backend.home');
 });
 Route::post('get-calon','HomeController@lookUp');
 Route::get('/exam-dashboard',function(){
@@ -324,16 +324,17 @@ Route::get('/exam-dashboard',function(){
     // echo "<pre>";
     // print_r($user);
     // echo "</pre>";die();
-	$users = App\Ciclassusers::find(1);
-	return view('backend.exam',[
+    $users = App\Ciclassusers::find(1);
+    return view('backend.exam',[
                                 'active_mn'=>'exam']);
 });
+Route::post('/updateInterview','HomeController@updateInterview');
 Route::get('frontend','HomeController@frontend');
 Route::post('/update-address','HomeController@update_address');
 Route::post('/update-kontak','HomeController@update_kontak');
 Route::get('/hapus-kontak/{id}',function($id){
-	$kontak = new DataContent();
-	$detele = $kontak::where('content_type_id',1)
+    $kontak = new DataContent();
+    $detele = $kontak::where('content_type_id',1)
 						->where('xs1','KONTAK')
 						->where('xs3',"$id")->delete();
 
@@ -410,8 +411,9 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/verify-page', 'HomeController@verify_page');
+Route::get('/interview', 'HomeController@interview');
 Route::post('/do_delete', 'HomeController@delete_data');
-
+Route::post('/getPendaftarbyname','HomeController@getPendaftarbyname');
 //Upload
 Route::get('/list-file/{id}','Upload@list_file');
 Route::post('/file-upload',"Upload@file_save");

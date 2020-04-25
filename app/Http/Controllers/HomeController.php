@@ -53,7 +53,7 @@ class HomeController extends Controller
             where 
                         b.pendaftar_detail_type_id =1
                         and c.pendaftar_detail_type_id =2
-                        and a.pendaftar_status_id =1 ");
+                         ");
         $count = New_pendaftar::where('pendaftar_status_id','1')->count();
         // print_r($pendaftar);die();
         return view('backend.home',['pendaftar'=>$pendaftar
@@ -63,7 +63,7 @@ class HomeController extends Controller
 
     public function lookUp(Request $req){
         $result = DB::select("
-            select a.xn1 as nik, d.name, a.xn2, a.xs1 as nama, a.created_at, b.xs3 as jenkel, b.xs4 as tgl_lahir, b.xs5 as tempat_lahir, b.xs6, b.xs7, c.xs9 as asal_sekolah, c.xs10 as alamat_asel 
+            select a.xn1 as nik, d.name, a.xn4, a.xn5, a.xn6, a.xs2, a.xn2, a.xs1 as nama, a.created_at, b.xs3 as jenkel, b.xs4 as tgl_lahir, b.xs5 as tempat_lahir, b.xs6, b.xs7, c.xs9 as asal_sekolah, c.xs10 as alamat_asel 
             from 
                         new_pendaftares a
                         left join sdit_nurulyaqin.new_pendaftar_details b on a.xn1 = b.pendaftar_account_id 
@@ -141,7 +141,49 @@ class HomeController extends Controller
                                       'dt_tes'=>$detail,
                                       'kuiz'=>$kuiz]);
     }
+    public function getPendaftarbyname(Request $req){
+        $name = $req->name;
+        $pendaftar = DB::select("
+            select a.xn1, d.name, a.xn2, a.xs1, a.created_at, c.xs3, c.xs2, b.xs5, b.xs6, b.xs7, a.xn3, c.xs9
+            from 
+                        new_pendaftares a
+                        inner join sdit_nurulyaqin.new_pendaftar_details b on a.xn1 = b.pendaftar_account_id 
+                        inner join sdit_nurulyaqin.new_pendaftar_details c on a.xn1 = c.pendaftar_account_id 
+                        inner join sdit_nurulyaqin.new_pendaftar_statuses d on a.pendaftar_status_id = d.id  
+            where 
+                        a.xs1 like '%".$name."%'  and b.pendaftar_detail_type_id =1
+                        and c.pendaftar_detail_type_id =2 ");
+        // print_r($pendaftar);
+        return view('backend.tgetpendaftar',['pendaftar'=>$pendaftar]);
+    }
 
+    public function interview(){
+        $pendaftar = DB::select("
+            select a.xn1, d.name, a.xn2, a.xs1, a.created_at, c.xs3, c.xs2, b.xs5, b.xs6, b.xs7, a.xn3, c.xs9
+            from 
+                        new_pendaftares a
+                        inner join sdit_nurulyaqin.new_pendaftar_details b on a.xn1 = b.pendaftar_account_id 
+                        inner join sdit_nurulyaqin.new_pendaftar_details c on a.xn1 = c.pendaftar_account_id 
+                        inner join sdit_nurulyaqin.new_pendaftar_statuses d on a.pendaftar_status_id = d.id  
+            where 
+                        b.pendaftar_detail_type_id =1
+                        and c.pendaftar_detail_type_id =2 ");
+        $client = new Client();
+        $response = $client->request('GET','http://localhost/CI-class/index.php/web/daftar_kelas#');
+        // print_r($response->getStatusCode());echo "<br>";
+        // print_r($response->getHeaderLine('content-type'));echo "<br>";
+        $kuiz = json_decode($response->getBody()->getContents());
+
+        $detail_instance = new New_pendaftar();
+        $detail = $detail_instance::has('detail')->whereHas('detail',function($query){
+            $query->where('pendaftar_detail_type_id','<=',1);
+        })->get();
+        
+        return view('backend.verify',['pendaftar'=>$pendaftar,
+                                      'active_mn'=>'interview',
+                                      'dt_tes'=>$detail,
+                                      'kuiz'=>$kuiz]);
+    }
     public function generate(Request $req){
         $kelas_id = $req->kelas_id;
         $client = new Client();
@@ -155,6 +197,16 @@ class HomeController extends Controller
 
         }
         return response()->json(["guid"=>0,"code"=>0,"message"=>"success"]);
+    }
+    public function updateInterview(Request $req){
+        $peserta = new New_pendaftar();
+        $update = $peserta::where('xn1', $req->nik)
+                                ->update(["xn4"=>$req->disiplin,
+                                          "xn5"=>$req->motivasi,
+                                          "xn6"=>$req->kerapihan,
+                                          "xs2"=>$req->disiplin >= 70 && $req->motivasi >= 70 && $req->kerapihan >= 70 ? "Lulus":"Tidak Lulus" ]);
+
+        return response()->json(["guid"=>0,"code"=>0,"message"=>$update]);
     }
 
     public function frontend(){
