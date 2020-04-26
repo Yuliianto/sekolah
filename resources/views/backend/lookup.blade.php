@@ -5,7 +5,7 @@ $path = "storage/".date_format($date,'Y/m/d')."/".$details->nik."_foto.jpg";
 // echo $path;
 ?>
 
-<button class="btn btn-primary" id="btn-test">click</button>
+
 <div class="row">
     <div class="col">
         <div class="card card-profile ml-auto mr-auto" style="max-width: 360px">

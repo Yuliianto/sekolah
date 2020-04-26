@@ -154,7 +154,8 @@ class HomeController extends Controller
                         a.xs1 like '%".$name."%'  and b.pendaftar_detail_type_id =1
                         and c.pendaftar_detail_type_id =2 ");
         // print_r($pendaftar);
-        return view('backend.tgetpendaftar',['pendaftar'=>$pendaftar]);
+        // return view('backend.tgetpendaftar',['pendaftar'=>$pendaftar]);
+        return response()->json($pendaftar);
     }
 
     public function interview(){

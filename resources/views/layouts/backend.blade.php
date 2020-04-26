@@ -54,6 +54,10 @@
     100% { transform: rotate(360deg); }
 }
 </style>
+
+<!-- data tables -->
+<link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
+<script type="text/javascript" src="//cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" defer></script>
 </head>
 
 <body>
@@ -307,7 +311,15 @@ $("#inpt").keypress(function(event){
               url: "/getPendaftarbyname",
               data: {name: val}
             }).done(function( result ){
-                $("#Tgetpendaftar").html(result);
+                // $("#Tgetpendaftar").html(result);
+                let txt = "";
+                for (var i = 0; i < result.length; i++) {
+                    txt += "<tr>";
+                    txt += txt.concat("<td>",parseInt(i)+1,"</td>","<td>",result[i].xs1,"</td>","<td>",result[i].xs9,"</td>","<td>",result[i].xs3,"</td>","<td>",result[i].xs2,"</td>","<td>",result[i].xn3,"</td>","<td>",result[i].name,"</td>","<td>","<button type=button rel=tooltip class=btn btn-info btn-round btn-lookup data-toggle=modal data-target=#lookUp  value= > <i class=material-icons>visibility</i></button>","</td>");
+                    txt += "</tr>";
+                    console.log(i);
+                }
+                $("#Tgetpendaftar").html(txt);
             });
   }
 });
@@ -315,7 +327,7 @@ $("#inpt").keypress(function(event){
 
       get_data_content();
     $( document ).ready(function(){
-
+      $("#myTable").DataTable();
       $("#form-content").hide();
       $("#add").click(function(){
         $("#content-list").hide();
@@ -358,6 +370,7 @@ $("#inpt").keypress(function(event){
     }
 
     $(".btn-lookup").click(function(){
+      console.log("test");
       let _nik    =$(this).val();
         
             $.ajax({

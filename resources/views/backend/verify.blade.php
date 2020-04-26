@@ -28,11 +28,7 @@
         
             <div class="card">
                 <div class="card-body">
-                    <div class="form-group">
-                        <label for="text">Search</label>
-                        <input type="text" name="inpt" id="inpt" class="form-control" placeholder="Type name..">
-                    </div>
-                    <table class="table">
+                    <table class="table" id="myTable">
                         <thead>
                             <tr>
                                 <th class="text-center">#</th>
@@ -75,4 +71,5 @@
 
     </div>
 </div>
+
 @endsection
