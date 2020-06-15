@@ -11,6 +11,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Crypt;
+use App\Mail\Pendaftares as Mailregis; 
 
 
 // Import Model 
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Crypt;
 use App\New_pendaftares as New_pendaftar;
 use App\New_pendaftar_details as New_pendaftar_details;
 use App\Mail\Pendaftares;
+use App\Mail\NotifTest;
 
 use App\User;
 use App\Ciclassmhs as Mhs;
@@ -175,6 +177,16 @@ class Controller extends BaseController
         $to = $reciver;
         return Mail::to($to)
                         ->send(new Pendaftares($nik));
+    }
+
+    public function test_email($nik, $to){
+        
+        $user = new Pendaftares($nik);
+        // $detail_regis = new Mailregis($nik);
+        // $detail_regis = new NotifTest("Helo world!!");
+        // $to = $reciver;
+        // Mail::to($to)->send(new NotifTest($nik));
+        return $detail_regis->render();
     }
 
 }

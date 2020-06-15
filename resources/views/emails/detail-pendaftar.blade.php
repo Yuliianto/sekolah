@@ -1,5 +1,9 @@
+@extends('layouts.guest')
+
+@section('content')
+
 <div class="row">
-    <div class="col-12">
+    <div class="col-12" style="background: #3498db;color: #fff; padding: 20px">
         <h3 class="h3">
             Informasi Pendaftara Siswa
         </h3>
@@ -8,7 +12,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-12 text-center">
+    <div class="col-12">
         
         <table class="table">
             <thead>
@@ -115,8 +119,14 @@
     untuk melanjutkan pendaftaran silakan verifikasi dan unggah berkas yang dibutuhkan dengan cara klik
 </p>
 <br>
-<a href="http://localhost:8000/cek-pendaftaran/{{ $id }}">http://localhost:8000/cek-pendaftaran/{{ $id }}</a>
-
-----------------
+<a href="http://localhost:8000/cek-pendaftaran/{{ $id }}" class="btn btn-primary">Link</a>
+<br>
+<hr><br>
 Panitia 
+
+@component('mail::button', ['url' => 'http://localhost:8000/cek-pendaftaran/{{ $id }}'])
+View Order
+@endcomponent
+
+@endsection
 

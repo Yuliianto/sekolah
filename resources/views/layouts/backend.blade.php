@@ -30,15 +30,15 @@
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <meta name="csrf-token" content="{{ csrf_token() }}"> 
   <!-- <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script> -->
+
+  <!-- SIMDITOR -->
+  <link rel="stylesheet" href="{{ asset('Trumbowyg/dist/ui/trumbowyg.min.css') }}">
+  <!-- -->
   
   <link href="{{ asset('dropzone/dropzone.min.css') }}" rel="stylesheet">
   <script type="text/javascript" src="{{ asset('dropzone/dropzone.min.js') }}"></script>
   <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
 
-  <!-- Text Editor Trial -->
-<link href="https://cdn.jsdelivr.net/npm/froala-editor@3.0.6/css/froala_editor.pkgd.min.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/froala-editor@3.0.6/js/froala_editor.pkgd.min.js"></script>
-  <!-- END ! -->
 <style type="text/css">
 .loader {
     border: 16px solid #f3f3f3; /* Light grey */
@@ -87,13 +87,13 @@
               <p>Pendaftar</p>
             </a>
           </li>
+          <!-- 
           <li class="nav-item  {{ $active_mn === 'interview' ? 'active' : '' }} ">
             <a class="nav-link" href="/interview">
               <i class="material-icons">folder_open</i>
               <p>Interview</p>
             </a>
           </li>
-          <!-- 
           <li class="nav-item active  ">
             <a class="nav-link" href="#0">
               <i class="material-icons">autorenew</i>
@@ -128,7 +128,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="#pablo">Dashboard</a>
+            <a class="navbar-brand" href="#pablo">Dashboard Admin</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -218,6 +218,10 @@
     <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.js.map') }}"></script>
     <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.min.js') }}"></script>
 
+
+    <!-- SIMDITOR -->
+      <script src="{{ asset('trumbowyg/dist/trumbowyg.min.js') }}"></script>
+    <!-- SIMDITOR -->
     <script type="text/javascript">
       
       $("#btn-del").click(function(){
@@ -283,6 +287,8 @@
 </div>
 
   <script type="text/javascript">
+$('textarea').trumbowyg();
+
 function get_data_content(){
   $.ajax({
     method:"get",
@@ -526,9 +532,7 @@ $("#inpt").keypress(function(event){
       });
 
 
-      var editor = new FroalaEditor('textarea',{
-        heightMin:320
-      });
+      
 
 
 function edit_content(_id){
@@ -561,16 +565,7 @@ function edit_content(_id){
   
 }
 
-(function () {
-      const editorInstance = new FroalaEditor('textarea', {
-        enter: FroalaEditor.ENTER_P,
-        events: {
-          contentChanged: function () {
-            console.log('content changed')
-          }
-        }
-      })
-    })()
+
   </script>
 </body>
 

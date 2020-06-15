@@ -52,4 +52,10 @@ class Pendaftares extends Mailable
                                             'detail2'=>$this->detail2,
                                             'id'=>$this->id]);
     }
+    public function register_detail(){
+        return view('emails.detail-pendaftar',['dt_pendaftaran'=>$this->dt_pendaftaran,
+                                            'detail'=>$this->detail,
+                                            'detail2'=>$this->detail2,
+                                            'id'=>$this->id]);
+    }
 }

@@ -23,6 +23,7 @@ use App\Ciclassmhs as Mhs;
 use App\Ciclassmhs as Mahasiswa;
 use App\Ciclassusers as CIusers;
 use App\Contents as DataContent;
+use App\Mail\NotifTest;
 
 class HomeController extends Controller
 {
@@ -63,7 +64,7 @@ class HomeController extends Controller
 
     public function lookUp(Request $req){
         $result = DB::select("
-            select a.xn1 as nik, d.name, a.xn4, a.xn5, a.xn6, a.xs2, a.xn2, a.xs1 as nama, a.created_at, b.xs3 as jenkel, b.xs4 as tgl_lahir, b.xs5 as tempat_lahir, b.xs6, b.xs7, c.xs9 as asal_sekolah, c.xs10 as alamat_asel 
+            select a.xn1 as nik, d.name, a.xn4, a.xn5, a.xn6, a.xs2, a.xn2, a.xs1 as nama, a.created_at, b.xs3 as jenkel, b.xs4 as tgl_lahir, b.xs5 as tempat_lahir, b.xs6, b.xs7, c.xs9 as asal_sekolah, c.xs10 as alamat_asel, a.xs3 as enrolkey, c.xs1 as email
             from 
                         new_pendaftares a
                         left join sdit_nurulyaqin.new_pendaftar_details b on a.xn1 = b.pendaftar_account_id 
@@ -116,7 +117,7 @@ class HomeController extends Controller
 
     public function verify_page(){
         $pendaftar = DB::select("
-            select a.xn1, d.name, a.xn2, a.xs1, a.created_at, c.xs3, c.xs2, b.xs5, b.xs6, b.xs7, a.xn3, c.xs9
+            select a.xn1, d.name, a.xn2, a.xs1, a.xs2 as lulus, a.created_at, c.xs3, c.xs2, b.xs5, b.xs6, b.xs7, a.xn3, c.xs9
             from 
                         new_pendaftares a
                         inner join sdit_nurulyaqin.new_pendaftar_details b on a.xn1 = b.pendaftar_account_id 
@@ -201,12 +202,12 @@ class HomeController extends Controller
     }
     public function updateInterview(Request $req){
         $peserta = new New_pendaftar();
+        $nilai = $peserta::where('xn1',$req->nik)->first();
         $update = $peserta::where('xn1', $req->nik)
                                 ->update(["xn4"=>$req->disiplin,
                                           "xn5"=>$req->motivasi,
                                           "xn6"=>$req->kerapihan,
-                                          "xs2"=>$req->disiplin >= 70 && $req->motivasi >= 70 && $req->kerapihan >= 70 ? "Lulus":"Tidak Lulus" ]);
-
+                                          "xs2"=>$req->disiplin >= 70 && $req->motivasi >= 70 && $req->kerapihan >= 70  && $nilai->xn3 >= 70 ? "Lulus":"Tidak Lulus" ]);
         return response()->json(["guid"=>0,"code"=>0,"message"=>$update]);
     }
 
@@ -263,6 +264,7 @@ class HomeController extends Controller
                                         'dt_content'=>$dt_content,
                                         'id_content'=>$req->judul,
                                         'active_mn'=>'frontend']);
+
     }
     public function view_list_content(){
         $kontent = new DataContent();
@@ -365,6 +367,20 @@ class HomeController extends Controller
             "highlight" => $request->highlight
         );
         // return json_encode($negara);
+        return response()->json(["guid"=>0,"code"=>0,"message"=>"success"]);
         
+    }
+    public function sendEnrol(Request $request){
+        $result = array('guid' => 0,
+                        'code' => 1,
+                        'data' => ['nik'=>$request->nik,'enrol'=>$request->enrolKey,'email'=>$request->email]);
+
+        // $user = new Pendaftares($nik);
+        // $detail_regis = new Mailregis($nik);
+        // $detail_regis = new NotifTest();
+        // $to = $reciver;
+        Mail::to($request->email)->send(new NotifTest($request->enrolKey));
+        // return $detail_regis->render();
+        return response()->json($result);
     }
 }

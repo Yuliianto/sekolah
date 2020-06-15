@@ -448,3 +448,5 @@ Route::post('/kode_bayar',function(Request $req){
     // return $req->order_id;
 });
 
+Route::post('sendEnrol','HomeController@sendEnrol');
+Route::get('test_email/{nik}/{email}','Controller@test_email');

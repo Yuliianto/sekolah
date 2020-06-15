@@ -28,7 +28,7 @@
         
             <div class="card">
                 <div class="card-body">
-                    <table class="table" id="myTable">
+                    <table class="table table-striped table-bordered" id="myTable">
                         <thead>
                             <tr>
                                 <th class="text-center">#</th>
@@ -38,7 +38,8 @@
                                 <th>Kontak</th>
                                 <th>Nilai</th>
                                 <th>Status</th>
-                                <th class="text-right">Actions</th>
+                                <th>Lulus</th>
+                                <th class="text-center">Actions</th>
                             </tr>
                         </thead>
                         <tbody id="Tgetpendaftar">
@@ -51,8 +52,13 @@
                                 <td>{{ $column->xs2 }}</td>
                                 <td>{{ $column->xn3 }}</td>
                                 <td>{{ $column->name }}</td>
+                                <td>{{ $column->lulus }}</td>
                                 
-                                <td class="td-actions text-right">
+                                <td class="td-actions text-center">
+
+                                    <button type="button" rel="tooltip" class="btn btn-success btn-round btn-lookup" data-toggle="modal" data-target="#lookUp"  value="{{ $column->xn1 }}">
+                                        <i class="material-icons">send</i>
+                                    </button>
                                     <button type="button" rel="tooltip" class="btn btn-info btn-round btn-lookup" data-toggle="modal" data-target="#lookUp"  value="{{ $column->xn1 }}">
                                         <i class="material-icons">visibility</i>
                                     </button>

@@ -81,6 +81,13 @@ $path = "storage/".date_format($date,'Y/m/d')."/".$details->nik."_foto.jpg";
                         
                     </td>
                 </tr>
+                <tr>
+                    <td colspan="3">
+
+                        <input type="text" name="enrol" id="email" class="form-control" placeholder="" value="{{ $details->email }}">
+                        <input type="text" name="enrol" id="enrol" class="form-control" placeholder="send enrol key to email" value="{{ $details->enrolkey }}">
+                    </td>
+                </tr>
             </tbody>
         </table>
 
@@ -116,6 +123,17 @@ $path = "storage/".date_format($date,'Y/m/d')."/".$details->nik."_foto.jpg";
                     });
         }
     }
+    function sendEnrol(_data){
+        // console.log('its come hire');
+        let inputdata = _data;
+        $.ajax({
+                    method : "POST",
+                    url: "/sendEnrol",
+                    data : inputdata}).done(function (result){
+                        console.log(result);
+                        // alert(result);
+                    });
+    }
 
     $("#Disiplin").keyup(function(){
       let data = {nik : $("input[name=nik]").val(), disiplin : $("#Disiplin").val(), motivasi:$("#Motivasi").val(), kerapihan:$("#Kerapihan").val()}
@@ -130,5 +148,14 @@ $path = "storage/".date_format($date,'Y/m/d')."/".$details->nik."_foto.jpg";
     $("#Kerapihan").keyup(function(){
       let data = {nik : $("input[name=nik]").val(), disiplin : $("#Disiplin").val(), motivasi:$("#Motivasi").val(), kerapihan:$("#Kerapihan").val()}
       updateInterview(data);
+    });
+
+    $("#enrol").keypress(function(event){
+        
+        if (event.which === 13){
+            console.log('Send enrol to email');
+            let data = {nik : $("input[name=nik]").val(),enrolKey:$("#enrol").val(),email:$("#email").val()}
+        // sendEnrol(data);
+        }
     });
 </script>
