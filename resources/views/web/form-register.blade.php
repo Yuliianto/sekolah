@@ -466,7 +466,7 @@
               
               $.notify({
                     icon: "add_alert",
-                    message: result
+                    message: res
 
                 },{
                     type: 'success',
