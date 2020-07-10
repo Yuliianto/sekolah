@@ -466,7 +466,7 @@
               
               $.notify({
                     icon: "add_alert",
-                    message: res
+                    message: result.data
 
                 },{
                     type: 'success',
@@ -476,10 +476,10 @@
                         align: "center"
                     }
                 });
-              // setTimeout(function(){
-              //   window.open('https://accounts.google.com/');
-              //   location.replace('http://localhost:8000/');
-              // },4000);
+              setTimeout(function(){
+                window.open('https://accounts.google.com/');
+                location.replace('http://localhost:8000/');
+              },1000);
               
               
             });
