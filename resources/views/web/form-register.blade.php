@@ -357,7 +357,7 @@
 <div class="loader fixed-top" style="margin: auto; top: 300px;"></div></div>
     <script type="text/javascript">
       $( document ).ready(function(){
-        alert("Test update script");
+
         $(".loading").css('display','none');
       });
 
@@ -466,7 +466,7 @@
               
               $.notify({
                     icon: "add_alert",
-                    message: "Registrasi berhasil, Silikan check inbox email anda"
+                    message: result
 
                 },{
                     type: 'success',
@@ -476,10 +476,10 @@
                         align: "center"
                     }
                 });
-              setTimeout(function(){
-                window.open('https://accounts.google.com/');
-                location.replace('http://localhost:8000/');
-              },4000);
+              // setTimeout(function(){
+              //   window.open('https://accounts.google.com/');
+              //   location.replace('http://localhost:8000/');
+              // },4000);
               
               
             });
