@@ -98,7 +98,7 @@ class Controller extends BaseController
 
 
             }
-            // $send = $this->send_email($param->keterangan->nik_Anak,$param->tempat_tinggal->email);
+            $send = $this->send_email($param->keterangan->nik_Anak,$param->tempat_tinggal->email);
 
             $send = true;
             $check['test'] = true;           
