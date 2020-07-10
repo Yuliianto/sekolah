@@ -249,6 +249,29 @@
                   <input type="text" class="form-control" id="alamattk" name="alamattk" placeholder="Tulis alamat sekolah" required>
                 </div>
 
+
+                <div class="form-group">
+                  <label for="namajurusan">Jurusan yang di pilih</label>
+                  <select class="form-control selectpicker" data-style="btn btn-link" id="penyakit" name="jurusan"  required>
+                              <option value="Informatika">Informatika</option>
+                              <option value="Sistem informasi">Sistem Informasi</option>
+                              <option value="Akuntansi">Akuntansi</option>
+                      </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="namajurusan">Jenjang</label>
+                  <select class="form-control selectpicker" data-style="btn btn-link" id="penyakit" name="jenjang"  required>
+                              <option value="D3">D3</option>
+                              <option value="Sarjana">Sarjana</option>
+                              <option value="Magister">Magister</option>
+                      </select>
+                </div>
+                <div class="form-group">
+                  <label for="nem">Nem</label>
+                  <input type="text" class="form-control" id="alamattk" name="nem" placeholder="Tulis alamat sekolah" required>
+                </div>
+
                 <div class="form-group">
                   <button class="btn btn-primary" id="check">Daftar &nbsp; <i class="material-icons">done_outline</i></button>
                 </div>
@@ -403,6 +426,9 @@
         let _kelainanlainnya =$("input[name=kelainanlainnya]").val(); 
         let _namatk          =$("input[name=namatk]").val();
         let _alamattk        =$("input[name=alamattk]").val();
+        let _jurusan         =$("select[name=jurusan]").val();
+        let _jenjang         =$("select[name=jenjang]").val();
+        let _nem             =$("input[name=nem]").val();
 
         
           var data_siswa = {
@@ -441,7 +467,10 @@
                   },
                   pendidikan:{
 						            namatk		:_namatk,
-						            alamattk	:_alamattk
+						            alamattk	:_alamattk,
+                        Jurusan   :_jurusan,
+                        nem       :_nem,
+                        jenjang   :_jenjang
                   }	
                 };
 

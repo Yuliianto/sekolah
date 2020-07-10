@@ -99,7 +99,7 @@ class HomeController extends Controller
                 }
             }
         } catch (FileNotFoundException $e) {
-            $data_file= array();
+            $data_file= array();    
         }
         
         return view('backend.lookup',['details'=>$result[0],

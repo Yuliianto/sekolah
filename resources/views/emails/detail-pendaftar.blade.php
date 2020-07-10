@@ -26,10 +26,7 @@
                     <td>nama</td>
                     <td>{{ $dt_pendaftaran->xs1 }}</td>
                 </tr>
-                <tr>
-                    <td>Status</td>
-                    <td>{{ $dt_pendaftaran->pendaftar_status_id }}</td>
-                </tr>
+                
                 <tr>
                     <td>Keterangan</td>
                     <td>anak ke <label class="text-bold">{{ $detail->xn2 }}</label> dari <label class="text-bold">{{ $detail->xn3 }} bersaudara</label></td>
@@ -39,7 +36,7 @@
                     <td>{{ $detail2->xs2 }}</td>
                 </tr>
                 <tr>
-                    <td>Email Orang Tua</td>
+                    <td>Email</td>
                     <td>{{ $detail2->xs1 }}</td>
                 </tr>
                 <tr>
@@ -87,8 +84,8 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Lahir</td>
-                    <td>{{ $detail->xs2 }},{{ $detail->xs3 }}</td>
+                    <td>Tempat, Tgl. Lahir</td>
+                    <td>{{ $detail->xs5 }},{{ $detail->xs4 }}</td>
                 </tr>
                 <tr>
                     <td>Agama</td>
@@ -103,11 +100,11 @@
                     <td>{{ $detail2->xn6 }}</td>
                 </tr>
                 <tr>
-                    <td>Asal TK</td>
+                    <td>Asal Sekolah</td>
                     <td></td>
                 </tr>
                 <tr>
-                    <td>Alamat TK</td>
+                    <td>Alamat Asal Sekolah</td>
                     <td>{{ $detail2->xs3 }}</td>
                 </tr>
             </tbody>

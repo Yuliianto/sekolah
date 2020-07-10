@@ -91,6 +91,10 @@ class Controller extends BaseController
                 $details->xs8       = $param->kesehatan->kelainanlainnya;
                 $details->xs9       = $param->pendidikan->namatk;
                 $details->xs10       = $param->pendidikan->alamattk;
+                $details->xs11      = $param->pendidikan->jurusan;
+                $details->xs12      = $param->pendidikan->nem;
+                $details->xs13      = $param->pendidikan->jenjang;
+
                 if ($details->save()) {
                     $check['detail_pendaftar'] = true;
                 }
