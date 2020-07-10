@@ -131,7 +131,9 @@ $path = "storage/".date_format($date,'Y/m/d')."/".$details->nik."_foto.jpg";
                     url: "/sendEnrol",
                     data : inputdata}).done(function (result){
                         console.log(result);
-                        // alert(result);
+                        if(result.code === 1){
+                            bootbox.alert("The enrol key has been send to user");
+                        }
                     });
     }
 
@@ -155,7 +157,7 @@ $path = "storage/".date_format($date,'Y/m/d')."/".$details->nik."_foto.jpg";
         if (event.which === 13){
             console.log('Send enrol to email');
             let data = {nik : $("input[name=nik]").val(),enrolKey:$("#enrol").val(),email:$("#email").val()}
-        // sendEnrol(data);
+            sendEnrol(data);
         }
     });
 </script>

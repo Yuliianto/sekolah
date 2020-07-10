@@ -39,68 +39,69 @@ class Controller extends BaseController
     	$store = new New_pendaftar;
     	try {
     		
-    		$store->pendaftar_type_id = 1;
-    		$store->pendaftar_status_id = 1;
-    		$store->xn1 = $param->keterangan->nik_Anak;
-    		$store->xn2 = $param->keterangan->anak_Ke;
-    		$store->xs1 = $param->keterangan->nama_lengkap;
+    		// $store->pendaftar_type_id = 1;
+    		// $store->pendaftar_status_id = 1;
+    		// $store->xn1 = $param->keterangan->nik_Anak;
+    		// $store->xn2 = $param->keterangan->anak_Ke;
+    		// $store->xs1 = $param->keterangan->nama_lengkap;
     		
 
     		
-    		if ($store->save()) {
-                // type 1 keterangan
-                $check['pendaftar'] = true;
+    		// if ($store->save()) {
+      //           // type 1 keterangan
+      //           $check['pendaftar'] = true;
 
-                $details = new New_pendaftar_details; 
-                $lastid = DB::getPDO()->lastInsertID();
-                $details->pendaftar_id = $lastid;
-                $details->pendaftar_detail_type_id = 1;
-                $details->pendaftar_account_id  = $param->keterangan->nik_Anak;
-                $details->xs1       = $param->keterangan->nama_lengkap;
-                $details->xs2       = $param->keterangan->nama_Panggilan;
-                $details->xs3       = $param->keterangan->jenis_kelamin;
-                $details->xs4       = $param->keterangan->tanggal_lahir;
-                $details->xs5       = $param->keterangan->tempat_Lahir;
-                $details->xs6       = $param->keterangan->agama;
-                // $details->xn1       = $param->keterangan->nik_Anak;
-                $details->xn2       = $param->keterangan->anak_Ke;
-                $details->xn3       = $param->keterangan->dari;
-                // $details->xs5       = $param->keterangan->bahasa;
-                // $details->xs6       = $param->keterangan->status_anak;
-                $details->xs7       = $param->keterangan->kewarga_negaraan;
-                $details->save();
-
-
-                $details = new New_pendaftar_details;
-                $details->pendaftar_id = $lastid;
-                $details->pendaftar_detail_type_id = 2;
-                $details->pendaftar_account_id = $param->keterangan->nik_Anak;
-
-                $details->xs1       = $param->tempat_tinggal->email;
-                $details->xs2       = $param->tempat_tinggal->notelp;
-                $details->xs3       = $param->tempat_tinggal->alamat;
-                $details->xs4       = $param->tempat_tinggal->tinggalbersama;
-                $details->xn1       = $param->tempat_tinggal->jaraksekolah;
+      //           $details = new New_pendaftar_details; 
+      //           $lastid = DB::getPDO()->lastInsertID();
+      //           $details->pendaftar_id = $lastid;
+      //           $details->pendaftar_detail_type_id = 1;
+      //           $details->pendaftar_account_id  = $param->keterangan->nik_Anak;
+      //           $details->xs1       = $param->keterangan->nama_lengkap;
+      //           $details->xs2       = $param->keterangan->nama_Panggilan;
+      //           $details->xs3       = $param->keterangan->jenis_kelamin;
+      //           $details->xs4       = $param->keterangan->tanggal_lahir;
+      //           $details->xs5       = $param->keterangan->tempat_Lahir;
+      //           $details->xs6       = $param->keterangan->agama;
+      //           // $details->xn1       = $param->keterangan->nik_Anak;
+      //           $details->xn2       = $param->keterangan->anak_Ke;
+      //           $details->xn3       = $param->keterangan->dari;
+      //           // $details->xs5       = $param->keterangan->bahasa;
+      //           // $details->xs6       = $param->keterangan->status_anak;
+      //           $details->xs7       = $param->keterangan->kewarga_negaraan;
+      //           $details->save();
 
 
-                $details->xn2       = $param->kesehatan->beratbadan;
-                $details->xn3       = $param->kesehatan->tinggi;
-                $details->xs5       = $param->kesehatan->golongandarah;
-                $details->xs6       = $param->kesehatan->penyakit;
-                $details->xs7       = $param->kesehatan->kebutuhankhusus;
-                $details->xs8       = $param->kesehatan->kelainanlainnya;
-                $details->xs9       = $param->pendidikan->namatk;
-                $details->xs10       = $param->pendidikan->alamattk;
-                if ($details->save()) {
-                    $check['detail_pendaftar'] = true;
-                }
+      //           $details = new New_pendaftar_details;
+      //           $details->pendaftar_id = $lastid;
+      //           $details->pendaftar_detail_type_id = 2;
+      //           $details->pendaftar_account_id = $param->keterangan->nik_Anak;
+
+      //           $details->xs1       = $param->tempat_tinggal->email;
+      //           $details->xs2       = $param->tempat_tinggal->notelp;
+      //           $details->xs3       = $param->tempat_tinggal->alamat;
+      //           $details->xs4       = $param->tempat_tinggal->tinggalbersama;
+      //           $details->xn1       = $param->tempat_tinggal->jaraksekolah;
+
+
+      //           $details->xn2       = $param->kesehatan->beratbadan;
+      //           $details->xn3       = $param->kesehatan->tinggi;
+      //           $details->xs5       = $param->kesehatan->golongandarah;
+      //           $details->xs6       = $param->kesehatan->penyakit;
+      //           $details->xs7       = $param->kesehatan->kebutuhankhusus;
+      //           $details->xs8       = $param->kesehatan->kelainanlainnya;
+      //           $details->xs9       = $param->pendidikan->namatk;
+      //           $details->xs10       = $param->pendidikan->alamattk;
+      //           if ($details->save()) {
+      //               $check['detail_pendaftar'] = true;
+      //           }
                       
 
 
-            }
-            $send = $this->send_email($param->keterangan->nik_Anak,$param->tempat_tinggal->email);
+      //       }
+      //       $send = $this->send_email($param->keterangan->nik_Anak,$param->tempat_tinggal->email);
 
-
+            $send = true;
+            $check['test'] = true;           
           
             if ($send && !in_array(false, $check)) {
                 return response()->json([
@@ -113,7 +114,13 @@ class Controller extends BaseController
     		
     	} catch (Exception $e) {
     		return "Gagal store data!";
-    	}
+    	} finally {
+            return response()->json([
+                    'guid'=>0,
+                    'code'=>2,
+                    'data'=>'Proses selesai'
+                ]);
+        }
     	// return json_encode($param->keterangan);
     }
 
@@ -183,7 +190,7 @@ class Controller extends BaseController
         
         $user = new Pendaftares($nik);
         // $detail_regis = new Mailregis($nik);
-        // $detail_regis = new NotifTest("Helo world!!");
+        $detail_regis = new NotifTest("d62fd8b6515e740353b1c60a9da");
         // $to = $reciver;
         // Mail::to($to)->send(new NotifTest($nik));
         return $detail_regis->render();

@@ -357,6 +357,7 @@
 <div class="loader fixed-top" style="margin: auto; top: 300px;"></div></div>
     <script type="text/javascript">
       $( document ).ready(function(){
+        alert("Test update script");
         $(".loading").css('display','none');
       });
 
@@ -459,7 +460,7 @@
             })
             .done(function( result ) {
               // $("#result-data").html(result);
-              // let res = JSON.stringify( result );
+              let res = JSON.stringify( result );
               
               $(".loading").css('display','none');
               

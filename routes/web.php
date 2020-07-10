@@ -25,10 +25,10 @@ use GuzzleHttp\Client;
 Route::get('/', function () {
         $kontent = new DataContent();
 	    $negara = DB::select(
-            "SELECT * FROM Contents WHERE content_type_id = 1 and xs1='NEGARA'"
+            "SELECT * FROM contents WHERE content_type_id = 1 and xs1='NEGARA'"
         );
         $kontak = DB::select("
-            SELECT * FROM CONTENTS WHERE content_type_id = 1 AND XS1 = 'KONTAK'
+            SELECT * FROM contents WHERE content_type_id = 1 AND XS1 = 'KONTAK'
             ");
         $profil = DataContent::where('content_type_id',1)->where('xs1','LOGO')->first();
             

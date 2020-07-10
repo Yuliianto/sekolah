@@ -375,12 +375,9 @@ class HomeController extends Controller
                         'code' => 1,
                         'data' => ['nik'=>$request->nik,'enrol'=>$request->enrolKey,'email'=>$request->email]);
 
-        // $user = new Pendaftares($nik);
-        // $detail_regis = new Mailregis($nik);
-        // $detail_regis = new NotifTest();
-        // $to = $reciver;
+        
         Mail::to($request->email)->send(new NotifTest($request->enrolKey));
-        // return $detail_regis->render();
+        
         return response()->json($result);
     }
 }

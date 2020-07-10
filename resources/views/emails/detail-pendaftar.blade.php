@@ -124,9 +124,7 @@
 <hr><br>
 Panitia 
 
-@component('mail::button', ['url' => 'http://localhost:8000/cek-pendaftaran/{{ $id }}'])
-View Order
-@endcomponent
+
 
 @endsection
 
