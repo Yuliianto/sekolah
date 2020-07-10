@@ -27,17 +27,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- Material Kit CSS -->
   <!-- Styles -->
-  <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <meta name="csrf-token" content="{{ csrf_token() }}"> 
-  <!-- <script type="text/javascript" src="{{ secure_asset('js/jquery-2.1.4.min.js') }}"></script> -->
+  <!-- <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script> -->
 
   <!-- SIMDITOR -->
-  <link rel="stylesheet" href="{{ secure_asset('Trumbowyg/dist/ui/trumbowyg.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('Trumbowyg/dist/ui/trumbowyg.min.css') }}">
   <!-- -->
   
-  <link href="{{ secure_asset('dropzone/dropzone.min.css') }}" rel="stylesheet">
-  <script type="text/javascript" src="{{ secure_asset('dropzone/dropzone.min.js') }}"></script>
-  <script type="text/javascript" src="{{ secure_asset('js/jquery-2.1.4.min.js') }}"></script>
+  <link href="{{ asset('dropzone/dropzone.min.css') }}" rel="stylesheet">
+  <script type="text/javascript" src="{{ asset('dropzone/dropzone.min.js') }}"></script>
+  <script type="text/javascript" src="{{ asset('js/jquery-2.1.4.min.js') }}"></script>
 
 <style type="text/css">
 .loader {
@@ -206,25 +206,25 @@
     </div>
   </div>
 
-    <script type="text/javascript" src="{{ secure_asset('js/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 
-    <script type="text/javascript" src="{{ secure_asset('material-dashboard/js/core/bootstrap-material-design.min.js') }}"></script>
-    <script type="text/javascript" src="{{ secure_asset('material-dashboard/js/core/jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ secure_asset('material-dashboard/js/core/popper.min.js') }}"></script>
-    <script type="text/javascript" src="{{ secure_asset('material-dashboard/js/plugins/bootstrap-notify.js') }}"></script>
-    <script type="text/javascript" src="{{ secure_asset('material-dashboard/js/plugins/chartist.min.js') }}"></script>
-    <script type="text/javascript" src="{{ secure_asset('material-dashboard/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ secure_asset('material-dashboard/js/material-dashboard.js') }}" ></script>
-    <script type="text/javascript" src="{{ secure_asset('material-dashboard/js/material-dashboard.js.map') }}"></script>
-    <script type="text/javascript" src="{{ secure_asset('material-dashboard/js/material-dashboard.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/core/bootstrap-material-design.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/core/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/core/popper.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/plugins/bootstrap-notify.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/plugins/chartist.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.js') }}" ></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.js.map') }}"></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.min.js') }}"></script>
 
     <!-- Dependensi bootbox -->
-    <script type="text/javascript" src="{{ secure_asset('js/bootbox.min.js') }}" defer></script>
-    <script type="text/javascript" src="{{ secure_asset('js/bootbox.locales.min.js') }}" defer></script>
-    <script type="text/javascript" src="{{ secure_asset('js/bootstrap.js') }}" ></script>
+    <script type="text/javascript" src="{{ asset('js/bootbox.min.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/bootbox.locales.min.js') }}" defer></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}" ></script>
 
     <!-- SIMDITOR -->
-      <script src="{{ secure_asset('trumbowyg/dist/trumbowyg.min.js') }}"></script>
+      <script src="{{ asset('trumbowyg/dist/trumbowyg.min.js') }}"></script>
     <!-- SIMDITOR -->
     <script type="text/javascript">
       

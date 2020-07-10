@@ -129,7 +129,7 @@ The above copyright notice and this permission notice shall be included in all c
         </div>  
     </div>
 
-    <script type="text/javascript" src="{{ asset('material-dashboard/js/core/bootstrap-material-design.min.js') }}" defer=""></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/core/bootstrap-material-design.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('material-dashboard/js/core/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('material-dashboard/js/core/popper.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('material-dashboard/js/plugins/bootstrap-notify.js') }}"></script>
