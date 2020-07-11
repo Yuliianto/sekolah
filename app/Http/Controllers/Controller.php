@@ -35,6 +35,7 @@ class Controller extends BaseController
     public function do_register(Request $request)
     {
     	$param = json_decode($request->param);
+      print_r($param);die();
     	$check= array();
     	$store = new New_pendaftar;
     	try {
