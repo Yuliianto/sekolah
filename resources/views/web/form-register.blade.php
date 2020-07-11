@@ -505,10 +505,10 @@
                         align: "center"
                     }
                 });
-              setTimeout(function(){
-                window.open('https://accounts.google.com/');
-                location.replace('http://localhost:8000/');
-              },1000);
+              // setTimeout(function(){
+              //   window.open('https://accounts.google.com/');
+              //   location.replace('http://localhost:8000/');
+              // },1000);
               
               
             });

@@ -91,7 +91,7 @@ class Controller extends BaseController
                 $details->xs8       = $param->kesehatan->kelainanlainnya;
                 $details->xs9       = $param->pendidikan->namatk;
                 $details->xs10       = $param->pendidikan->alamattk;
-                $details->xs11      = $param->pendidikan->jurusan;
+                $details->xs11      = $param->pendidikan->Jurusan;
                 $details->xs12      = $param->pendidikan->nem;
                 $details->xs13      = $param->pendidikan->jenjang;
 
@@ -118,13 +118,7 @@ class Controller extends BaseController
     		
     	} catch (Exception $e) {
     		return "Gagal store data!";
-    	} finally {
-            return response()->json([
-                    'guid'=>0,
-                    'code'=>2,
-                    'data'=>'Proses selesai'
-                ]);
-        }
+    	} 
     	// return json_encode($param->keterangan);
     }
 
