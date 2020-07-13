@@ -107,6 +107,7 @@
     <script type="text/javascript">
       Dropzone.autoDiscover =false;
       var _id = $("input[name=id]").val();
+      var myDrop;
       var myDropZone = new Dropzone($('#myDropzone').get(0), {
       acceptedFiles: ".pdf,.doc,.docx,.jpg,.jpeg,.png",
       maxFilesize: 2, // MB
@@ -129,23 +130,26 @@
       },
       init: function() {
         var me = this;
-
-        $.get("/list-file/"+_id, function(data) {
-          // if any files already in server show all here
-          data = JSON.parse(data);
-          if (data.length > 0) {
-            $.each(data, function(key, value) {
-              var mockFile = value;
-              me.emit("addedfile", mockFile);
-              me.emit("thumbnail", mockFile,value.file_url);
-              me.emit("complete", mockFile);
-            });
-          }
-        });
+        myDrop = this;
+        if($("input[name=nik]").val()!=''){
+          $.get("/list-file/"+_id, function(data) {
+            // if any files already in server show all here
+            data = JSON.parse(data);
+            if (data.length > 0) {
+              $.each(data, function(key, value) {
+                var mockFile = value;
+                me.emit("addedfile", mockFile);
+                me.emit("thumbnail", mockFile,value.file_url);
+                me.emit("complete", mockFile);
+              });
+            }
+          });
+        }
       }
       });
 
       $("input").keypress(function(e){
+
         if (e.which == 13) {
           let _nik   =$("input[name=nik]").val();
           $("input[name=id]").val(_nik);
@@ -160,6 +164,19 @@
               // let res = JSON.stringify( result );
               // alert(result);
             });
+            $.get("/list-file/"+_nik, function(data) {
+          // if any files already in server show all here
+          data = JSON.parse(data);
+          if (data.length > 0) {
+            $.each(data, function(key, value) {
+              var mockFile = value;
+              myDrop.emit("reset", mockFile);
+              myDrop.emit("addedfile", mockFile);
+              myDrop.emit("thumbnail", mockFile,value.file_url);
+              myDrop.emit("complete", mockFile);
+            });
+          }
+        });
         }
       }); 
 

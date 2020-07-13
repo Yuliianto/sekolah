@@ -17,9 +17,9 @@
                           <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button" id="generate">Generate Nilai</button>
                           </div>
-                          <div class="input-group-append">
+                          <!-- <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button" id="send-pengumuman">send-pengumuman <i class="material-icons">email</i></button>
-                          </div>
+                          </div> -->
                         </div>
 
                     </div>

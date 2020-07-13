@@ -36,7 +36,7 @@
                     <td>{{ $detail2->xs2 }}</td>
                 </tr>
                 <tr>
-                    <td>Email Orang Tua</td>
+                    <td>Email</td>
                     <td>{{ $detail2->xs1 }}</td>
                 </tr>
                 <tr>
@@ -119,7 +119,7 @@
                 </tr>
                 <tr>
                     <td>Keterangan</td>
-                    <td><label class="font-weight-bold">{{ $dt_pendaftaran->xs3 }}</label></td>
+                    <td><label class="font-weight-bold">{{ $dt_pendaftaran->xs2 }}</label></td>
                 </tr>
                 <tr>
                     <td>Status Pendaftaran</td>
@@ -150,5 +150,9 @@
     }else if("{{ $status->status->id }}" < 2){
         $("#verify").css('display','block');
         $("#test").css("display",'none');
+    }
+
+    if ("{{ $dt_pendaftaran->xs2 }}" != '') {
+        $("#test").hide();
     }
 </script>

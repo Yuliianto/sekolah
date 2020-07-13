@@ -12,13 +12,15 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-12">
-        
+    
+    <div class="col-6">
         <table class="table">
             <thead>
                 <tr>
                     <th class="text-center"></th>
-                    <th></th>
+                    <th>
+                        
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -26,7 +28,10 @@
                     <td>nama</td>
                     <td>{{ $dt_pendaftaran->xs1 }}</td>
                 </tr>
-                
+                <tr>
+                    <td>Status</td>
+                    <td>{{ $dt_pendaftaran->pendaftar_status_id }}</td>
+                </tr>
                 <tr>
                     <td>Keterangan</td>
                     <td>anak ke <label class="text-bold">{{ $detail->xn2 }}</label> dari <label class="text-bold">{{ $detail->xn3 }} bersaudara</label></td>
@@ -74,7 +79,9 @@
                 </tr>
             </tbody>
         </table>
+    </div>
 
+    <div class="col-6">
         <table class="table">
             <thead>
                 <tr>
@@ -84,31 +91,34 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Tempat, Tgl. Lahir</td>
+                    <td>Tempat, Tgl Lahir</td>
                     <td>{{ $detail->xs5 }},{{ $detail->xs4 }}</td>
                 </tr>
                 <tr>
                     <td>Agama</td>
-                    <td>{{ $detail->xs4 }}</td>
+                    <td>{{ $detail->xs6 }}</td>
                 </tr>
                 <tr>
                     <td>Berat badan</td>
-                    <td>{{ $detail2->xn5 }}</td>
+                    <td>{{ $detail2->xn2 }}</td>
                 </tr>
                 <tr>
                     <td>Tinggi badan</td>
-                    <td>{{ $detail2->xn6 }}</td>
+                    <td>{{ $detail2->xn3 }}</td>
                 </tr>
                 <tr>
                     <td>Asal Sekolah</td>
-                    <td></td>
+                    <td>{{ $detail2->xs9 }}</td>
                 </tr>
                 <tr>
-                    <td>Alamat Asal Sekolah</td>
-                    <td>{{ $detail2->xs3 }}</td>
+                    <td>Alamat asal sekolah</td>
+                    <td>{{ $detail2->xs10 }}</td>
                 </tr>
+
+               
             </tbody>
         </table>
+
     </div>
 </div>
 

@@ -399,7 +399,6 @@
       }
       
       $("#check").click(function(){
-        $(".loading").css('display','block');
         let _nama_lengkap    =$("input[name=name]").val();
         let _nama_Panggilan  =$("input[name=nama-panggilan]").val();
         let _jenis_kelamin   =$("input[name=jenis_kelamin]").val();
@@ -430,6 +429,7 @@
         let _jenjang         =$("select[name=jenjang]").val();
         let _nem             =$("input[name=nem]").val();
 
+        
         
           var data_siswa = {
                   keterangan:{
@@ -480,7 +480,8 @@
           if (tgl) {
               umur  = usia(tgl);
           }
-          if (true) {
+          if (data_siswa.keterangan.nik_Anak != '' && data_siswa.tempat_tinggal.email != '') {
+            $(".loading").css('display','block');
             $.ajax({
               method: "post",
               url: "/do_register",
@@ -514,7 +515,18 @@
             });
 
           }else{
-            alert("usia tidak memenuhi persyaratan");
+            $.notify({
+                    icon: "add_alert",
+                    message: "GAGAL!! Check kolom nik atau email"
+
+                },{
+                    type: 'danger',
+                    timer: 4000,
+                    placement: {
+                        from: "top",
+                        align: "center"
+                    }
+                });
           }
       });
 
