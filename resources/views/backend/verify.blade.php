@@ -7,34 +7,22 @@
             <div class="card">
                 <div class="card-body">
                     <div class="form-inline">
-                        <div class="form-group mb-2">
-                            <label for="staticEmail2" class="sr-only">Generate Nilai</label>
-                            <input type="text" readonly class="form-control-plaintext" id="staticEmail2" value="Generate Nilai">
-                        </div>
-                        <div class="form-group mx-sm-3 mb-2">
-                            <label for="inputPassword2" class="sr-only">Password</label>
-                            <select class="form-control" name="kelas_id">
-                                @foreach($kuiz as $value)
-                                <option value="{{ $value->kuiz_id}}">{{ $value->deskrip }}</option>
-                                @endforeach
-                            </select>
+
+                        <div class="input-group">
+                          <select class="custom-select" id="inputGroupSelect04" name="kelas_id">
+                            @foreach($kuiz as $value)
+                            <option value="{{ $value->kuiz_id}}">{{ $value->deskrip }}</option>
+                            @endforeach
+                          </select>
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="generate">Generate Nilai</button>
+                          </div>
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="send-pengumuman">send-pengumuman <i class="material-icons">email</i></button>
+                          </div>
                         </div>
 
-                        <button type="submit" class="btn btn-success mb-2" id="generate">Generate</button>
                     </div>
-
-                    <form>
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect1">Example select</label>
-                            <select class="form-control selectpicker" data-style="btn btn-link" id="exampleFormControlSelect1">
-                              <option>1</option>
-                              <option>2</option>
-                              <option>3</option>
-                              <option>4</option>
-                              <option>5</option>
-                            </select>
-                        </div>
-                    </form>
                 </div>
             </div>
         
@@ -48,7 +36,7 @@
                                 <th class="text-center">#</th>
                                 <th>Name</th>
                                 <th>Asal sekolah</th>
-                                <th>Alamat</th>
+                                <!-- <th>Alamat</th> -->
                                 <th>Kontak</th>
                                 <th>Nilai</th>
                                 <th>Status</th>
@@ -62,7 +50,7 @@
                                 <td class="text-center">{{ $loop->index+1 }}</td>
                                 <td>{{ $column->xs1 }}</td>
                                 <td>{{ $column->xs9 }}</td>
-                                <td>{{ $column->xs3 }}</td>
+                                <!-- <td>{{ $column->xs3 }}</td> -->
                                 <td>{{ $column->xs2 }}</td>
                                 <td>{{ $column->xn3 }}</td>
                                 <td>{{ $column->name }}</td>
@@ -76,7 +64,7 @@
                                     <button type="button" rel="tooltip" class="btn btn-info btn-round btn-lookup" data-toggle="modal" data-target="#lookUp"  value="{{ $column->xn1 }}">
                                         <i class="material-icons">visibility</i>
                                     </button>
-                                    <button type="button" rel="tooltip" class="btn btn-danger btn-round" data-toggle="modal" data-target="#remarkModal"  value="{{ $column->xn1 }}">
+                                    <button type="button" rel="tooltip" class="btn btn-danger btn-round" data-toggle="modal" data-target="#remarkModal"  data-whatever="{{ $column->xn1 }}">
                                         <i class="material-icons">delete</i>
                                     </button>
                                 </td>
@@ -91,5 +79,7 @@
 
     </div>
 </div>
+
+
 
 @endsection

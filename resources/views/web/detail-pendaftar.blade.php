@@ -86,28 +86,28 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Lahir</td>
-                    <td>{{ $detail->xs2 }},{{ $detail->xs3 }}</td>
+                    <td>Tempat, Tgl Lahir</td>
+                    <td>{{ $detail->xs5 }},{{ $detail->xs4 }}</td>
                 </tr>
                 <tr>
                     <td>Agama</td>
-                    <td>{{ $detail->xs4 }}</td>
+                    <td>{{ $detail->xs6 }}</td>
                 </tr>
                 <tr>
                     <td>Berat badan</td>
-                    <td>{{ $detail2->xn5 }}</td>
+                    <td>{{ $detail2->xn2 }}</td>
                 </tr>
                 <tr>
                     <td>Tinggi badan</td>
-                    <td>{{ $detail2->xn6 }}</td>
+                    <td>{{ $detail2->xn3 }}</td>
                 </tr>
                 <tr>
-                    <td>Asal TK</td>
-                    <td></td>
+                    <td>Asal Sekolah</td>
+                    <td>{{ $detail2->xs9 }}</td>
                 </tr>
                 <tr>
-                    <td>Alamat TK</td>
-                    <td>{{ $detail2->xs3 }}</td>
+                    <td>Alamat asal sekolah</td>
+                    <td>{{ $detail2->xs10 }}</td>
                 </tr>
 
                 <tr>
@@ -115,11 +115,11 @@
                 </tr>
                 <tr>
                     <td>Nilai</td>
-                    <td><label class="font-weight-bold">{{ $detail2->xs3 }}</label></td>
+                    <td><label class="font-weight-bold">{{ $dt_pendaftaran->xn3 }}</label></td>
                 </tr>
                 <tr>
                     <td>Keterangan</td>
-                    <td><label class="font-weight-bold">{{ $detail2->xs3 }}</label></td>
+                    <td><label class="font-weight-bold">{{ $dt_pendaftaran->xs3 }}</label></td>
                 </tr>
                 <tr>
                     <td>Status Pendaftaran</td>

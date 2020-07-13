@@ -16,12 +16,12 @@ class NotifTest extends Mailable
      *
      * @return void
      */
-    protected $enrol;
+    protected $data;
 
     public function __construct($_data)
     {
-        //
-        $this->enrol= $_data;
+        //  
+        $this->data= $_data;
     }
 
     /**
@@ -31,6 +31,6 @@ class NotifTest extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.notiftest',['enrol'=>$this->enrol]);
+        return $this->markdown('emails.notiftest',['data'=>$this->data]);
     }
 }

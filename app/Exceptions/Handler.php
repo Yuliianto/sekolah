@@ -48,5 +48,11 @@ class Handler extends ExceptionHandler
     public function render($request, Exception $exception)
     {
         return parent::render($request, $exception);
+        // $result = array('guid' => 0,
+        //                 'code' => 1,
+        //                 'data' => $request,
+        //                 'message'=> "Terdapat error pada salah satu proses");
+        // return response()->json($result);
+
     }
 }

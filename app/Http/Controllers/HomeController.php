@@ -45,15 +45,13 @@ class HomeController extends Controller
     public function index()
     {
         $pendaftar = DB::select("
-            select a.xn1, d.name, a.xn2, a.xs1, a.created_at, b.xs3, b.xs4, b.xs5, b.xs6, b.xs7 
+            select a.xn1, d.name, a.xn2, a.xs1, a.xs2 as lulus, a.created_at, c.xs3, c.xs2, b.xs5, b.xs6, b.xs7, a.xn3, c.xs9
             from 
                         new_pendaftares a
-                        inner join sdit_nurulyaqin.new_pendaftar_details b on a.xn1 = b.pendaftar_account_id 
-                        inner join sdit_nurulyaqin.new_pendaftar_details c on a.xn1 = c.pendaftar_account_id 
+                        inner join sdit_nurulyaqin.new_pendaftar_details b on a.xn1 = b.pendaftar_account_id and b.pendaftar_detail_type_id =1
+                        inner join sdit_nurulyaqin.new_pendaftar_details c on a.xn1 = c.pendaftar_account_id  and c.pendaftar_detail_type_id =2 
                         inner join sdit_nurulyaqin.new_pendaftar_statuses d on a.pendaftar_status_id = d.id  
-            where 
-                        b.pendaftar_detail_type_id =1
-                        and c.pendaftar_detail_type_id =2
+            order by a.created_at desc
                          ");
         $count = New_pendaftar::where('pendaftar_status_id','1')->count();
         // print_r($pendaftar);die();
@@ -75,20 +73,14 @@ class HomeController extends Controller
                         and c.pendaftar_detail_type_id = 2
                         
                         and a.xn1 = ".$req->nik);
-        // print_r($result);die();
         
-        // if ($isFoto) {
-        //     echo "available";
-        //  }else{
-        //      echo "nok";
-        //  } die();
         $data_file = array();
         $date = date_create($result[0]->created_at);
         $path = date_format($date,'Y/m/d');
         try {
-            $isFoto = Storage::get("public/".$path."/".$req->nik."_foto.jpg");    
-            $files = Storage::allFiles('public/'.$path);
-            
+            $isFoto = Storage::get("public/".$path."/".$req->nik."/".$req->nik."_foto.jpg"); 
+            $files = Storage::allFiles('public/'.$path.'/'.$req->nik);
+
             foreach ($files as $key => $file) {
                 if (substr($file, 18,16)==$req->nik) {
                     $data_file[$key] = array(
@@ -99,9 +91,13 @@ class HomeController extends Controller
                 }
             }
         } catch (FileNotFoundException $e) {
-            $data_file= array();    
+            $data_file[0]= array(
+                        'name' => "Failed to load file!!",
+                        'size' => "0",
+                        'file_url' => "Failed to load file!!" );    
+
         }
-        
+
         return view('backend.lookup',['details'=>$result[0],
                                       'documents'=>$data_file]);
     }
@@ -120,12 +116,11 @@ class HomeController extends Controller
             select a.xn1, d.name, a.xn2, a.xs1, a.xs2 as lulus, a.created_at, c.xs3, c.xs2, b.xs5, b.xs6, b.xs7, a.xn3, c.xs9
             from 
                         new_pendaftares a
-                        inner join sdit_nurulyaqin.new_pendaftar_details b on a.xn1 = b.pendaftar_account_id 
-                        inner join sdit_nurulyaqin.new_pendaftar_details c on a.xn1 = c.pendaftar_account_id 
+                        inner join sdit_nurulyaqin.new_pendaftar_details b on a.xn1 = b.pendaftar_account_id and b.pendaftar_detail_type_id =1
+                        inner join sdit_nurulyaqin.new_pendaftar_details c on a.xn1 = c.pendaftar_account_id  and c.pendaftar_detail_type_id =2 
                         inner join sdit_nurulyaqin.new_pendaftar_statuses d on a.pendaftar_status_id = d.id  
-            where 
-                        b.pendaftar_detail_type_id =1
-                        and c.pendaftar_detail_type_id =2 ");
+            where a.pendaftar_status_id != 6
+            order by a.created_at desc");
         $client = new Client();
         $response = $client->request('GET','http://localhost/CI-class/index.php/web/daftar_kelas#');
         // print_r($response->getStatusCode());echo "<br>";
@@ -371,13 +366,31 @@ class HomeController extends Controller
         
     }
     public function sendEnrol(Request $request){
+        $validator = 0 ;
+        $message = 'success';
+        try {   
+            $param = array ('data' => ['nik'=>$request->nik,'enrol'=>$request->enrolKey,'email'=>$request->email]);
+            $peserta = new New_pendaftar();
+            $update = $peserta::where('xn1', $request->nik)
+                                    ->update(['xs3'=>$request->enrolKey]);
+            Mail::to($request->email)->send(new NotifTest($param['data']));
+            $validator = 1;
+        } catch (Exception $e) {
+            
+            $validator = 0;
+            $message = $e;
+        }
+
+
         $result = array('guid' => 0,
-                        'code' => 1,
-                        'data' => ['nik'=>$request->nik,'enrol'=>$request->enrolKey,'email'=>$request->email]);
+                        'code' => $validator,
+                        'data' => ['nik'=>$request->nik,'enrol'=>$request->enrolKey,'email'=>$request->email],
+                        'message'=> $message);
 
         
-        Mail::to($request->email)->send(new NotifTest($request->enrolKey));
         
         return response()->json($result);
+
+        // return (new NotifTest($result->data))->render();
     }
 }

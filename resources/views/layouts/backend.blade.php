@@ -239,8 +239,8 @@
 
 
     <!-- Modal -->
-<div class="modal fade" id="remarkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+<div class="modal fade bd-example-modal-lg" id="remarkModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Delete Data</h5>
@@ -249,14 +249,12 @@
         </button>
       </div>
       <div class="modal-body">
-        Alasan untuk menghapus data?
-
         <div class="form-group">
           <label for="id">ID number</label>
-          <input type="text" class="form-control" name="id" disabled="true">
+          <input type="text" class="form-control" name="id" disabled="true" id="recipient-name">
         </div>
         <div class="form-group">
-          <label for="exampleFormControlTextarea1">remark</label>
+          <label for="exampleFormControlTextarea1"><b>Alasan untuk menghapus data?</b></label>
           <!-- <input type="text" class="form-control" name="id"> -->
           <textarea class="form-control" id="remark" rows="3"></textarea>
         </div>
@@ -274,7 +272,7 @@
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Delete Data</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Detail Data</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -291,6 +289,7 @@
 </div>
 
   <script type="text/javascript">
+
 $('textarea').trumbowyg();
 
 function get_data_content(){
@@ -352,6 +351,15 @@ $("#inpt").keypress(function(event){
       });
     });
 
+$('#remarkModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('Delete for ID ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+})
     function del(){
        let _nik    =$("input[name=id]").val();
         let _remark =$("#remark").val() 

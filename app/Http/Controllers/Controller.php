@@ -185,11 +185,16 @@ class Controller extends BaseController
                         ->send(new Pendaftares($nik));
     }
 
-    public function test_email($nik, $to){
+    public function test_email($nik, $to, $enrol){
         
-        $user = new Pendaftares($nik);
-        // $detail_regis = new Mailregis($nik);
-        $detail_regis = new NotifTest("d62fd8b6515e740353b1c60a9da");
+        $peserta = new New_pendaftar();
+        $update = $peserta::where('xn1', $nik)
+                                ->update(['xs3'=>$enrol]);
+
+        $result = array('guid' => 0,
+                        'code' => 1,
+                        'data' => ['nik'=>$nik,'enrol'=>$enrol,'email'=>$to]);
+        $detail_regis = new NotifTest($result['data']);
         // $to = $reciver;
         // Mail::to($to)->send(new NotifTest($nik));
         return $detail_regis->render();

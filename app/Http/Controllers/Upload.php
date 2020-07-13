@@ -30,7 +30,7 @@ class Upload extends Controller
         $pendaftar = New_pendaftar::where('xn1',$req->id)->first();
         // echo date_format($pendaftar->created_at,'Y/m/d');die();
         $extension = $req->file('file')->extension();
-        $path = Storage::putFileAs('public/'.date_format($pendaftar->created_at,'Y/m/d'),$req->file('file'), $req->id."_".$name);
+        $path = Storage::putFileAs('public/'.date_format($pendaftar->created_at,'Y/m/d').'/'.$req->id,$req->file('file'), $req->id."_".$name);
         return $path;
     }
 
@@ -38,7 +38,7 @@ class Upload extends Controller
         // print_r($req->id);die();
 
         $pendaftar = New_pendaftar::where('xn1',$req->id)->first();
-        $path = date_format($pendaftar->created_at,'Y/m/d');
+        $path = date_format($pendaftar->created_at,'Y/m/d').'/'.$req->id;
         
         // $files = Storage::allFiles('public/'.$path);
 

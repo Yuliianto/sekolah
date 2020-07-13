@@ -1,7 +1,7 @@
 
 <?php
 $date = date_create($details->created_at);
-$path = "storage/".date_format($date,'Y/m/d')."/".$details->nik."_foto.jpg";
+$path = "storage/".date_format($date,'Y/m/d')."/".$details->nik."/".$details->nik."_foto.jpg";
 // echo $path;
 ?>
 
@@ -133,6 +133,8 @@ $path = "storage/".date_format($date,'Y/m/d')."/".$details->nik."_foto.jpg";
                         console.log(result);
                         if(result.code === 1){
                             bootbox.alert("The enrol key has been send to user");
+                        }else{
+                            bootbox.alert(result.message);
                         }
                     });
     }
