@@ -4,6 +4,76 @@
 <div class="content">
     <div class="container-fluid">
         <!-- your content here -->
+
+          <div class="row">
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-warning card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">content_copy</i>
+                  </div>
+                  <p class="card-category">Pendaftar</p>
+                  <h3 class="card-title">{{ $summary['total'] }}
+                    <small>org</small>
+                  </h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons text-danger">warning</i>
+                    terkini
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-success card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">store</i>
+                  </div>
+                  <p class="card-category">Verifikas</p>
+                  <h3 class="card-title">{{ $summary['terverifikasi'] }}</h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons">date_range</i> update
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-danger card-header-icon">
+                  <div class="card-icon">
+                    <i class="material-icons">info_outline</i>
+                  </div>
+                  <p class="card-category">Lulus</p>
+                  <h3 class="card-title">{{ $summary['lulus'] }}</h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons">local_offer</i> siswa
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="card card-stats">
+                <div class="card-header card-header-info card-header-icon">
+                  <div class="card-icon">
+                    <i class="fa fa-user"></i>
+                  </div>
+                  <p class="card-category">Tidak Lulus</p>
+                  <h3 class="card-title">{{ $summary['tidak_lulus'] }}</h3>
+                </div>
+                <div class="card-footer">
+                  <div class="stats">
+                    <i class="material-icons">update</i> peserta
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         <div class="card">
             <div class="card-body">
 
@@ -15,7 +85,7 @@
                             </div>
                             <div class="card-body">
                                 <h4 class="card-title">Total Pendaftar</h4>
-                                <p class="card-category"><span class="text-success"><i class="fa fa-long-arrow-up"></i> {{ $count }}  </span>increase in today sales.</p>
+                                <p class="card-category"><span class="text-success"><i class="fa fa-long-arrow-up"></i>  </span>increase in today sales.</p>
                             </div>
                             <div class="card-footer">
                                 <div class="stats">

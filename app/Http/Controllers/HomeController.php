@@ -53,10 +53,14 @@ class HomeController extends Controller
                         inner join sdit_nurulyaqin.new_pendaftar_statuses d on a.pendaftar_status_id = d.id  
             order by a.created_at desc
                          ");
-        $count = New_pendaftar::where('pendaftar_status_id','1')->count();
+        
+        $summary = array('total' => New_pendaftar::where('pendaftar_type_id','1')->count(),
+                         'terverifikasi' => New_pendaftar::where('pendaftar_type_id','2')->count(),
+                         'lulus'=> New_pendaftar::where('XS2','Lulus')->count(),
+                         'tidak_lulus'=> New_pendaftar::where('xs2','Tidak Lulus')->count());
         // print_r($pendaftar);die();
         return view('backend.home',['pendaftar'=>$pendaftar
-                                    ,'count'=>$count
+                                    ,'summary'=>$summary
                                     ,'active_mn'=>'home']);
     }
 

@@ -160,7 +160,7 @@
 					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 w3layouts_stats_left w3_counter_grid">
 						<span class="fas fa-smile" aria-hidden="true"></span>
 						<p class="counter">{{ $calon_pendaftar }}</p>
-						<h3>Calon Mahasiswa</h3>
+						<h3>Pendaftar</h3>
 					</div>
 					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6   w3layouts_stats_left w3_counter_grid1">
 						<span class="fas fa-bookmark" aria-hidden="true"></span>

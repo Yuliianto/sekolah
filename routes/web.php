@@ -45,10 +45,10 @@ Route::get('/', function () {
                                 ->get();
         $ct_sambutan = DataContent::where('content_type_id',3)->first();
         $ct_filosofi = DataContent::where('content_type_id',4)->first();
-        $calon_pendaftar = App\New_pendaftares::where('pendaftar_status_id',1)->count();
+        $calon_pendaftar = App\New_pendaftares::where('pendaftar_type_id',1)->count();
         $user_verify = App\New_pendaftares::where('pendaftar_status_id',2)->count();
-        $mhs = App\New_pendaftares::where('pendaftar_status_id',3)->count();
-        $tidak_lulus = App\New_pendaftares::where('pendaftar_status_id',4)->count();
+        $mhs = App\New_pendaftares::where('XS2','Lulus')->count();
+        $tidak_lulus = App\New_pendaftares::where('xs2','Tidak Lulus')->count();
 	$meta_data = array('page_name' => 'home',
 						'title'		=> 'Home :: SDIT Nurul Yaqin',
 						'dt_negara'=>$negara,

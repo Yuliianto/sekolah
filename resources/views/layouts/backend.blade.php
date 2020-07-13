@@ -214,7 +214,7 @@
     <script type="text/javascript" src="{{ asset('material-dashboard/js/plugins/bootstrap-notify.js') }}"></script>
     <script type="text/javascript" src="{{ asset('material-dashboard/js/plugins/chartist.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('material-dashboard/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.js') }}" ></script>
+    <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.js') }}"></script>
     <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.js.map') }}"></script>
     <script type="text/javascript" src="{{ asset('material-dashboard/js/material-dashboard.min.js') }}"></script>
 
