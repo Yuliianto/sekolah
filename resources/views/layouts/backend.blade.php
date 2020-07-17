@@ -84,7 +84,7 @@
           <li class="nav-item  {{ $active_mn === 'verify' ? 'active' : '' }}  ">
             <a class="nav-link" href="/verify-page">
               <i class="material-icons">verified_user</i>
-              <p>Pendaftar</p>
+              <p>Pendaftaran</p>
             </a>
           </li>
           <!-- 
@@ -109,13 +109,19 @@
           <li class="nav-item  {{ $active_mn === 'exam' ? 'active':'' }} ">
             <a class="nav-link" href="/exam-dashboard">
               <i class="material-icons">assignment</i>
-              <p>Create Exam</p>
+              <p>Tes Pendaftaran</p>
             </a>
           </li>
 
+          <li class="nav-item  {{ $active_mn === 'periode' ? 'active':'' }}">
+            <a class="nav-link" href="/periode">
+              <i class="material-icons">calendar_today</i>
+              <p>Manage periode</p>
+            </a>
+          </li> 
           <li class="nav-item {{ $active_mn === 'frontend' ? 'active':'' }}  ">
             <a class="nav-link" href="/frontend">
-              <i class="material-icons">brush</i>
+              <i class="material-icons">home</i>
               <p>Frontend</p>
             </a>
           </li>
@@ -268,6 +274,43 @@
 </div>
 
 
+<div class="modal fade bd-example-modal-lg" id="form_insert_periode" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Form manage data periode</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="id">Nama</label>
+          <input type="text" class="form-control" name="periode-name"  id="periode-name">
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1"><b>Tahun ajaran</b></label>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <input type="date" name="tanggal-awal" class="form-control" placeholder="Tanggal awal" required>
+                            </div>
+                            <div class="col">
+                                <input type="date" name="tanggal-akhir" class="form-control" placeholder="Tanggal akhir" required>
+                            </div>
+                        </div>
+                    </div>
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <span class="btn btn-primary" id="delete-ok" data-dismiss="modal" onclick ="tambah_periode()">Tambahkan</span>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="modal fade bd-example-modal-lg" id="lookUp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
@@ -312,6 +355,73 @@ function del_content(_id){
   });
 }
 
+function tambah_periode(){
+  $.ajax({
+    method:"post",
+    url:"/tambah-periode",
+    data : {
+      nama: $("input[name=periode-name]").val(),
+      tgl_awal : $("input[name=tanggal-awal]").val(),
+      tgl_akhir : $("input[name=tanggal-akhir]").val()
+    }
+  }).done(function( result ){
+    // console.log(result);
+    get_periode();
+    $.notify({
+        icon: "add_alert",
+        message: "Data telah di tambahkan!!"
+
+    },{
+        type: 'success',
+        timer: 4000,
+        placement: {
+            from: "top",
+            align: "center"
+        }
+    });
+  });
+}
+
+function get_periode(){
+    $.get('/get-periode',function( result ){
+    let periode = result.data;
+    $("select[name=perioder_selectbox]").html("");
+    for (var i = 0; i < periode.length; i++) {
+      // console.log(periode[i]);
+      let optionHtml = "<option value="+periode[i].id+">"+periode[i].xs2+"</option>";
+      $("select[name=perioder_selectbox]").append(optionHtml);
+    }
+    // $.notify({
+    //     icon: "add_alert",
+    //     message: "Data telah di tambahkan!!"
+
+    // },{
+    //     type: 'success',
+    //     timer: 4000,
+    //     placement: {
+    //         from: "top",
+    //         align: "center"
+    //     }
+    // });
+
+  });
+}
+
+$("#delete-periode").click(function(){
+  let periode_id = $("select[name=perioder_selectbox]").val();
+  console.log("are you sure want to delete "+ periode_id);
+  bootbox.confirm("Are you sure?", function(result){
+    if (result) {
+      $.ajax({
+              method: "post",
+              url: "/delete-periode",
+              data: {content_id: periode_id}
+            }).done(function( result ){
+                get_periode();
+            });
+    }
+  });
+});
 $("#inpt").keypress(function(event){
   if (event.which === 13) {
     let val = $(this).val();
@@ -336,6 +446,7 @@ $("#inpt").keypress(function(event){
 
       get_data_content();
     $( document ).ready(function(){
+      get_periode();
       $("#myTable").DataTable();
       $("#form-content").hide();
       $("#add").click(function(){

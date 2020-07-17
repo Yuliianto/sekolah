@@ -363,15 +363,9 @@ Route::get('/edit_content/{id}',function($_id){
     }
 });
 Route::post('/generate','HomeController@generate');
-
-Route::get('/test_req',function(Request $req)
-{	
-	return response()->json([
-                    'guid'=>0,
-                    'code'=>1,
-                    'data'=>'Registrasi telah berhasil silakan check email anda'
-                ]);
-});
+Route::post('/tambah-periode','HomeController@tambah_periode');
+Route::post('/delete-periode','HomeController@delete_periode');
+Route::get('/get-periode','HomeController@get_periode');
 Route::get('/edit_fm/{judul}','HomeController@edit');
 
 // Route::get('/login',function(){
@@ -411,6 +405,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/verify-page', 'HomeController@verify_page');
+Route::get('/periode', 'HomeController@periode');
 Route::get('/interview', 'HomeController@interview');
 Route::post('/do_delete', 'HomeController@delete_data');
 Route::post('/getPendaftarbyname','HomeController@getPendaftarbyname');
@@ -450,3 +445,9 @@ Route::post('/kode_bayar',function(Request $req){
 
 Route::post('sendEnrol','HomeController@sendEnrol');
 Route::get('test_email/{nik}/{email}/{enrol}/','Controller@test_email');
+
+Route::get('/testpdf',function(){
+    $pdf = App::make('dompdf.wrapper');
+    $pdf->loadHTML('<h1>Test</h1>');
+    return $pdf->stream();
+});

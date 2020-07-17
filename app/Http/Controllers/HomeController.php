@@ -141,6 +141,52 @@ class HomeController extends Controller
                                       'dt_tes'=>$detail,
                                       'kuiz'=>$kuiz]);
     }
+
+    public function periode(){
+        $dt_content = DataContent::where('content_type_id',6)->get();
+        $client = new Client();
+        
+        
+        return view('backend.periode',['dt_content'=>$dt_content,
+                                      'active_mn'=>'periode']);
+    }
+
+    public function tambah_periode(Request $req){
+        $periode = new DataContent();
+        $result = array('guid'=>0,
+                        'code'=>0,
+                        'data'=> '' );
+        try {
+            $periode->content_type_id = 6;
+            $periode->xs1 = 'PERIODE';
+            $periode->xs2 = $req->nama;
+            $periode->xd1 = $req->tgl_awal;
+            $periode->xd2 = $req->tgl_akhir;
+            $periode->create_at = now();
+            if ($periode->save()) {
+                $result['code']=1;
+                $result['data']='berhasil';
+            }
+
+        } catch (Exception $e) {
+                $result['code']=2;
+                $result['data']='Gagal';
+        }
+        return response()->json($result);
+    }
+
+    function get_periode(){
+        $periode = DataContent::where('content_type_id',6)->get();
+        return response()->json(['guid'=>0,'code'=>1,'data'=>$periode]);
+    }
+
+    function delete_periode(Request $req){
+        $content_id = $req->content_id;
+        $periode = DataContent::find($content_id);
+        $periode->delete();
+        return response()->json(['guid'=>0,'code'=>1,'data'=>$periode]);
+    }
+
     public function getPendaftarbyname(Request $req){
         $name = $req->name;
         $pendaftar = DB::select("

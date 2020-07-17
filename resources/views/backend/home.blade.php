@@ -84,12 +84,12 @@
                                 <div class="ct-chart" id="dailySalesChart"></div>
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title">Total Pendaftar</h4>
-                                <p class="card-category"><span class="text-success"><i class="fa fa-long-arrow-up"></i>  </span>increase in today sales.</p>
+                                <h4 class="card-title">Pendaftar</h4>
+                                <p class="card-category"><span class="h1">{{ $summary['total'] }}</span></p>
                             </div>
                             <div class="card-footer">
                                 <div class="stats">
-                                    <i class="material-icons">access_time</i>Updated 4 minutes ago
+                                    <i class="material-icons">access_time</i>-
                                 </div>
                             </div>
                         </div>
@@ -100,8 +100,8 @@
                                 <div class="ct-chart" id="completedTasksChart"></div>
                             </div>
                             <div class="card-body">
-                                <h4 class="card-title">Completed Tasks</h4>
-                                <p class="card-category">Last Campaign Performance</p>
+                                <h4 class="card-title">Lulus</h4>
+                                <p class="card-category"><span class="h1">{{ $summary['lulus'] }}</span></p>
                             </div>
                             <div class="card-footer">
                                 <div class="stats">
