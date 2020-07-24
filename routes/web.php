@@ -418,30 +418,6 @@ Route::get('/admin',function(){
 	return redirect('/login');
 });
 
-Route::post('/kode_bayar',function(Request $req){
-
-    $data = array();
-    $order_id = explode(',', $req->order_id);
-        // echo count($order_id);
-        // for ($i=0; $i < count($order_id) ; $i++) { 
-        //     $data[$i] = $order_id[$i].",kode_bayar\n";
-        // }
-    $client = new GuzzleHttp\Client();
-    $response = $client->request('POST','http://eaiesbretail.telkom.co.id:9121/rest/telkom/nb/starclick/restwss/statusBayar',[
-            'auth'=>['usrStarClick','TelkomEAIRetail2019'],
-            'form_params'=> [
-                        "sof_type"=> "check",
-                        "sof_id"=> "finpay021",
-                        "invoice"=> $order_id[0],
-                        "merchant_id"=> "SC2311"
-            ]
-        ]);
-    // $res = json_decode($response);
-    // print_r($res);die();
-
-    return $response;
-    // return $req->order_id;
-});
 
 Route::post('sendEnrol','HomeController@sendEnrol');
 Route::get('test_email/{nik}/{email}/{enrol}/','Controller@test_email');
