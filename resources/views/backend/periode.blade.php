@@ -37,8 +37,8 @@
                         <thead>
                             <tr>
                                 <th class="text-center">#</th>
-                                <th>Nama</th>
                                 <th>Periode</th>
+                                <th>Biaya</th>
                                 <th class="text-center">Actions</th>
                             </tr>
                         </thead>
@@ -46,10 +46,10 @@
                             @foreach($dt_content as $column)
                             <tr>
                                 <td class="text-center">{{ $loop->index+1 }}</td>
-                                <td>{{ $column->xs1 }}</td>
+                                <td>{{ $column->xs2 }}</td>
                                 <!-- <td>{{ $column->xs9 }}</td> -->
                                 <!-- <td>{{ $column->xs3 }}</td> -->
-                                <td>{{ $column->xs2 }}</td><!-- 
+                                <td>{{ $column->xn1 }}</td><!-- 
                                 <td>{{ $column->xn3 }}</td>
                                 <td>{{ 'data' }}</td>
                                 <td>{{ 'data' }}</td>

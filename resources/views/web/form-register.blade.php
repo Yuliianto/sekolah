@@ -283,28 +283,28 @@
                 </h3>
                   <form id="my_form" enctype="multipart/form-data">
                     <label>Foto</label><br>
-				          	<input type="file" class="form-control" name="multi_file[]">
-				          	<br>
+                    <input type="file" class="form-control" name="multi_file[]">
+                    <br>
 
-				          	<label>KTP ORANG TUA</label><br>
-				          	<input type="file" class="form-control" name="multi_file[]">
-				          	<br>
+                    <label>KTP ORANG TUA</label><br>
+                    <input type="file" class="form-control" name="multi_file[]">
+                    <br>
 
-				          	<label>KARTU KELUARGA</label><br>
-				          	<input type="file" class="form-control" name="multi_file[]">
-				          	<br>
+                    <label>KARTU KELUARGA</label><br>
+                    <input type="file" class="form-control" name="multi_file[]">
+                    <br>
 
-				          	<label>KARTU IDENTITAS ANAK(KIA)</label><br>
-				          	<input type="file" class="form-control" name="multi_file[]">
-				          	<br>
+                    <label>KARTU IDENTITAS ANAK(KIA)</label><br>
+                    <input type="file" class="form-control" name="multi_file[]">
+                    <br>
                     
-				          	<label>AKTE ANAK</label><br>
-				          	<input type="file" class="form-control" name="multi_file[]">
-				          	<br>
+                    <label>AKTE ANAK</label><br>
+                    <input type="file" class="form-control" name="multi_file[]">
+                    <br>
                     
-				          	<label>Lain-lain(kartu imunisasi)</label><br>
-				          	<input type="file" class="form-control" name="multi_file[]">
-				          	<br>
+                    <label>Lain-lain(kartu imunisasi)</label><br>
+                    <input type="file" class="form-control" name="multi_file[]">
+                    <br>
                   </form> -->
                     
 <!-- 
@@ -447,31 +447,31 @@
                           kewarga_negaraan   : _kewarga_negaraan
                           // multi_file  : _file
                   },
-                  tempat_tinggal:{	
-						              email   : _email,
-						              notelp	: _notelp,
-						              alamat	: _alamat,
-						              tinggalbersama : _tinggalbersama,
-						              jaraksekolah : _jaraksekolah
+                  tempat_tinggal:{  
+                          email   : _email,
+                          notelp  : _notelp,
+                          alamat  : _alamat,
+                          tinggalbersama : _tinggalbersama,
+                          jaraksekolah : _jaraksekolah
                   },
                   kesehatan :{
-                          		
-						            beratbadan		 : _beratbadan,		
-						            tinggi         : _tinggi,
+                              
+                        beratbadan     : _beratbadan,   
+                        tinggi         : _tinggi,
                         golongandarah  : _golongandarah,
-						            penyakit       : _penyakit,
+                        penyakit       : _penyakit,
                         penyakitdll       : _penyakitdll,
                         kebutuhankhusus: _kebutuhankhusus,
                         kelainanlainnya: _kelainanlainnya
 
                   },
                   pendidikan:{
-						            namatk		:_namatk,
-						            alamattk	:_alamattk,
+                        namatk    :_namatk,
+                        alamattk  :_alamattk,
                         Jurusan   :_jurusan,
                         nem       :_nem,
                         jenjang   :_jenjang
-                  }	
+                  } 
                 };
 
           let str = JSON.stringify(data_siswa);

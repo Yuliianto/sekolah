@@ -77,6 +77,12 @@ class HomeController extends Controller
                         and c.pendaftar_detail_type_id = 2
                         
                         and a.xn1 = ".$req->nik);
+        $sis = New_pendaftar::where('xn1',$req->nik)->first();
+
+        
+        $inPeriod = DataContent::where('xd1','<=',date_format($sis->created_at,'Y-m-d'))
+                             ->where('xd2','>=',date_format($sis->created_at,'Y-m-d'))->first();
+        
         
         $data_file = array();
         $date = date_create($result[0]->created_at);
@@ -103,7 +109,8 @@ class HomeController extends Controller
         }
 
         return view('backend.lookup',['details'=>$result[0],
-                                      'documents'=>$data_file]);
+                                      'documents'=>$data_file,
+                                      'biaya'=>$inPeriod->xn1]);
     }
 
 
@@ -127,9 +134,11 @@ class HomeController extends Controller
             order by a.created_at desc");
         $client = new Client();
         $response = $client->request('GET','http://localhost/CI-class/index.php/web/daftar_kelas#');
+        $enrol_list = $client->request('GET','http://localhost/CI-class/index.php/web/enrol_list_from_kelas#');
         // print_r($response->getStatusCode());echo "<br>";
         // print_r($response->getHeaderLine('content-type'));echo "<br>";
         $kuiz = json_decode($response->getBody()->getContents());
+        $get_enrol_list = json_decode($enrol_list->getBody()->getContents());
 
         $detail_instance = new New_pendaftar();
         $detail = $detail_instance::has('detail')->whereHas('detail',function($query){
@@ -139,7 +148,8 @@ class HomeController extends Controller
         return view('backend.verify',['pendaftar'=>$pendaftar,
                                       'active_mn'=>'verify',
                                       'dt_tes'=>$detail,
-                                      'kuiz'=>$kuiz]);
+                                      'kuiz'=>$kuiz,
+                                      'dt_enrol'=>$get_enrol_list]);
     }
 
     public function periode(){
@@ -160,6 +170,7 @@ class HomeController extends Controller
             $periode->content_type_id = 6;
             $periode->xs1 = 'PERIODE';
             $periode->xs2 = $req->nama;
+            $periode->xn1 = $req->biaya;
             $periode->xd1 = $req->tgl_awal;
             $periode->xd2 = $req->tgl_akhir;
             $periode->create_at = now();
@@ -245,6 +256,38 @@ class HomeController extends Controller
         }
         return response()->json(["guid"=>0,"code"=>0,"message"=>"success"]);
     }
+    public function sendenrolmassal(Request $req){
+        $enkey= $req->enrolKey;
+        $validator = 0 ;
+        $message = 'success';
+        try {  
+            $instanceUsers = new New_pendaftar_details();
+            $users = $instanceUsers::where('pendaftar_detail_type_id',2)->get();
+            foreach ($users as $key => $value) {
+                $param = array ('data' => ['nik'=>$value->pendaftar_account_id,'enrol'=>$enkey,'email'=>$value->xs1]);
+                $peserta = new New_pendaftar();
+                $update = $peserta::where('xn1', $value->pendaftar_account_id)
+                                        ->update(['xs3'=>$enkey]);
+                Mail::to($value->xs1)->send(new NotifTest($param['data']));
+                $validator = 1;
+            }
+        } catch (Exception $e) {
+            
+            $validator = 0;
+            $message = $e;
+        }
+
+
+        $result = array('guid' => 0,
+                        'code' => $validator,
+                        'data' => 'oke',
+                        'message'=> $message);
+
+        
+        
+        return response()->json($result);
+    }
+
     public function updateInterview(Request $req){
         $peserta = new New_pendaftar();
         $nilai = $peserta::where('xn1',$req->nik)->first();

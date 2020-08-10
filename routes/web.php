@@ -296,6 +296,16 @@ Route::get('/ujian',function(){
 
 // Guest data input
 Route::get('/student-register',function(){
+    $currentdate = date('Y-m-d');
+    try {
+        $periode = DataContent::where('xd1','<=',$currentdate)
+                             ->where('xd2','>=',$currentdate)->first();      
+    } catch (Exception $e) {
+        
+    }
+    if (isset($periode)) {
+        // echo "$periode->xn1";
+    }
 	return view('web.form-register');
 });
 Route::post('/do_register','Controller@do_register');
@@ -363,6 +373,7 @@ Route::get('/edit_content/{id}',function($_id){
     }
 });
 Route::post('/generate','HomeController@generate');
+Route::post('/send-enrol-masal','HomeController@sendenrolmassal');
 Route::post('/tambah-periode','HomeController@tambah_periode');
 Route::post('/delete-periode','HomeController@delete_periode');
 Route::get('/get-periode','HomeController@get_periode');
@@ -395,11 +406,9 @@ Route::get('/edit_fm/{judul}','HomeController@edit');
 // 	Route::get('/gallery', function () { //fourth
 // 	    return view('web.gallery');
 // 	});
-
 // 	Route::get('/contact', function () { //fifth
 // 	    return view('web.contact');
 // 	});
-
 // });
 Auth::routes();
 
@@ -423,7 +432,10 @@ Route::post('sendEnrol','HomeController@sendEnrol');
 Route::get('test_email/{nik}/{email}/{enrol}/','Controller@test_email');
 
 Route::get('/testpdf',function(){
+    $test ='tes';
     $pdf = App::make('dompdf.wrapper');
     $pdf->loadHTML('<h1>Test</h1>');
     return $pdf->stream();
 });
+
+

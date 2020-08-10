@@ -63,6 +63,11 @@ $path = "storage/".date_format($date,'Y/m/d')."/".$details->nik."/".$details->ni
                     <th scope="row">Asal Sekolah</th>
                     <td colspan="2">{{ $details->asal_sekolah }}, {{ $details->alamat_asel }}</td>
                 </tr>
+
+                <tr>
+                    <th scope="row">Tagihan Biaya</th>
+                    <td colspan="2">{{ $biaya }}</td>
+                </tr>
                 <tr>
                     
                     <td colspan="3">

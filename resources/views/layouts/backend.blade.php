@@ -289,6 +289,10 @@
           <input type="text" class="form-control" name="periode-name"  id="periode-name">
         </div>
         <div class="form-group">
+          <label for="id">Biaya</label>
+          <input type="text" class="form-control" name="periode-biaya"  id="periode-biaya">
+        </div>
+        <div class="form-group">
           <label for="exampleFormControlTextarea1"><b>Tahun ajaran</b></label>
                     <div class="form-group">
                         <div class="row">
@@ -361,6 +365,7 @@ function tambah_periode(){
     url:"/tambah-periode",
     data : {
       nama: $("input[name=periode-name]").val(),
+      biaya: $("input[name=periode-biaya]").val(),
       tgl_awal : $("input[name=tanggal-awal]").val(),
       tgl_akhir : $("input[name=tanggal-akhir]").val()
     }
@@ -548,6 +553,28 @@ $('#remarkModal').on('show.bs.modal', function (event) {
       });
     });
 // end Generate
+
+// SEND ENROL MASAL 
+// ID send-enrol-masal
+    $("#send-enrol-masal").click(function(){
+      let enrolKey = $("select[name=enrolSelected]").val();
+      
+      $.ajax(
+      {
+        method : "POST",
+        url: "/send-enrol-masal",
+        data : {
+          enrolKey : enrolKey
+          
+        }
+      }
+        ).done(function( result ){
+          if (result.message){
+              location.reload();
+          }
+      });
+    });
+// END 
 
 
     $('#update-address').click(function(){

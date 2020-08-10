@@ -14,8 +14,17 @@
                             <option value="{{ $value->kuiz_id}}">{{ $value->deskrip }}</option>
                             @endforeach
                           </select>
+                          <select class="custom-select" id="inputGroupSelect04" name="enrolSelected">
+                            @foreach($dt_enrol as $value)
+                            <option value="{{ $value->enrol}}">{{ $value->enrol }}</option>
+                            @endforeach
+                          </select>
                           <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button" id="generate">Generate Nilai</button>
+                          </div>
+
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="send-enrol-masal">send enrol</button>
                           </div>
                           <!-- <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button" id="send-pengumuman">send-pengumuman <i class="material-icons">email</i></button>
