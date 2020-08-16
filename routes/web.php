@@ -17,8 +17,10 @@ use App\User;
 use App\Contents as DataContent;
 use App\New_pendaftares;
 
+use GuzzleHttp\Cookie\CookieJarInterface;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Auth;
 
 
 
@@ -330,13 +332,10 @@ Route::get('/backend',function(){
 });
 Route::post('get-calon','HomeController@lookUp');
 Route::get('/exam-dashboard',function(){
+    
     $user = Auth::user();
-    // echo "<pre>";
-    // print_r($user);
-    // echo "</pre>";die();
     $users = App\Ciclassusers::find(1);
-    return view('backend.exam',[
-                                'active_mn'=>'exam']);
+    return view('backend.exam',['active_mn'=>'exam','user'=>$user]);
 });
 Route::post('/updateInterview','HomeController@updateInterview');
 Route::get('frontend','HomeController@frontend');

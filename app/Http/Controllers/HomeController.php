@@ -25,6 +25,8 @@ use App\Ciclassusers as CIusers;
 use App\Contents as DataContent;
 use App\Mail\NotifTest;
 
+
+
 class HomeController extends Controller
 {
     /**
