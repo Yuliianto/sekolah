@@ -9,15 +9,17 @@
                     <div class="form-inline">
 
                         <div class="input-group">
-                          <select class="custom-select" id="inputGroupSelect04" name="kelas_id">
+                          <select class="custom-select" id="kelas_idselected" name="kelas_id">
+                            <option>pilih nama kelas</option>
                             @foreach($kuiz as $value)
                             <option value="{{ $value->kuiz_id}}">{{ $value->deskrip }}</option>
                             @endforeach
                           </select>
-                          <select class="custom-select" id="inputGroupSelect04" name="enrolSelected">
-                            @foreach($dt_enrol as $value)
+                          <select class="custom-select" id="enrolSelected" name="enrolSelected">
+                            <option>pilih enrol key</option>
+                            <!-- @foreach($dt_enrol as $value)
                             <option value="{{ $value->enrol}}">{{ $value->enrol }}</option>
-                            @endforeach
+                            @endforeach -->
                           </select>
                           <div class="input-group-append">
                             <button class="btn btn-outline-secondary" type="button" id="generate">Generate Nilai</button>
@@ -89,6 +91,19 @@
     </div>
 </div>
 
+<script type="text/javascript">
+    $( document ).ready(function(){
+
+        $("#kelas_idselected").change(function() {
+            let kelas_id = $(this).val();
+            $.get("/get_enrol/"+kelas_id,function( result ){
+                // console.log( result.enrol );
+                // $dt = JSON.parse(result);
+                $("#enrolSelected").html("<option value = "+result.enrol+">"+result.enrol+"</option>");
+            });
+        });
+    });
+</script>
 
 
 @endsection

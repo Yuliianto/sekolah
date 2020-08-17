@@ -31,6 +31,7 @@ class NotifTest extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.notiftest',['data'=>$this->data]);
+        return $this->from('sistem.pendaftaran@domain.com')
+                    ->markdown('emails.notiftest',['data'=>$this->data]);
     }
 }

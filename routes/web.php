@@ -413,6 +413,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/verify-page', 'HomeController@verify_page');
+Route::get('get_enrol/{kelas_id}','HomeController@list_enrol');
 Route::get('/periode', 'HomeController@periode');
 Route::get('/interview', 'HomeController@interview');
 Route::post('/do_delete', 'HomeController@delete_data');

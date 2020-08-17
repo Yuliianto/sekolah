@@ -53,6 +53,7 @@ class HomeController extends Controller
                         inner join sdit_nurulyaqin.new_pendaftar_details b on a.xn1 = b.pendaftar_account_id and b.pendaftar_detail_type_id =1
                         inner join sdit_nurulyaqin.new_pendaftar_details c on a.xn1 = c.pendaftar_account_id  and c.pendaftar_detail_type_id =2 
                         inner join sdit_nurulyaqin.new_pendaftar_statuses d on a.pendaftar_status_id = d.id  
+            where a.pendaftar_status_id <> 6
             order by a.created_at desc
                          ");
         
@@ -120,7 +121,8 @@ class HomeController extends Controller
     public function delete_data(Request $req){
         $nik = $req->nik;
         $remark = $req->remark;
-        $verify = New_pendaftar::where('xn1',$nik)->update(['pendaftar_status_id'=>6,'xs20'=>$remark]);
+        $delete_trans = New_pendaftar::where('xn1',$nik)->update(['pendaftar_status_id'=>6,'xs20'=>$remark, 'xn1'=>'-'.$nik]);
+        $delet_detail = New_pendaftar_details::where('pendaftar_account_id',$nik)->update(['pendaftar_account_id'=>'-'.$nik]);
         return $nik;
     }
 
@@ -265,14 +267,22 @@ class HomeController extends Controller
         try {  
             $instanceUsers = new New_pendaftar_details();
             $users = $instanceUsers::where('pendaftar_detail_type_id',2)->get();
+            $email = array();
             foreach ($users as $key => $value) {
-                $param = array ('data' => ['nik'=>$value->pendaftar_account_id,'enrol'=>$enkey,'email'=>$value->xs1]);
-                $peserta = new New_pendaftar();
-                $update = $peserta::where('xn1', $value->pendaftar_account_id)
-                                        ->update(['xs3'=>$enkey]);
-                Mail::to($value->xs1)->send(new NotifTest($param['data']));
-                $validator = 1;
+                array_push($email, $value->xs1);
             }
+            
+            $param = array ('data' => ['nik'=>'-','enrol'=>$enkey,'email'=>'test']);
+            Mail::to($email)->send(new NotifTest($param['data']));
+            $validator = 1;
+            // foreach ($users as $key => $value) {
+            //     $param = array ('data' => ['nik'=>$value->pendaftar_account_id,'enrol'=>$enkey,'email'=>$value->xs1]);
+            //     $peserta = new New_pendaftar();
+            //     $update = $peserta::where('xn1', $value->pendaftar_account_id)
+            //                             ->update(['xs3'=>$enkey]);
+            //     Mail::to($value->xs1)->send(new NotifTest($param['data']));
+            //     $validator = 1;
+            // }
         } catch (Exception $e) {
             
             $validator = 0;
@@ -487,5 +497,19 @@ class HomeController extends Controller
         return response()->json($result);
 
         // return (new NotifTest($result->data))->render();
+    }
+    public function list_enrol($kelas_id =null){
+        $client = new Client();
+        $response = $client->request('GET','http://localhost/CI-class/index.php/web/enrol_list_from_kelas/'.$kelas_id);
+        $hasil = json_decode($response->getBody()->getContents());
+        // foreach ($hasil->hasil as $value) {
+        //     $gate = new New_pendaftar();
+        //     $candidat = $gate::where('xn1',$value->nim)
+        //                         ->update([
+        //                                   'xn3'=>($value->total_benar/$hasil->jml_soal)*100  ]);
+
+        // }
+        
+        return response()->json(['enrol'=>$hasil[0]->enrol]);
     }
 }

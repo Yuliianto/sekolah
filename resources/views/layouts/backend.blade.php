@@ -500,6 +500,7 @@ $('#remarkModal').on('show.bs.modal', function (event) {
                         align: "center"
                     }
                 });
+               location.reload();
             });
     }
 
