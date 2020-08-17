@@ -410,6 +410,7 @@ Route::get('/edit_fm/{judul}','HomeController@edit');
 // 	});
 // });
 Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/verify-page', 'HomeController@verify_page');
