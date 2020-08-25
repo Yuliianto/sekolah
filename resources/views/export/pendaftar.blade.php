@@ -1,0 +1,12 @@
+<table>
+    <thead>
+        <tr>
+            <th>Field</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>values</td>
+        </tr>
+    </tbody>
+</table>

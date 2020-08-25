@@ -176,6 +176,8 @@ return [
         App\Providers\RouteServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
 
+        // Laravel excel 
+        Maatwebsite\Excel\ExcelServiceProvider::class,
     ],
 
     /*

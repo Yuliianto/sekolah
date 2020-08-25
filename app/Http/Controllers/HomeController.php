@@ -25,6 +25,9 @@ use App\Ciclassusers as CIusers;
 use App\Contents as DataContent;
 use App\Mail\NotifTest;
 
+// Export 
+use App\Exports\NewPendaftares;
+
 
 
 class HomeController extends Controller
@@ -511,5 +514,9 @@ class HomeController extends Controller
         // }
         
         return response()->json(['enrol'=>$hasil[0]->enrol]);
+    }
+
+    public function export_pendaftar(){
+        return Export::download(new NewPendaftares, date('Y-m-d_H:i:s').'data.xlxs');
     }
 }

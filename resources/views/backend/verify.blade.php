@@ -12,7 +12,7 @@
                           <select class="custom-select" id="kelas_idselected" name="kelas_id">
                             <option>pilih nama kelas</option>
                             @foreach($kuiz as $value)
-                            <option value="{{ $value->kuiz_id}}">{{ $value->deskrip }}</option>
+                            <option value="{{ $value->post_id}}">{{ $value->deskrip }}</option>
                             @endforeach
                           </select>
                           <select class="custom-select" id="enrolSelected" name="enrolSelected">
